@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2c6ejnc44vsh"]
+
+[ext_resource type="Script" path="res://scenes/overworld/maps/base_map/map.gd" id="1_vu4ff"]
+[ext_resource type="PackedScene" uid="uid://76b6ppdrtu4v" path="res://scenes/overworld/player/player.tscn" id="2_x4qdt"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_vu4ff")
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="Doors" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Player" parent="." instance=ExtResource("2_x4qdt")]
+unique_name_in_owner = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)

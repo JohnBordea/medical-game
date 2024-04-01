@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://csx36j3nc84an"]
+
+[ext_resource type="Script" path="res://scenes/patient_data/UI/patient_main_panel/profile_data/profile_data_panel.gd" id="1_2ncqk"]
+
+[node name="ProfileDataPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(252, 252)
+script = ExtResource("1_2ncqk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Name: Name Name"
+
+[node name="Gender" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Gender: Gender"
+
+[node name="Age" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Age: Age years old"

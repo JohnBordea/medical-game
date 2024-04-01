@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://76b6ppdrtu4v"]
+
+[ext_resource type="Script" path="res://scenes/overworld/player/player.gd" id="1_u0al8"]
+[ext_resource type="SpriteFrames" uid="uid://ct0o65k0icxdx" path="res://scenes/overworld/entity/assets/resources/regular_person_male_doctor.tres" id="2_sfslf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l8dqw"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vv406"]
+radius = 23.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 5
+script = ExtResource("1_u0al8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = ExtResource("2_sfslf")
+animation = &"idle_left"
+
+[node name="WallCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_l8dqw")
+
+[node name="DialogueController" type="Area2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -4)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueController"]
+position = Vector2(32, 0)
+shape = SubResource("CircleShape2D_vv406")
+
+[connection signal="body_entered" from="DialogueController" to="." method="_on_dialogue_controller_body_entered"]
+[connection signal="body_exited" from="DialogueController" to="." method="_on_dialogue_controller_body_exited"]

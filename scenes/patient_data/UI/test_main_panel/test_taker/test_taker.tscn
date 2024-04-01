@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0y5yrgh7eu5j"]
+
+[ext_resource type="Script" path="res://scenes/patient_data/UI/test_main_panel/test_taker/test_taker.gd" id="1_k0cjf"]
+[ext_resource type="PackedScene" uid="uid://def0h6l13ytmh" path="res://scenes/patient_data/UI/test_main_panel/test_taker/category/category_container.tscn" id="2_hgxvv"]
+
+[node name="TestTaker" type="MarginContainer"]
+custom_minimum_size = Vector2(855, 484)
+offset_right = 855.0
+script = ExtResource("1_k0cjf")
+category_continer = ExtResource("2_hgxvv")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+
+[node name="AllCategoryContainer" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(855, 0)
+layout_mode = 2
+theme_override_constants/separation = 20

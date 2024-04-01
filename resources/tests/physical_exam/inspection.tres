@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Test" load_steps=2 format=3 uid="uid://rmdpvjluls4"]
+
+[ext_resource type="Script" path="res://resources/tests/test.gd" id="1_cltmd"]
+
+[resource]
+script = ExtResource("1_cltmd")
+image = "res://resources/tests/default_icon.png"
+name = "Inspection"
+description = "You are inspecting the body(maybe the chest)."
+default_diagnostic = "Nothing Unusual"

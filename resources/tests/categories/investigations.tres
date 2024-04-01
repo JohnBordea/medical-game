@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TestType" load_steps=2 format=3 uid="uid://c8biysp07o1ak"]
+
+[ext_resource type="Script" path="res://resources/tests/test_type.gd" id="1_ob4cg"]
+
+[resource]
+script = ExtResource("1_ob4cg")
+name = ""
+tests = Array[Resource("res://resources/tests/test.gd")]([])

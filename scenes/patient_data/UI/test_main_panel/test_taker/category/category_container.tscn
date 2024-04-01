@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://def0h6l13ytmh"]
+
+[ext_resource type="PackedScene" uid="uid://bv8p1454ugva8" path="res://scenes/patient_data/UI/test_main_panel/test_taker/category/test/test.tscn" id="1_24m02"]
+[ext_resource type="Script" path="res://scenes/patient_data/UI/test_main_panel/test_taker/category/category_container.gd" id="1_jhmut"]
+
+[node name="CategoryContainer" type="PanelContainer"]
+custom_minimum_size = Vector2(855, 0)
+script = ExtResource("1_jhmut")
+test_instance = ExtResource("1_24m02")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CategoryName" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Category Name"
+
+[node name="CategoryContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5

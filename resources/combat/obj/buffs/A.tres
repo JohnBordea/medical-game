@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatBuff" load_steps=2 format=3 uid="uid://b7r7ti05ngbfo"]
+
+[ext_resource type="Script" path="res://resources/combat/scripts/buff/stat_buff.gd" id="1_aegwf"]
+
+[resource]
+script = ExtResource("1_aegwf")
+block_chance = 1.0
+name = "A Buff"
+sprite = "res://resources/combat/obj/skills/misc/buff_base.png"
+cooldown = -1

@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://4g1yxls604eu"]
+
+[ext_resource type="Script" path="res://scenes/patient_data/UI/patient_main_panel/test/test_panel.gd" id="1_ax1uh"]
+[ext_resource type="PackedScene" uid="uid://bgwplkawhpig3" path="res://scenes/patient_data/UI/patient_main_panel/test/icon/test_panel.tscn" id="1_d0xqp"]
+
+[node name="TestPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(368, 0)
+script = ExtResource("1_ax1uh")
+test_made = ExtResource("1_d0xqp")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Tests"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Test
+"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="TestContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillAttack" load_steps=3 format=3 uid="uid://dk6torl01ftw0"]
+
+[ext_resource type="Resource" uid="uid://b7r7ti05ngbfo" path="res://resources/combat/obj/buffs/A.tres" id="1_m5c6a"]
+[ext_resource type="Script" path="res://resources/combat/scripts/skills/attack_skill.gd" id="2_mepnc"]
+
+[resource]
+script = ExtResource("2_mepnc")
+buff_bonus = {}
+buff_weakness = {}
+nullifies = ExtResource("1_m5c6a")
+name = "A Nullifier"
+type = 0
+power = 1.0
+cooldown = 0
+active_cooldown = 0
+priority_factor = 0

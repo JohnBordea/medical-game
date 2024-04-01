@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillAttack" load_steps=3 format=3 uid="uid://cgh1m4dykq6kg"]
+
+[ext_resource type="Script" path="res://resources/combat/scripts/skills/attack_skill.gd" id="1_8ql86"]
+[ext_resource type="Resource" uid="uid://cmh6qdrn3mgyk" path="res://resources/combat/obj/skills/type/physical.tres" id="2_3iuvy"]
+
+[resource]
+script = ExtResource("1_8ql86")
+buff_bonus = {}
+buff_weakness = {}
+name = "Power Attack"
+type = ExtResource("2_3iuvy")
+power = 30.0
+cooldown = 1
+active_cooldown = 0
+priority_factor = 0

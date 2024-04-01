@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillAttack" load_steps=3 format=3 uid="uid://cxkkh14f3m1no"]
+
+[ext_resource type="Resource" uid="uid://b7r7ti05ngbfo" path="res://resources/combat/obj/buffs/A.tres" id="1_hgq35"]
+[ext_resource type="Script" path="res://resources/combat/scripts/skills/attack_skill.gd" id="1_rar7w"]
+
+[resource]
+script = ExtResource("1_rar7w")
+buff_bonus = {
+ExtResource("1_hgq35"): 4.0
+}
+buff_weakness = {}
+name = "A Attack"
+type = 0
+power = 5.0
+cooldown = 0
+priority_factor = 3

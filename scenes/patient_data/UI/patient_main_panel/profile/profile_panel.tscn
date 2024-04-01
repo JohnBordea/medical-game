@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://iuhg3oswe0fl"]
+
+[ext_resource type="Script" path="res://scenes/patient_data/UI/patient_main_panel/profile/profile_panel.gd" id="1_jcvoq"]
+[ext_resource type="Texture2D" uid="uid://crdyua3ifkix3" path="res://scenes/patient_data/UI/icon.png" id="1_rndur"]
+
+[node name="ProfilePanel" type="PanelContainer"]
+custom_minimum_size = Vector2(252, 252)
+script = ExtResource("1_jcvoq")
+
+[node name="ProfilePic" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_rndur")

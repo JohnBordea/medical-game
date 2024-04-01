@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="HistoryBase" load_steps=2 format=3 uid="uid://dhrrhnu361uxm"]
+
+[ext_resource type="Script" path="res://resources/illnesses/history/history.gd" id="1_a13pr"]
+
+[resource]
+script = ExtResource("1_a13pr")
+image = "res://resources/illnesses/history/default_icon.png"
+name = "Default Hystory"

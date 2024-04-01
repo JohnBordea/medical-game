@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillBuff" load_steps=5 format=3 uid="uid://cafhcs7trgjva"]
+
+[ext_resource type="Resource" uid="uid://b7r7ti05ngbfo" path="res://resources/combat/obj/buffs/A.tres" id="1_hdm53"]
+[ext_resource type="Script" path="res://resources/combat/scripts/skills/buff_skill.gd" id="1_nbr50"]
+[ext_resource type="Resource" uid="uid://cww7rfytmvib7" path="res://resources/combat/obj/buffs/heal.tres" id="2_foq6d"]
+[ext_resource type="Resource" uid="uid://eqnlpxwibnow" path="res://resources/combat/obj/buffs/B.tres" id="3_5tk0d"]
+
+[resource]
+script = ExtResource("1_nbr50")
+adds = Array[Resource("res://resources/combat/scripts/buff/buff.gd")]([ExtResource("1_hdm53"), ExtResource("2_foq6d"), ExtResource("3_5tk0d")])
+name = "A Heal"
+type = 1
+power = 0.0
+cooldown = 5
+priority_factor = 5

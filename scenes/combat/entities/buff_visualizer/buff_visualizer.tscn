@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfp66oj1otkuc"]
+
+[ext_resource type="Script" path="res://scenes/combat/entities/buff_visualizer/buff_visualizer.gd" id="1_eiq4p"]
+[ext_resource type="PackedScene" uid="uid://cyrk87ccsnvlc" path="res://scenes/combat/entities/buff_visualizer/buff/buff_rect.tscn" id="2_0ustr"]
+
+[node name="BuffVisualizer" type="MarginContainer"]
+custom_minimum_size = Vector2(100, 0)
+offset_left = -50.0
+offset_top = -10.0
+offset_right = 50.0
+offset_bottom = 10.0
+script = ExtResource("1_eiq4p")
+buff_rect = ExtResource("2_0ustr")
+
+[node name="BuffContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+theme_override_constants/separation = -10

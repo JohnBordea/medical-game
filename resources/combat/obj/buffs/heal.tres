@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HealBuff" load_steps=2 format=3 uid="uid://cww7rfytmvib7"]
+
+[ext_resource type="Script" path="res://resources/combat/scripts/buff/heal_buff.gd" id="1_1egh6"]
+
+[resource]
+script = ExtResource("1_1egh6")
+hp_heal = 50
+eliminate_buffs_self = Array[Resource("res://resources/combat/scripts/buff/buff.gd")]([])
+name = "Heal"
+sprite = "res://resources/combat/entities/skills/misc/buff_base.png"
+cooldown = -1

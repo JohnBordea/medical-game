@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsxuk38hroqjq"]
+
+[ext_resource type="Script" path="res://scenes/patient_data/UI/patient_main_panel/symptom/symptom_panel.gd" id="1_wlrjy"]
+[ext_resource type="PackedScene" uid="uid://bm6dgqf7xt4kt" path="res://scenes/patient_data/UI/patient_main_panel/symptom/icon/symptom_icon.tscn" id="2_pnh7a"]
+
+[node name="SymptomPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(336, 0)
+script = ExtResource("1_wlrjy")
+icon = ExtResource("2_pnh7a")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Symptoms"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 283)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="SympthomContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="SymptomIcon" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/SympthomContainer" instance=ExtResource("2_pnh7a")]
+layout_mode = 2
+
+[node name="SymptomIcon2" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/SympthomContainer" instance=ExtResource("2_pnh7a")]
+layout_mode = 2
+
+[node name="SymptomIcon3" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/SympthomContainer" instance=ExtResource("2_pnh7a")]
+layout_mode = 2
+
+[node name="SymptomIcon4" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/SympthomContainer" instance=ExtResource("2_pnh7a")]
+layout_mode = 2

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ShieldBuff" load_steps=2 format=3 uid="uid://eqnlpxwibnow"]
+
+[ext_resource type="Script" path="res://resources/combat/scripts/buff/shield_buff.gd" id="1_s408h"]
+
+[resource]
+script = ExtResource("1_s408h")
+shield = 50
+name = "B Shield"
+sprite = "res://resources/combat/obj/skills/misc/buff_base.png"
+cooldown = -1

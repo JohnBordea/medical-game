@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgft46nunt4t5"]
+
+[ext_resource type="PackedScene" uid="uid://b87nw5ltsn42k" path="res://scenes/patient_data/UI/patient_main_panel/history/icon/history_icon.tscn" id="1_7pimj"]
+[ext_resource type="Script" path="res://scenes/patient_data/UI/patient_main_panel/history/history_panel.gd" id="1_y1kse"]
+
+[node name="HistoryPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(568, 252)
+script = ExtResource("1_y1kse")
+icon = ExtResource("1_7pimj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "History"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 199)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="HistoryContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HistoryIcon" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/HistoryContainer" instance=ExtResource("1_7pimj")]
+layout_mode = 2
+
+[node name="HistoryIcon2" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/HistoryContainer" instance=ExtResource("1_7pimj")]
+layout_mode = 2
+
+[node name="HistoryIcon3" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/HistoryContainer" instance=ExtResource("1_7pimj")]
+layout_mode = 2
+
+[node name="HistoryIcon4" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/HistoryContainer" instance=ExtResource("1_7pimj")]
+layout_mode = 2
+
+[node name="HistoryIcon5" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/HistoryContainer" instance=ExtResource("1_7pimj")]
+layout_mode = 2
+
+[node name="HistoryIcon6" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/HistoryContainer" instance=ExtResource("1_7pimj")]
+layout_mode = 2

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv8p1454ugva8"]
+
+[ext_resource type="Texture2D" uid="uid://ch0rggl1t5rq6" path="res://unknown.png" id="1_1f2ws"]
+[ext_resource type="Script" path="res://scenes/patient_data/UI/test_main_panel/test_taker/category/test/test.gd" id="1_d4jqu"]
+
+[node name="Test" type="MarginContainer"]
+custom_minimum_size = Vector2(159, 0)
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_d4jqu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_1f2ws")
+expand_mode = 4
+stretch_mode = 6
+
+[node name="Name" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "NameNameNameNameNameName"
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

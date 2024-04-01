@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://cff2bj2nkj1x6"]
+
+[ext_resource type="PackedScene" uid="uid://clekmpvpp0vwa" path="res://scenes/UI/general_menu/illness_info/illness_info.tscn" id="1_56aeo"]
+
+[node name="GeneralMenu" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer"]
+layout_mode = 2
+current_tab = 1
+
+[node name="Inventory" type="TabBar" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Inventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Inventory/MarginContainer"]
+layout_mode = 2
+text = "To be Implemented"
+
+[node name="Information" type="TabBar" parent="MarginContainer/TabContainer"]
+layout_mode = 2
+
+[node name="IllnessInfo" parent="MarginContainer/TabContainer/Information" instance=ExtResource("1_56aeo")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="TabBar3" type="TabBar" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2

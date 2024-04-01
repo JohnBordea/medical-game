@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5sjvndflrx2d"]
+
+[ext_resource type="Script" path="res://scenes/patient_data/UI/patient_main_panel/patient_main_panel.gd" id="1_c3ovd"]
+[ext_resource type="PackedScene" uid="uid://iuhg3oswe0fl" path="res://scenes/patient_data/UI/patient_main_panel/profile/profile_panel.tscn" id="1_x5lwe"]
+[ext_resource type="PackedScene" uid="uid://csx36j3nc84an" path="res://scenes/patient_data/UI/patient_main_panel/profile_data/profile_data_panel.tscn" id="2_6ypuo"]
+[ext_resource type="PackedScene" uid="uid://cgft46nunt4t5" path="res://scenes/patient_data/UI/patient_main_panel/history/history_panel.tscn" id="3_vw6td"]
+[ext_resource type="PackedScene" uid="uid://bsxuk38hroqjq" path="res://scenes/patient_data/UI/patient_main_panel/symptom/symptom_panel.tscn" id="4_33gki"]
+[ext_resource type="PackedScene" uid="uid://4g1yxls604eu" path="res://scenes/patient_data/UI/patient_main_panel/test/test_panel.tscn" id="5_vkevb"]
+[ext_resource type="PackedScene" uid="uid://coxwwo4e6gmjy" path="res://scenes/patient_data/UI/patient_main_panel/diagnostic/diagnostic_panel.tscn" id="7_0d8mg"]
+
+[node name="PatientMainPanel" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c3ovd")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 252)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ProfilePanel" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_x5lwe")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ProfileDataPanel" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("2_6ypuo")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HistoryPanel" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("3_vw6td")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 336)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SymptomPanel" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer" instance=ExtResource("4_33gki")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TestPanel" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer" instance=ExtResource("5_vkevb")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DiagnosticPanel" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer" instance=ExtResource("7_0d8mg")]
+unique_name_in_owner = true
+layout_mode = 2

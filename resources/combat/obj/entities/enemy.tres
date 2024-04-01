@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CombatEntity" load_steps=6 format=3 uid="uid://dqge67rw5rvqc"]
+
+[ext_resource type="Script" path="res://resources/combat/scripts/combat_entity.gd" id="1_xbg0e"]
+[ext_resource type="Resource" uid="uid://cxkkh14f3m1no" path="res://resources/combat/obj/skills/enemy/a_attack.tres" id="2_xj7hy"]
+[ext_resource type="Script" path="res://resources/combat/scripts/stats.gd" id="3_0i1ej"]
+[ext_resource type="Resource" uid="uid://cafhcs7trgjva" path="res://resources/combat/obj/skills/enemy/a_buff.tres" id="3_oojyt"]
+
+[sub_resource type="Resource" id="Resource_by4bx"]
+script = ExtResource("3_0i1ej")
+strength = 5
+constitution = 5
+intelligence = 5
+agility = 10
+luck = 5
+
+[resource]
+script = ExtResource("1_xbg0e")
+name = "Enemy"
+sprite = null
+is_player = false
+ally = false
+stats = SubResource("Resource_by4bx")
+skills = Array[Resource("res://resources/combat/scripts/misc/skill.gd")]([ExtResource("2_xj7hy"), ExtResource("3_oojyt")])

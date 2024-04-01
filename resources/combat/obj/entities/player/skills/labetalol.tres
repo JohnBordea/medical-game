@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SkillAttack" load_steps=3 format=3 uid="uid://dfvfb0j8g8tmu"]
+
+[ext_resource type="Script" path="res://resources/combat/scripts/skills/attack_skill.gd" id="1_8vcyp"]
+[ext_resource type="Resource" uid="uid://dsu2lcliaeq4b" path="res://resources/combat/obj/stenoza_mitrala_usoara/buffs/palpitatii.tres" id="1_ghk1i"]
+
+[resource]
+script = ExtResource("1_8vcyp")
+nullifies = Array[Resource("res://resources/combat/scripts/buff/buff.gd")]([ExtResource("1_ghk1i")])
+restriction = Array[Resource("res://resources/combat/scripts/buff/buff.gd")]([])
+add_buff = Array[Resource("res://resources/combat/scripts/buff/buff.gd")]([])
+true_damage = 10
+buff_bonus = {}
+buff_weakness = {}
+name = "Labetalol"
+type = 0
+power = 10.0
+cooldown = 0
+priority_factor = 0

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyrk87ccsnvlc"]
+
+[ext_resource type="Texture2D" uid="uid://cydn0sy6ydtl6" path="res://resources/combat/obj/skills/misc/skill_type_buff.png" id="1_ueyxn"]
+[ext_resource type="Script" path="res://scenes/combat/entities/buff_visualizer/buff/buff_rect.gd" id="2_s134r"]
+
+[node name="BuffRect" type="TextureRect"]
+texture = ExtResource("1_ueyxn")
+expand_mode = 2
+script = ExtResource("2_s134r")

@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgwplkawhpig3"]
+
+[ext_resource type="Script" path="res://scenes/patient_data/UI/patient_main_panel/test/icon/test_panel.gd" id="1_hg3rd"]
+[ext_resource type="Texture2D" uid="uid://j76qux1iank6" path="res://resources/tests/default_icon.png" id="2_jeiv4"]
+
+[node name="TestPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(348, 126)
+script = ExtResource("1_hg3rd")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TestIcon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(106, 106)
+layout_mode = 2
+texture = ExtResource("2_jeiv4")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(212, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Test title"
+
+[node name="Result" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Test Result"

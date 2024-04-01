@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SymptomBase" load_steps=2 format=3 uid="uid://dq86n4b58gnwa"]
+
+[ext_resource type="Script" path="res://resources/illnesses/symptoms/symptom.gd" id="1_4qv48"]
+
+[resource]
+script = ExtResource("1_4qv48")
+image = "res://resources/illnesses/symptoms/default_icon.png"
+name = "Default Sympthom"

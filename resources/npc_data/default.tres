@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCBase" load_steps=3 format=3 uid="uid://bf1r35fmuvvuq"]
+
+[ext_resource type="Script" path="res://resources/npc_data/npc.gd" id="1_oafa8"]
+[ext_resource type="Resource" uid="uid://w687bsh80w2" path="res://resources/illnesses/mild_mifral_stenosis.tres" id="1_wjwdq"]
+
+[resource]
+script = ExtResource("1_oafa8")
+sprite = "res://resources/npc_data/default_icon.png"
+name = "Default Case"
+gender = "Undefined"
+age = 99
+illness = ExtResource("1_wjwdq")
+cured = false

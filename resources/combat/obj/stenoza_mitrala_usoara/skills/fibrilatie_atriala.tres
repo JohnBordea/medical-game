@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SkillAttack" load_steps=3 format=3 uid="uid://c3qm64oid4oin"]
+
+[ext_resource type="Resource" uid="uid://dsu2lcliaeq4b" path="res://resources/combat/obj/stenoza_mitrala_usoara/buffs/palpitatii.tres" id="1_8bou4"]
+[ext_resource type="Script" path="res://resources/combat/scripts/skills/attack_skill.gd" id="1_jy0c6"]
+
+[resource]
+script = ExtResource("1_jy0c6")
+nullifies = Array[Resource("res://resources/combat/scripts/buff/buff.gd")]([])
+restriction = Array[Resource("res://resources/combat/scripts/buff/buff.gd")]([])
+add_buff = Array[Resource("res://resources/combat/scripts/buff/buff.gd")]([ExtResource("1_8bou4")])
+true_damage = 0
+buff_bonus = {
+ExtResource("1_8bou4"): 1.0
+}
+buff_weakness = {}
+name = "Fibrilatie Atriala"
+type = 0
+power = 5.0
+cooldown = 6
+priority_factor = 1

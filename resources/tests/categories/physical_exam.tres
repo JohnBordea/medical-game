@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TestType" load_steps=6 format=3 uid="uid://eqw8guvhytya"]
+
+[ext_resource type="Script" path="res://resources/tests/test_type.gd" id="1_he1m8"]
+[ext_resource type="Resource" uid="uid://rmdpvjluls4" path="res://resources/tests/physical_exam/inspection.tres" id="2_xpd8a"]
+[ext_resource type="Resource" uid="uid://g452iu14nfh0" path="res://resources/tests/physical_exam/palpare.tres" id="3_q6gg5"]
+[ext_resource type="Resource" uid="uid://s4pmirwnia7h" path="res://resources/tests/physical_exam/ascultare.tres" id="4_rjamy"]
+[ext_resource type="Resource" uid="uid://bwytrtqogel7f" path="res://resources/tests/physical_exam/percutie.tres" id="5_0jg0f"]
+
+[resource]
+script = ExtResource("1_he1m8")
+name = "Physical Exam"
+tests = Array[Resource("res://resources/tests/test.gd")]([ExtResource("2_xpd8a"), ExtResource("3_q6gg5"), ExtResource("4_rjamy"), ExtResource("5_0jg0f")])

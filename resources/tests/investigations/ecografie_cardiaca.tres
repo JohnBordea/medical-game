@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Test" load_steps=2 format=3 uid="uid://haipkowknrxx"]
+
+[ext_resource type="Script" path="res://resources/tests/test.gd" id="1_o3mtg"]
+
+[resource]
+script = ExtResource("1_o3mtg")
+image = "res://resources/tests/default_icon.png"
+name = "Ecografie Cardiaca"
+description = ""
+default_diagnostic = "Nothing Unusual"

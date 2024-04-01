@@ -1,0 +1,82 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://bo1d4h62k4dp8"]
+
+[ext_resource type="Texture2D" uid="uid://c7xovjjeemrk" path="res://scenes/overworld/entity/assets/imgs/sprite_default_entity_draft.png" id="1_rn65n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfvwg"]
+atlas = ExtResource("1_rn65n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdvjq"]
+atlas = ExtResource("1_rn65n")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duspj"]
+atlas = ExtResource("1_rn65n")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ysql"]
+atlas = ExtResource("1_rn65n")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x25kg"]
+atlas = ExtResource("1_rn65n")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a18vk"]
+atlas = ExtResource("1_rn65n")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abq2w"]
+atlas = ExtResource("1_rn65n")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kp8ne"]
+atlas = ExtResource("1_rn65n")
+region = Rect2(32, 32, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfvwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdvjq")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duspj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ysql")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x25kg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a18vk")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abq2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kp8ne")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}]

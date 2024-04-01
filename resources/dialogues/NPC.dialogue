@@ -1,0 +1,16 @@
+~ content
+if DialogueManagerGlobal.npc.cured == false:
+	=> to_be_cured
+else:
+	=> dialogue_end
+=> dialogue_end
+
+~ to_be_cured
+NPC: Va rog ajutatima!
+do DialogueManagerGlobal.start_treatment()
+=> END
+
+~ dialogue_end
+NPC: Totul este bine!
+do DialogueManagerGlobal.end_dialogue()
+=> END

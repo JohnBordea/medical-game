@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillAttack" load_steps=3 format=3 uid="uid://btnu75720cxsy"]
+
+[ext_resource type="Script" path="res://resources/combat/scripts/skills/attack_skill.gd" id="1_ejiup"]
+[ext_resource type="Resource" uid="uid://cmh6qdrn3mgyk" path="res://resources/combat/obj/skills/type/physical.tres" id="2_148y5"]
+
+[resource]
+script = ExtResource("1_ejiup")
+buff_bonus = {}
+buff_weakness = {}
+name = "Simple Attack"
+type = ExtResource("2_148y5")
+power = 10.0
+cooldown = 0
+active_cooldown = 0

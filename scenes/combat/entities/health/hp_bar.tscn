@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxb17bv3fohd2"]
+
+[ext_resource type="Script" path="res://scenes/combat/entities/health/hp_bar.gd" id="1_72uwr"]
+
+[node name="HPBar" type="ProgressBar"]
+custom_minimum_size = Vector2(100, 20)
+offset_left = -50.0
+offset_top = -10.0
+offset_right = 50.0
+offset_bottom = 10.0
+step = 1.0
+value = 2.0
+show_percentage = false
+script = ExtResource("1_72uwr")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_top = -2.0
+offset_right = 44.0
+offset_bottom = 21.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "-1 / -1"
+horizontal_alignment = 1
+vertical_alignment = 1

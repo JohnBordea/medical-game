@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="IllnessBase" load_steps=9 format=3 uid="uid://w687bsh80w2"]
+
+[ext_resource type="Script" path="res://resources/illnesses/illness_base.gd" id="1_ajlup"]
+[ext_resource type="Resource" uid="uid://dhrrhnu361uxm" path="res://resources/illnesses/history/default.tres" id="1_pufan"]
+[ext_resource type="Resource" uid="uid://50j6tdrak0dg" path="res://resources/combat/obj/stenoza_mitrala_usoara/stenoza_mitrala_usoara.tres" id="1_xljxu"]
+[ext_resource type="Resource" uid="uid://rmdpvjluls4" path="res://resources/tests/physical_exam/inspection.tres" id="2_0pyw7"]
+[ext_resource type="Resource" uid="uid://dq86n4b58gnwa" path="res://resources/illnesses/symptoms/default.tres" id="2_bbs2x"]
+[ext_resource type="Resource" uid="uid://g452iu14nfh0" path="res://resources/tests/physical_exam/palpare.tres" id="3_cxhxu"]
+[ext_resource type="Resource" uid="uid://s4pmirwnia7h" path="res://resources/tests/physical_exam/ascultare.tres" id="4_invgn"]
+[ext_resource type="Resource" uid="uid://bwytrtqogel7f" path="res://resources/tests/physical_exam/percutie.tres" id="7_mhmjq"]
+
+[resource]
+script = ExtResource("1_ajlup")
+image = "res://resources/tests/default_icon.png"
+title = "Mild Mifral Stenosis"
+description = "Simple information about the Illness. Maybe a few fun facts about it. ETC..."
+history = Array[Resource("res://resources/illnesses/history/history.gd")]([ExtResource("1_pufan")])
+symptoms = Array[Resource("res://resources/illnesses/symptoms/symptom.gd")]([ExtResource("2_bbs2x")])
+tests = {
+ExtResource("2_0pyw7"): &"Normal Facies",
+ExtResource("3_cxhxu"): &"Reduced pulse amplitude",
+ExtResource("4_invgn"): &"Z1 intarit; clacment de deschidere; uruitura diostolica",
+ExtResource("7_mhmjq"): &"Nu"
+}
+combat_entity = ExtResource("1_xljxu")

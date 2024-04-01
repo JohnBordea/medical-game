@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bekinc46pxnvc"
+path="res://.godot/imported/NPC.dialogue-3c5b6992c653b5afc82cc286032d74c4.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/NPC.dialogue"
+dest_files=["res://.godot/imported/NPC.dialogue-3c5b6992c653b5afc82cc286032d74c4.tres"]
+
+[params]
+
+defaults=true

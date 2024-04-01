@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="CombatEntity" load_steps=9 format=3 uid="uid://50j6tdrak0dg"]
+
+[ext_resource type="Script" path="res://resources/combat/scripts/combat_entity.gd" id="1_njx80"]
+[ext_resource type="Resource" uid="uid://cxavhja0b656i" path="res://resources/combat/obj/stenoza_mitrala_usoara/skills/dispnee.tres" id="2_snfau"]
+[ext_resource type="Resource" uid="uid://c3qm64oid4oin" path="res://resources/combat/obj/stenoza_mitrala_usoara/skills/fibrilatie_atriala.tres" id="3_la1qt"]
+[ext_resource type="Resource" uid="uid://dpycsbo6pquwp" path="res://resources/combat/obj/stenoza_mitrala_usoara/skills/tromb_intra_atrial.tres" id="4_iuuxe"]
+[ext_resource type="Resource" uid="uid://cay2avqwlp8te" path="res://resources/combat/obj/stenoza_mitrala_usoara/skills/edeme_periferice.tres" id="5_payer"]
+[ext_resource type="Script" path="res://resources/combat/scripts/stats.gd" id="6_8d7md"]
+[ext_resource type="Resource" uid="uid://btnu75720cxsy" path="res://resources/combat/obj/skills/simple_attack.tres" id="6_a0qdv"]
+
+[sub_resource type="Resource" id="Resource_1lsv2"]
+script = ExtResource("6_8d7md")
+strength = 5
+constitution = 5
+intelligence = 5
+agility = 99
+luck = 5
+
+[resource]
+script = ExtResource("1_njx80")
+name = "Stenoza Mitrala Usoara"
+sprite = "res://resources/combat/obj/stenoza_mitrala_usoara/heart.png"
+is_player = false
+ally = false
+stats = SubResource("Resource_1lsv2")
+skills = Array[Resource("res://resources/combat/scripts/misc/skill.gd")]([ExtResource("2_snfau"), ExtResource("3_la1qt"), ExtResource("4_iuuxe"), ExtResource("5_payer"), ExtResource("6_a0qdv")])
