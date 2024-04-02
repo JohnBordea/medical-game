@@ -16,7 +16,7 @@ func _ready():
 	camera.zoom = Vector2(2, 2)
 	
 	for map_scene in map.get_children():
-		map_scene.initiate_doors()
+		map_scene.initiate(Vector2(480, 304))
 		map_scene.map_scene_change.connect(_on_map_scene_change)
 	player_node = map.get_child(0).player
 
@@ -48,11 +48,15 @@ func _on_game_over(winner: CombatEntity):
 	DialogueManagerGlobal.end_dialogue()
 
 func _on_map_scene_change(path: String, coord: Vector2):
+	print(10)
+	call_deferred("_on_map_scene_change_defered", path, coord)
+
+func _on_map_scene_change_defered(path: String, coord: Vector2):
 	for map_scene in map.get_children():
 		map_scene.queue_free()
 	var scene = load(path)
 	var new_map = scene.instantiate()
 	map.add_child(new_map)
-	new_map.initiate_doors()
 	new_map.initiate(coord)
+	new_map.map_scene_change.connect(_on_map_scene_change)
 	player_node = new_map.player
