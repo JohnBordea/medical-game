@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://chfkupnwy1kjf"]
+
+[ext_resource type="Script" path="res://scenes/patient_data/UI/test_main_panel/category_button/category_button.gd" id="1_jc5s8"]
+
+[node name="CategoryButton" type="Button"]
+text = "Data1"
+script = ExtResource("1_jc5s8")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

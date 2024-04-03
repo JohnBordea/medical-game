@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy72ifo1kmdb7"]
+[gd_scene load_steps=5 format=3 uid="uid://cy72ifo1kmdb7"]
 
 [ext_resource type="Script" path="res://scenes/patient_data/UI/patient_data_ui.gd" id="1_l2t86"]
 [ext_resource type="PackedScene" uid="uid://c5sjvndflrx2d" path="res://scenes/patient_data/UI/patient_main_panel/patient_main_panel.tscn" id="2_bia2d"]
 [ext_resource type="PackedScene" uid="uid://stwp41baibx8" path="res://scenes/patient_data/UI/test_main_panel/test_main_panel.tscn" id="3_mdm13"]
+[ext_resource type="PackedScene" uid="uid://ddke7nget66ec" path="res://scenes/patient_data/UI/diagnostic_main_panel/diagnostic_main_panel.tscn" id="4_fmdcs"]
 
 [node name="PatientDataUI" type="CanvasLayer"]
 script = ExtResource("1_l2t86")
@@ -11,5 +12,9 @@ script = ExtResource("1_l2t86")
 unique_name_in_owner = true
 
 [node name="TestMainPanel" parent="." instance=ExtResource("3_mdm13")]
+unique_name_in_owner = true
+visible = false
+
+[node name="DiagnosticMainPanel" parent="." instance=ExtResource("4_fmdcs")]
 unique_name_in_owner = true
 visible = false

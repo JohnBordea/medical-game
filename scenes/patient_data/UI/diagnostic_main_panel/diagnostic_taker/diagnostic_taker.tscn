@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0f1s1e5pf4yc"]
+
+[ext_resource type="Script" path="res://scenes/patient_data/UI/diagnostic_main_panel/diagnostic_taker/diagnostic_taker.gd" id="1_jnfs0"]
+[ext_resource type="PackedScene" uid="uid://cgiw2j6k1hio1" path="res://scenes/patient_data/UI/diagnostic_main_panel/diagnostic_taker/category/category_container.tscn" id="2_qi36p"]
+
+[node name="DiagnosticTaker" type="MarginContainer"]
+custom_minimum_size = Vector2(855, 484)
+script = ExtResource("1_jnfs0")
+category_continer = ExtResource("2_qi36p")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+
+[node name="AllCategoryContainer" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(855, 0)
+layout_mode = 2
+theme_override_constants/separation = 20

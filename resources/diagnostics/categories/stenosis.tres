@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DiagnosticType" load_steps=4 format=3 uid="uid://bmfj7ussdge7r"]
+
+[ext_resource type="Script" path="res://resources/diagnostics/diagnostic_type.gd" id="1_c0slw"]
+[ext_resource type="Resource" uid="uid://db7ipn0o656w7" path="res://resources/diagnostics/stenosis/mild_mifral_stenosis.tres" id="2_yn27a"]
+[ext_resource type="Resource" uid="uid://ktmjsvr05gs2" path="res://resources/diagnostics/stenosis/intermidiate_mifral_stenosis.tres" id="3_e4y2l"]
+
+[resource]
+script = ExtResource("1_c0slw")
+name = "Stenosis"
+tests = Array[Resource("res://resources/diagnostics/diagnostic.gd")]([ExtResource("2_yn27a"), ExtResource("3_e4y2l")])

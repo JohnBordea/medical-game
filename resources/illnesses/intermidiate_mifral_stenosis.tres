@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="IllnessBase" load_steps=2 format=3 uid="uid://c803u3linaxqw"]
+
+[ext_resource type="Script" path="res://resources/illnesses/illness_base.gd" id="1_hh7hd"]
+
+[resource]
+script = ExtResource("1_hh7hd")
+image = "res://resources/tests/default_icon.png"
+title = "Intermidiate Mifral Stenosis"
+description = "Simple information about the Illness. Maybe a few fun facts about it. ETC..."
+history = Array[Resource("res://resources/illnesses/history/history.gd")]([])
+symptoms = Array[Resource("res://resources/illnesses/symptoms/symptom.gd")]([])
+tests = {}

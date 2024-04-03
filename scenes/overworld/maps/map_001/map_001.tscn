@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://42fbpkbn0viu"]
+[gd_scene load_steps=8 format=3 uid="uid://42fbpkbn0viu"]
 
 [ext_resource type="Script" path="res://scenes/overworld/maps/map_001/map_001.gd" id="1_25pc0"]
 [ext_resource type="TileSet" uid="uid://bo4mdekuamqni" path="res://scenes/overworld/maps/assets/base.tres" id="1_ctttt"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ditmakevejder" path="res://scenes/overworld/maps/door/door.tscn" id="3_wb8xt"]
 [ext_resource type="PackedScene" uid="uid://bvfhiih78wcpl" path="res://scenes/overworld/NPC/npc.tscn" id="5_utrj4"]
 [ext_resource type="Resource" uid="uid://bekinc46pxnvc" path="res://resources/dialogues/NPC.dialogue" id="6_7ftru"]
+[ext_resource type="Resource" uid="uid://bf1r35fmuvvuq" path="res://resources/npc_data/default.tres" id="7_knaen"]
 
 [node name="Map001" type="Node2D"]
 script = ExtResource("1_25pc0")
@@ -38,3 +39,4 @@ position = Vector2(480, 304)
 position = Vector2(64, 192)
 dialogue = ExtResource("6_7ftru")
 dialogue_start = "content"
+data = ExtResource("7_knaen")

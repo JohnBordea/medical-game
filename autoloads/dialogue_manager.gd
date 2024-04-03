@@ -22,3 +22,8 @@ signal test_taken(test: Test)
 
 func test_chosen(test: Test):
 	emit_signal("test_taken", test)
+
+signal diagnostic_taken(diagnostic: Diagnostic)
+
+func diagnostic_chosen(diagnostic: Diagnostic):
+	emit_signal("diagnostic_taken", diagnostic)

@@ -1,8 +1,11 @@
-[gd_resource type="Resource" script_class="TestType" load_steps=2 format=3 uid="uid://c8biysp07o1ak"]
+[gd_resource type="Resource" script_class="TestType" load_steps=5 format=3 uid="uid://c8biysp07o1ak"]
 
 [ext_resource type="Script" path="res://resources/tests/test_type.gd" id="1_ob4cg"]
+[ext_resource type="Resource" uid="uid://haipkowknrxx" path="res://resources/tests/investigations/ecografie_cardiaca.tres" id="2_m5peh"]
+[ext_resource type="Resource" uid="uid://2m3f7m42livc" path="res://resources/tests/investigations/ekg.tres" id="3_y73wa"]
+[ext_resource type="Resource" uid="uid://bsbf4fe7h065j" path="res://resources/tests/investigations/radiografie.tres" id="4_5fbo2"]
 
 [resource]
 script = ExtResource("1_ob4cg")
-name = ""
-tests = Array[Resource("res://resources/tests/test.gd")]([])
+name = "Investigation"
+tests = Array[Resource("res://resources/tests/test.gd")]([ExtResource("2_m5peh"), ExtResource("3_y73wa"), ExtResource("4_5fbo2")])

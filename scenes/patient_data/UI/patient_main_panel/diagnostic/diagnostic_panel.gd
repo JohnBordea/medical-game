@@ -1,14 +1,29 @@
 extends PanelContainer
 
 signal diagnostic
+signal cure
 
-@onready var button = $MarginContainer/VBoxContainer/Button
+@onready var b_diagnostic = %Diagnose
+@onready var b_cure = %Cure
+@onready var result = %Result
 
 func initiate():
-	button.disabled = true
+	b_diagnostic.disabled = true
+	b_cure.disabled = true
 
 func test_taken():
-	button.disabled = false
+	b_diagnostic.disabled = false
 
-func _on_button_pressed():
+func diagnostic_taken(chosen_corectly: bool):
+	if chosen_corectly:
+		result.text = "Correct Diagnosys"
+		b_diagnostic.disabled = true
+		b_cure.disabled = false
+	else:
+		result.text = "Wrong Diagnosys"
+
+func _on_diagnose_pressed():
 	emit_signal("diagnostic")
+
+func _on_cure_pressed():
+	emit_signal("cure")

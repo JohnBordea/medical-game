@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1dsf2bgcunvb"]
+
+[ext_resource type="Texture2D" uid="uid://ch0rggl1t5rq6" path="res://unknown.png" id="1_hg27o"]
+[ext_resource type="Script" path="res://scenes/patient_data/UI/diagnostic_main_panel/diagnostic_taker/category/diagnostic/diagnostic.gd" id="1_v4h7f"]
+
+[node name="Diagnostic" type="MarginContainer"]
+custom_minimum_size = Vector2(159, 0)
+script = ExtResource("1_v4h7f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_hg27o")
+expand_mode = 4
+stretch_mode = 6
+
+[node name="Name" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "NameNameNameNameNameName"
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

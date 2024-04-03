@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Diagnostic" load_steps=3 format=3 uid="uid://db7ipn0o656w7"]
+
+[ext_resource type="Script" path="res://resources/diagnostics/diagnostic.gd" id="1_n1xi4"]
+[ext_resource type="Resource" uid="uid://w687bsh80w2" path="res://resources/illnesses/mild_mifral_stenosis.tres" id="1_tcv5e"]
+
+[resource]
+script = ExtResource("1_n1xi4")
+image = "res://resources/tests/default_icon.png"
+name = "Mild Mifral Stenosis"
+description = ExtResource("1_tcv5e")
+default_diagnostic = "Nothing Unusual"
