@@ -5,6 +5,7 @@ signal cancel_test
 
 @onready var test_taker = %TestTaker
 @onready var link_container = %CategoryLinkContainer
+@onready var text_button = %TakeTest
 
 @export var link_button_instance: PackedScene
 
@@ -45,11 +46,11 @@ func _get_all_files(path: String, sufix: String):
 
 func initiate():
 	test = null
-	%TakeTest.disabled = true
+	text_button.disabled = true
 
 func _on_test_chosen(test: Test):
 	self.test = test
-	%TakeTest.disabled = false
+	text_button.disabled = false
 
 func _on_take_test_pressed():
 	emit_signal("take_test", test)

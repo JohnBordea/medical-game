@@ -16,7 +16,7 @@ script = ExtResource("1_u0al8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = ExtResource("2_sfslf")
-animation = &"idle_left"
+animation = &"walk_up"
 
 [node name="WallCollider" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)

@@ -25,10 +25,12 @@ func initiate(npc: NPCBase):
 func _on_patient_take_test():
 	panel_profile.set_process_mode(4)
 	panel_test.visible = true
+	panel_test.initiate()
 
 func _on_test_take(test: Test = null):
 	panel_profile.set_process_mode(0)
 	panel_test.visible = false
+	DialogueManagerGlobal.reset_test_chosen()
 
 	if test != null:
 		if test in npc_data.illness.tests.keys():
@@ -39,10 +41,12 @@ func _on_test_take(test: Test = null):
 func _on_patient_take_diagnostic():
 	panel_profile.set_process_mode(4)
 	panel_diagnostic.visible = true
+	panel_diagnostic.initiate()
 
 func _on_diagnostic_take(diagnostic: Diagnostic = null):
 	panel_profile.set_process_mode(0)
 	panel_diagnostic.visible = false
+	DialogueManagerGlobal.reset_diagnostic_chosen()
 	
 	if diagnostic != null:
 		panel_profile.diagnostic_taken(diagnostic.description == npc_data.illness)
