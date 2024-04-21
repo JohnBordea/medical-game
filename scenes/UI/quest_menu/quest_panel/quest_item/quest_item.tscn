@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dic75xtxbmhke"]
+
+[ext_resource type="Script" path="res://scenes/UI/quest_menu/quest_panel/quest_item/quest_item.gd" id="1_spppj"]
+
+[node name="QuestItem" type="Control"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+script = ExtResource("1_spppj")
+
+[node name="Sprite" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

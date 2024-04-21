@@ -7,3 +7,6 @@ class_name NPCBase
 @export var age: int
 @export var illness: IllnessBase
 @export var cured: bool = false
+@export var dialogue: DialogueResource
+@export var dialogue_start: String
+@export var map: PackedScene

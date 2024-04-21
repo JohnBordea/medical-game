@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cahqvmct0aq2c"]
+[gd_scene load_steps=6 format=3 uid="uid://cahqvmct0aq2c"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_rnblv"]
 [ext_resource type="PackedScene" uid="uid://42fbpkbn0viu" path="res://scenes/overworld/maps/map_001/map_001.tscn" id="2_75gwd"]
 [ext_resource type="PackedScene" uid="uid://cy72ifo1kmdb7" path="res://scenes/patient_data/UI/patient_data_ui.tscn" id="4_v15a2"]
 [ext_resource type="PackedScene" uid="uid://cyibu1b8m43uc" path="res://scenes/combat/main/main.tscn" id="5_cqne2"]
+[ext_resource type="PackedScene" uid="uid://dxuvwd147qy3x" path="res://scenes/UI/quest_menu/quest_menu.tscn" id="5_fjltw"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_rnblv")
@@ -24,3 +25,9 @@ visible = false
 [node name="Camera" type="Camera2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(577, 324)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="QuestMenu" parent="CanvasLayer" instance=ExtResource("5_fjltw")]
+unique_name_in_owner = true
+visible = false

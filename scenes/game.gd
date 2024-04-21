@@ -4,6 +4,7 @@ extends Node2D
 @onready var patient_data_ui = %PatientDataUI
 @onready var combat = %Main
 @onready var camera = %Camera
+@onready var quest_menu = %QuestMenu
 
 var player_node: Node2D
 
@@ -25,6 +26,8 @@ func _process(delta):
 		camera.global_position = player_node.global_position
 	else:
 		camera.global_position = Vector2(577, 324)
+	if Input.is_action_just_released("quest_menu"):
+		_on_quest_menu_activate()
 
 func _on_start_treatment_menu(npc: NPCBase):
 	map.visible = false
@@ -45,10 +48,13 @@ func _on_game_over(winner: CombatEntity):
 	map.visible = true
 	if DialogueManagerGlobal.npc.illness.combat_entity != winner:
 		DialogueManagerGlobal.npc.cured = true
+	#TODO
+	Config.quest_checker(DialogueManagerGlobal.npc.illness)
+	Config.show_quests()
+
 	DialogueManagerGlobal.end_dialogue()
 
 func _on_map_scene_change(path: String, coord: Vector2):
-	print(10)
 	call_deferred("_on_map_scene_change_defered", path, coord)
 
 func _on_map_scene_change_defered(path: String, coord: Vector2):
@@ -60,3 +66,12 @@ func _on_map_scene_change_defered(path: String, coord: Vector2):
 	new_map.initiate(coord)
 	new_map.map_scene_change.connect(_on_map_scene_change)
 	player_node = new_map.player
+
+func _on_quest_menu_activate():
+	if quest_menu.visible:
+		map.visible = true
+		quest_menu.visible = false
+	else:
+		map.visible = false
+		quest_menu.visible = true
+		quest_menu.initiate()

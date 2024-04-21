@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://76b6ppdrtu4v"]
+[gd_scene load_steps=6 format=3 uid="uid://76b6ppdrtu4v"]
 
 [ext_resource type="Script" path="res://scenes/overworld/player/player.gd" id="1_u0al8"]
 [ext_resource type="SpriteFrames" uid="uid://ct0o65k0icxdx" path="res://scenes/overworld/entity/assets/resources/regular_person_male_doctor.tres" id="2_sfslf"]
+[ext_resource type="AudioStream" uid="uid://c5f6yjeouctra" path="res://scenes/overworld/player/step.ogg" id="3_jc18s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l8dqw"]
 radius = 9.0
@@ -16,7 +17,7 @@ script = ExtResource("1_u0al8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = ExtResource("2_sfslf")
-animation = &"walk_up"
+animation = &"walk_down"
 
 [node name="WallCollider" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
@@ -32,5 +33,9 @@ collision_mask = 2
 position = Vector2(32, 0)
 shape = SubResource("CircleShape2D_vv406")
 
+[node name="StepSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jc18s")
+
 [connection signal="body_entered" from="DialogueController" to="." method="_on_dialogue_controller_body_entered"]
 [connection signal="body_exited" from="DialogueController" to="." method="_on_dialogue_controller_body_exited"]
+[connection signal="finished" from="StepSound" to="." method="_on_step_sound_finished"]

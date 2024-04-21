@@ -36,7 +36,7 @@ position = Vector2(480, 304)
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="NPC" parent="NPCs" instance=ExtResource("5_utrj4")]
-position = Vector2(64, 192)
+position = Vector2(480, 88)
 dialogue = ExtResource("6_7ftru")
 dialogue_start = "content"
 data = ExtResource("7_knaen")

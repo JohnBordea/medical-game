@@ -2,8 +2,10 @@ extends Entity
 class_name Player
 
 @onready var _dialogue_controller = $DialogueController
+@onready var _step_sound = $StepSound
 
 var _input: bool = true
+var sound_over = true
 
 var _npc: NPC = null
 
@@ -39,7 +41,9 @@ func _play_animation():
 
 	if _player_state == "walk":
 		_dialogue_controller.rotation = atan2(velocity.y, velocity.x)
-		
+		if not _step_sound.playing:
+			_step_sound.play()
+
 	_animation_player.play(_player_state + "_" + _player_state_direction)
 
 func _on_dialogue_start():
@@ -55,3 +59,6 @@ func _on_dialogue_controller_body_entered(body):
 func _on_dialogue_controller_body_exited(body):
 	if _npc == body:
 		_npc = null
+
+func _on_step_sound_finished():
+	sound_over = true

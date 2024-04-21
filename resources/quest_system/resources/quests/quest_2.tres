@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="QuestBase" load_steps=8 format=3 uid="uid://dtkm5hsr7rg3s"]
+
+[ext_resource type="Script" path="res://resources/quest_system/classes/quest_progress.gd" id="1_2sdis"]
+[ext_resource type="Script" path="res://resources/quest_system/classes/quest_base.gd" id="1_afpvu"]
+[ext_resource type="Resource" uid="uid://cddso0xkf32ua" path="res://resources/quest_system/resources/quests/quest_1.tres" id="1_encr7"]
+[ext_resource type="Resource" uid="uid://w687bsh80w2" path="res://resources/illnesses/mild_mifral_stenosis.tres" id="1_xpx4g"]
+[ext_resource type="Script" path="res://resources/quest_system/classes/quest_progres_action.gd" id="2_hgrb3"]
+
+[sub_resource type="Resource" id="Resource_jpqb4"]
+script = ExtResource("2_hgrb3")
+character_class = "Cure"
+item = ExtResource("1_xpx4g")
+amount = 2
+
+[sub_resource type="Resource" id="Resource_m3e42"]
+script = ExtResource("1_2sdis")
+title = "Generic Progress"
+actions = Array[ExtResource("2_hgrb3")]([SubResource("Resource_jpqb4")])
+
+[resource]
+script = ExtResource("1_afpvu")
+title = "Regular Quest - Continuation"
+description = "Continuation of the Previous Quest"
+progress = Array[ExtResource("1_2sdis")]([SubResource("Resource_m3e42")])
+prerequesites = Array[ExtResource("1_afpvu")]([ExtResource("1_encr7")])
+image = "res://resources/quest_system/classes/quest_item_icon_default.png"
+coordinates = Vector2(400, 300)
