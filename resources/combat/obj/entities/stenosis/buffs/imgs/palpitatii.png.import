@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq7bie7h14idd"
-path="res://.godot/imported/heart.png-bda202d535985312f2b2dd4ab05d27ab.ctex"
+uid="uid://kpreomx71037"
+path="res://.godot/imported/palpitatii.png-f60beef57d3fb0cfd0e047ce0a1499a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/combat/obj/stenoza_mitrala_usoara/heart.png"
-dest_files=["res://.godot/imported/heart.png-bda202d535985312f2b2dd4ab05d27ab.ctex"]
+source_file="res://resources/combat/obj/entities/stenosis/buffs/imgs/palpitatii.png"
+dest_files=["res://.godot/imported/palpitatii.png-f60beef57d3fb0cfd0e047ce0a1499a3.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SkillAttack" load_steps=3 format=3 uid="uid://cxavhja0b656i"]
 
-[ext_resource type="Resource" uid="uid://7phj457l85pn" path="res://resources/combat/obj/stenoza_mitrala_usoara/buffs/dispnee.tres" id="1_l0kcn"]
+[ext_resource type="Resource" uid="uid://7phj457l85pn" path="res://resources/combat/obj/entities/stenosis/buffs/dispnee.tres" id="1_l0kcn"]
 [ext_resource type="Script" path="res://resources/combat/scripts/skills/attack_skill.gd" id="1_w7nw7"]
 
 [resource]

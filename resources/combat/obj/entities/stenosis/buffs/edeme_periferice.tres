@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatBuff" load_steps=2 format=3 uid="uid://cj1rlgbu8anpu"]
+
+[ext_resource type="Script" path="res://resources/combat/scripts/buff/stat_buff.gd" id="1_dq6ig"]
+
+[resource]
+script = ExtResource("1_dq6ig")
+block_chance = 1.0
+name = "Edeme Periferice"
+sprite = "res://resources/combat/obj/entities/stenosis/buffs/imgs/edeme_periferice.png"
+cooldown = -1

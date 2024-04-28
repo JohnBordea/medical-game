@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatBuff" load_steps=2 format=3 uid="uid://7phj457l85pn"]
+
+[ext_resource type="Script" path="res://resources/combat/scripts/buff/stat_buff.gd" id="1_nmfho"]
+
+[resource]
+script = ExtResource("1_nmfho")
+block_chance = 1.0
+name = "Dispnee"
+sprite = "res://resources/combat/obj/entities/stenosis/buffs/imgs/dispnee.png"
+cooldown = -1

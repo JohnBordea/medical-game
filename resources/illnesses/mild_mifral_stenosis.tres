@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="IllnessBase" load_steps=9 format=3 uid="uid://w687bsh80w2"]
 
+[ext_resource type="Resource" uid="uid://50j6tdrak0dg" path="res://resources/combat/obj/entities/stenosis/stenoza_mitrala_usoara/stenoza_mitrala_usoara.tres" id="1_1okp4"]
 [ext_resource type="Script" path="res://resources/illnesses/illness_base.gd" id="1_ajlup"]
 [ext_resource type="Resource" uid="uid://dhrrhnu361uxm" path="res://resources/illnesses/history/default.tres" id="1_pufan"]
-[ext_resource type="Resource" uid="uid://50j6tdrak0dg" path="res://resources/combat/obj/stenoza_mitrala_usoara/stenoza_mitrala_usoara.tres" id="1_xljxu"]
 [ext_resource type="Resource" uid="uid://rmdpvjluls4" path="res://resources/tests/physical_exam/inspection.tres" id="2_0pyw7"]
 [ext_resource type="Resource" uid="uid://dq86n4b58gnwa" path="res://resources/illnesses/symptoms/default.tres" id="2_bbs2x"]
 [ext_resource type="Resource" uid="uid://g452iu14nfh0" path="res://resources/tests/physical_exam/palpare.tres" id="3_cxhxu"]
@@ -22,4 +22,4 @@ ExtResource("3_cxhxu"): &"Reduced pulse amplitude",
 ExtResource("4_invgn"): &"Z1 intarit; clacment de deschidere; uruitura diostolica",
 ExtResource("7_mhmjq"): &"Nu"
 }
-combat_entity = ExtResource("1_xljxu")
+combat_entity = ExtResource("1_1okp4")

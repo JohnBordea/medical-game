@@ -6,20 +6,21 @@ extends Node2D
 @onready var camera = %Camera
 @onready var quest_menu = %QuestMenu
 
-var player_node: Node2D
+enum window_open {
+	MAP,
+	PATIENT_DATA,
+	COMBAT
+}
 
+var player_node: Node2D
 var _is_camera_on_player: bool = true
+var _what_window_open: window_open
 
 func _ready():
 	DialogueManagerGlobal.start_treatment_menu.connect(_on_start_treatment_menu)
 	patient_data_ui.take_diagnostic.connect(_on_take_diagnostic)
 	CombatBase.game_over.connect(_on_game_over)
-	camera.zoom = Vector2(2, 2)
-	
-	for map_scene in map.get_children():
-		map_scene.initiate(Vector2(480, 304))
-		map_scene.map_scene_change.connect(_on_map_scene_change)
-	player_node = map.get_child(0).player
+	initiate()
 
 func _process(delta):
 	if _is_camera_on_player:
@@ -28,6 +29,22 @@ func _process(delta):
 		camera.global_position = Vector2(577, 324)
 	if Input.is_action_just_released("quest_menu"):
 		_on_quest_menu_activate()
+
+func initiate(load: SaveSlot = null):
+	Config.initiate(load)
+	camera.zoom = Vector2(2, 2)
+	
+	#map generator
+	for map_scene in map.get_children():
+		map_scene.queue_free()
+	
+	var map_instantiator = load(Config.local_save.map_path)
+	var map_scene = map_instantiator.instantiate()
+	map.add_child(map_scene)
+	map_scene.initiate(Config.local_save.player_coord)
+	map_scene.map_scene_change.connect(_on_map_scene_change)
+
+	player_node = map_scene.player
 
 func _on_start_treatment_menu(npc: NPCBase):
 	map.visible = false
@@ -50,7 +67,7 @@ func _on_game_over(winner: CombatEntity):
 		DialogueManagerGlobal.npc.cured = true
 	#TODO
 	Config.quest_checker(DialogueManagerGlobal.npc.illness)
-	Config.show_quests()
+	#Config.show_quests()
 
 	DialogueManagerGlobal.end_dialogue()
 

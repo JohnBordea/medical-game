@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kpreomx71037"
-path="res://.godot/imported/palpitatii.png-56bd062feb4a00dca0669cbd590b89a6.ctex"
+uid="uid://cfmyp6kyvehms"
+path="res://.godot/imported/edeme_periferice.png-3c04fe997b5288d806332e3863a6b068.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/combat/obj/stenoza_mitrala_usoara/buffs/imgs/palpitatii.png"
-dest_files=["res://.godot/imported/palpitatii.png-56bd062feb4a00dca0669cbd590b89a6.ctex"]
+source_file="res://resources/combat/obj/entities/stenosis/buffs/imgs/edeme_periferice.png"
+dest_files=["res://.godot/imported/edeme_periferice.png-3c04fe997b5288d806332e3863a6b068.ctex"]
 
 [params]
 

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpslh1ve46rr6"]
+
+[ext_resource type="Script" path="res://scenes/UI/hover_pop_up/pop_up_area/pop_up_area.gd" id="1_fk7vx"]
+
+[node name="PopUpArea" type="Area2D"]
+script = ExtResource("1_fk7vx")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

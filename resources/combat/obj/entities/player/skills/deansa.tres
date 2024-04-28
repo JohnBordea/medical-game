@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="SkillAttack" load_steps=4 format=3 uid="uid://cb2lkffta6fql"]
 
 [ext_resource type="Script" path="res://resources/combat/scripts/skills/attack_skill.gd" id="1_cin6y"]
-[ext_resource type="Resource" uid="uid://7phj457l85pn" path="res://resources/combat/obj/stenoza_mitrala_usoara/buffs/dispnee.tres" id="1_rkh8e"]
-[ext_resource type="Resource" uid="uid://cj1rlgbu8anpu" path="res://resources/combat/obj/stenoza_mitrala_usoara/buffs/edeme_periferice.tres" id="2_xwrwk"]
+[ext_resource type="Resource" uid="uid://7phj457l85pn" path="res://resources/combat/obj/entities/stenosis/buffs/dispnee.tres" id="1_rkh8e"]
+[ext_resource type="Resource" uid="uid://cj1rlgbu8anpu" path="res://resources/combat/obj/entities/stenosis/buffs/edeme_periferice.tres" id="2_xwrwk"]
 
 [resource]
 script = ExtResource("1_cin6y")

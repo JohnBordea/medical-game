@@ -12,6 +12,7 @@ var _npc: NPC = null
 func _ready():
 	DialogueManagerGlobal.start.connect(_on_dialogue_start)
 	DialogueManagerGlobal.end.connect(_on_dialogue_end)
+	_play_animation()
 
 func _physics_process(delta):
 	if _input:

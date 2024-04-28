@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SaveSlot" load_steps=5 format=3 uid="uid://bl8lkyxbbn70k"]
+
+[ext_resource type="Script" path="res://resources/save_system/save_slot.gd" id="1_2t6pd"]
+[ext_resource type="Resource" uid="uid://7swt41q72yl8" path="res://resources/save_system/saves/map_positioning/map_001_positioning.tres" id="1_71nor"]
+[ext_resource type="Resource" uid="uid://cddso0xkf32ua" path="res://resources/quest_system/resources/quests/quest_1.tres" id="1_l5ovt"]
+[ext_resource type="Resource" uid="uid://dtkm5hsr7rg3s" path="res://resources/quest_system/resources/quests/quest_2.tres" id="2_dfmt1"]
+
+[resource]
+script = ExtResource("1_2t6pd")
+name = "Defaul Save"
+map_path = "res://scenes/overworld/maps/map_001/map_001.tscn"
+player_coord = Vector2(272, 200)
+quest_list = Array[Resource("res://resources/quest_system/classes/quest_base.gd")]([ExtResource("1_l5ovt"), ExtResource("2_dfmt1")])
+maps_positioning = Array[Resource("res://resources/save_system/map_positioning.gd")]([ExtResource("1_71nor")])

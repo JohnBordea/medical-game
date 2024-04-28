@@ -13,6 +13,7 @@ func initiate():
 func add_test_result(image_path: String, test_title: String, test_result: String):
 	var test = test_made.instantiate()
 	test_container.add_child(test)
+	test_container.move_child(test, 0)
 	test.initiate(image_path, test_title, test_result)
 	print(image_path + test_title + test_result)
 

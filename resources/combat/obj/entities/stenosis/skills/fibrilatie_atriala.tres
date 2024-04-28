@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SkillAttack" load_steps=3 format=3 uid="uid://c3qm64oid4oin"]
 
-[ext_resource type="Resource" uid="uid://dsu2lcliaeq4b" path="res://resources/combat/obj/stenoza_mitrala_usoara/buffs/palpitatii.tres" id="1_8bou4"]
+[ext_resource type="Resource" uid="uid://dsu2lcliaeq4b" path="res://resources/combat/obj/entities/stenosis/buffs/palpitatii.tres" id="1_8bou4"]
 [ext_resource type="Script" path="res://resources/combat/scripts/skills/attack_skill.gd" id="1_jy0c6"]
 
 [resource]

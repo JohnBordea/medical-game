@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crhy5heu15c6i"
-path="res://.godot/imported/buff_dispnee.png-f83107d719651bd26edab38addd8fc88.ctex"
+uid="uid://dq7bie7h14idd"
+path="res://.godot/imported/heart.png-015062fa017753302fa0ebe60c426f95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/combat/obj/stenoza_mitrala_usoara/buffs/imgs/buff_dispnee.png"
-dest_files=["res://.godot/imported/buff_dispnee.png-f83107d719651bd26edab38addd8fc88.ctex"]
+source_file="res://resources/combat/obj/entities/stenosis/heart.png"
+dest_files=["res://.godot/imported/heart.png-015062fa017753302fa0ebe60c426f95.ctex"]
 
 [params]
 

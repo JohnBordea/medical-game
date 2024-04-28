@@ -4,9 +4,9 @@ class_name Entity
 @onready var _animation_player = $AnimatedSprite2D
 
 @export var max_speed: int = 400
+@export var _player_state: String = "idle"
+@export var _player_state_direction: String = "down"
 
-var _player_state: String = "idle"
-var _player_state_direction: String = "down"
 var _direction: Vector2 = Vector2.ZERO
 
 func _ready():

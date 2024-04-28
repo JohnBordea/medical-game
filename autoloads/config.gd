@@ -1,25 +1,28 @@
 extends Node
 
+signal show_pop_up(title: String)
+signal hide_pop_up(title: String)
+
 enum SkillType{
 	PHYSICAL,
 	BUFF
 }
 
-var skill_type_info = {
-	#"physical": ResourceLoader.load("res://resources/combat/entities/skills/type/physical.tres"),
-	#"buff": ResourceLoader.load("res://resources/combat/entities/skills/type/buff.tres")
-}
+var local_save: SaveSlot
 
 var global_npc_locations: Array[NPCBase]
-
 var global_quests: Array[QuestBase] = []
 
 func _ready():
-	load_quests()
+	pass
 
-func load_quests():
-	global_quests.append(ResourceLoader.load("res://resources/quest_system/resources/quests/quest_1.tres") as QuestBase)
-	global_quests.append(ResourceLoader.load("res://resources/quest_system/resources/quests/quest_2.tres") as QuestBase)
+func initiate(load: SaveSlot = null):
+	if load == null:
+		local_save = ResourceLoader.load("res://resources/save_system/saves/default_save.tres") as SaveSlot
+	else:
+		local_save = load
+	global_quests = local_save.quest_list
+	print(local_save.maps_positioning)
 
 func quest_checker(item: Resource):
 	for quest in global_quests:
@@ -29,3 +32,9 @@ func quest_checker(item: Resource):
 func show_quests():
 	for quest in global_quests:
 		quest.print_debug()
+
+func show_hover_pop_up(title: String):
+	emit_signal("show_pop_up", title)
+
+func hide_hover_pop_up(title: String):
+	emit_signal("hide_pop_up", title)
