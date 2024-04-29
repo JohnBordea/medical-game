@@ -20,6 +20,7 @@ func _ready():
 	DialogueManagerGlobal.start_treatment_menu.connect(_on_start_treatment_menu)
 	patient_data_ui.take_diagnostic.connect(_on_take_diagnostic)
 	CombatBase.game_over.connect(_on_game_over)
+	_what_window_open = window_open.MAP
 	initiate()
 
 func _process(delta):
@@ -27,7 +28,7 @@ func _process(delta):
 		camera.global_position = player_node.global_position
 	else:
 		camera.global_position = Vector2(577, 324)
-	if Input.is_action_just_released("quest_menu"):
+	if _what_window_open == window_open.MAP and Input.is_action_just_released("quest_menu"):
 		_on_quest_menu_activate()
 
 func initiate(load: SaveSlot = null):
@@ -47,11 +48,13 @@ func initiate(load: SaveSlot = null):
 	player_node = map_scene.player
 
 func _on_start_treatment_menu(npc: NPCBase):
+	_what_window_open = window_open.PATIENT_DATA
 	map.visible = false
 	patient_data_ui.visible = true
 	patient_data_ui.initiate(npc)
 
 func _on_take_diagnostic():
+	_what_window_open = window_open.COMBAT
 	_is_camera_on_player = false
 	camera.zoom = Vector2(1, 1)
 	patient_data_ui.visible = false
@@ -59,6 +62,7 @@ func _on_take_diagnostic():
 	combat.initiate(DialogueManagerGlobal.npc.illness.combat_entity)
 
 func _on_game_over(winner: CombatEntity):
+	_what_window_open = window_open.MAP
 	_is_camera_on_player = true
 	camera.zoom = Vector2(2, 2)
 	combat.visible = false

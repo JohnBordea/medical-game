@@ -7,7 +7,8 @@ signal cure
 @onready var b_cure = %Cure
 @onready var result = %Result
 
-func initiate():
+func initiate(npc: NPCBase):
+	result.text = ""
 	b_diagnostic.disabled = true
 	b_cure.disabled = true
 

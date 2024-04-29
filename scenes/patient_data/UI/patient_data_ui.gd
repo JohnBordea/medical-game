@@ -34,8 +34,10 @@ func _on_test_take(test: Test = null):
 
 	if test != null:
 		if test in npc_data.illness.tests.keys():
+			Config.add_test_to_save(npc_data, test, npc_data.illness.tests[test])
 			panel_profile.test_taken(test, npc_data.illness.tests[test])
 		else:
+			Config.add_test_to_save(npc_data, test, test.default_diagnostic)
 			panel_profile.test_taken(test, test.default_diagnostic)
 
 func _on_patient_take_diagnostic():
@@ -49,6 +51,7 @@ func _on_diagnostic_take(diagnostic: Diagnostic = null):
 	DialogueManagerGlobal.reset_diagnostic_chosen()
 	
 	if diagnostic != null:
+		Config.add_diagnostic_to_save(npc_data, diagnostic.description == npc_data.illness)
 		panel_profile.diagnostic_taken(diagnostic.description == npc_data.illness)
 
 func _on_take_cure():

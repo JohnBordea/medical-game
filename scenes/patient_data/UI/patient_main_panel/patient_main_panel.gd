@@ -12,8 +12,6 @@ signal take_cure
 @onready var panel_diagnostic = %DiagnosticPanel
 
 func _ready():
-	#var npc = ResourceLoader.load("res://resources/npc_data/default.tres") as NPCBase
-	#initiate(npc)
 	panel_test.take_test.connect(_on_patient_take_test)
 	panel_diagnostic.diagnostic.connect(_on_patient_take_diagnostic)
 	panel_diagnostic.cure.connect(_on_patient_take_cure)
@@ -23,11 +21,11 @@ func initiate(npc: NPCBase):
 	panel_profile_data.initiate(npc.name, npc.gender, npc.age)
 	panel_history.initiate(npc.illness.history)
 	panel_sympthoms.initiate(npc.illness.symptoms)
-	panel_test.initiate()
-	panel_diagnostic.initiate()
+	panel_test.initiate(npc)
+	panel_diagnostic.initiate(npc)
 
 func test_taken(test: Test, result: String):
-	panel_test.add_test_result(test.image, test.name, result)
+	panel_test.add_test_result(test, result)
 	panel_diagnostic.test_taken()
 
 func diagnostic_taken(chosen_corectly: bool):

@@ -4,7 +4,7 @@ extends PanelContainer
 @onready var title = %Title
 @onready var result = %Result
 
-func initiate(image_path: String, test_title: String, test_result: String):
-	icon.texture = load(image_path)
-	title.text = test_title
+func initiate(test_made: Test, test_result: String):
+	icon.texture = load(test_made.image)
+	title.text = test_made.name
 	result.text = test_result
