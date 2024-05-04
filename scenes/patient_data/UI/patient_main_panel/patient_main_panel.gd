@@ -3,6 +3,7 @@ extends PanelContainer
 signal take_test
 signal take_diagnostic
 signal take_cure
+signal cancel
 
 @onready var panel_profile = %ProfilePanel
 @onready var panel_profile_data = %ProfileDataPanel
@@ -15,6 +16,7 @@ func _ready():
 	panel_test.take_test.connect(_on_patient_take_test)
 	panel_diagnostic.diagnostic.connect(_on_patient_take_diagnostic)
 	panel_diagnostic.cure.connect(_on_patient_take_cure)
+	panel_diagnostic.cancel.connect(_on_cancel_procedure)
 
 func initiate(npc: NPCBase):
 	panel_profile.initiate(npc.sprite)
@@ -39,3 +41,6 @@ func _on_patient_take_diagnostic():
 
 func _on_patient_take_cure():
 	emit_signal("take_cure")
+
+func _on_cancel_procedure():
+	emit_signal("cancel")

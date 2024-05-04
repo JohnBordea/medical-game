@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dx7k4ge64nfax"]
+[gd_scene load_steps=6 format=3 uid="uid://dx7k4ge64nfax"]
 
 [ext_resource type="Script" path="res://scenes/overworld/maps/map_002/map_002.gd" id="1_bdtvk"]
 [ext_resource type="TileSet" uid="uid://bo4mdekuamqni" path="res://scenes/overworld/maps/assets/base.tres" id="1_dew01"]
+[ext_resource type="PackedScene" uid="uid://bvfhiih78wcpl" path="res://scenes/overworld/NPC/npc.tscn" id="2_b5s2w"]
 [ext_resource type="PackedScene" uid="uid://ditmakevejder" path="res://scenes/overworld/maps/door/door.tscn" id="2_rnftj"]
 [ext_resource type="PackedScene" uid="uid://76b6ppdrtu4v" path="res://scenes/overworld/player/player.tscn" id="3_854wq"]
 
 [node name="Map002" type="Node2D"]
 script = ExtResource("1_bdtvk")
+npc_instance = ExtResource("2_b5s2w")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_dew01")
@@ -29,3 +31,7 @@ coordinates = Vector2(480, 304)
 [node name="Player" parent="." instance=ExtResource("3_854wq")]
 unique_name_in_owner = true
 position = Vector2(64, 72)
+
+[node name="NPCs" type="Node2D" parent="."]
+unique_name_in_owner = true
+process_mode = 1

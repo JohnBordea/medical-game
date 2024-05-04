@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 signal take_diagnostic
+signal cancel
 
 @onready var panel_profile = %PatientMainPanel
 @onready var panel_test = $TestMainPanel
@@ -10,10 +11,12 @@ var npc_data: NPCBase
 
 func _ready():
 	panel_profile.take_test.connect(_on_patient_take_test)
-	panel_test.take_test.connect(_on_test_take)
-	panel_test.cancel_test.connect(_on_test_take)
 	panel_profile.take_diagnostic.connect(_on_patient_take_diagnostic)
 	panel_profile.take_cure.connect(_on_take_cure)
+	panel_profile.cancel.connect(_on_cancel)
+
+	panel_test.take_test.connect(_on_test_take)
+	panel_test.cancel_test.connect(_on_test_take)
 
 	panel_diagnostic.take_diagnostic.connect(_on_diagnostic_take)
 	panel_diagnostic.cancel_diagnostic.connect(_on_diagnostic_take)
@@ -56,3 +59,6 @@ func _on_diagnostic_take(diagnostic: Diagnostic = null):
 
 func _on_take_cure():
 	emit_signal("take_diagnostic")
+
+func _on_cancel():
+	emit_signal("cancel")

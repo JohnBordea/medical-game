@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2c6ejnc44vsh"]
+[gd_scene load_steps=4 format=3 uid="uid://b2c6ejnc44vsh"]
 
 [ext_resource type="Script" path="res://scenes/overworld/maps/base_map/map.gd" id="1_vu4ff"]
+[ext_resource type="PackedScene" uid="uid://bvfhiih78wcpl" path="res://scenes/overworld/NPC/npc.tscn" id="2_7b4c8"]
 [ext_resource type="PackedScene" uid="uid://76b6ppdrtu4v" path="res://scenes/overworld/player/player.tscn" id="2_x4qdt"]
 
 [node name="Map" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_vu4ff")
+npc_instance = ExtResource("2_7b4c8")
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
@@ -13,4 +16,8 @@ format = 2
 unique_name_in_owner = true
 
 [node name="Player" parent="." instance=ExtResource("2_x4qdt")]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="NPCs" type="Node2D" parent="."]
 unique_name_in_owner = true

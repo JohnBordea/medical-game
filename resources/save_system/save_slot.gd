@@ -2,6 +2,7 @@ extends Resource
 class_name SaveSlot
 
 @export var name: String
+@export var date: String
 
 @export var map_path: String
 @export var player_coord: Vector2

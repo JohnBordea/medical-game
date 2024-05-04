@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cahqvmct0aq2c"]
+[gd_scene load_steps=8 format=3 uid="uid://cahqvmct0aq2c"]
 
 [ext_resource type="Script" path="res://scenes/UI/game/game.gd" id="1_rnblv"]
 [ext_resource type="PackedScene" uid="uid://42fbpkbn0viu" path="res://scenes/overworld/maps/map_001/map_001.tscn" id="2_75gwd"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://cyibu1b8m43uc" path="res://scenes/combat/main/main.tscn" id="5_cqne2"]
 [ext_resource type="PackedScene" uid="uid://dxuvwd147qy3x" path="res://scenes/UI/quest_menu/quest_menu.tscn" id="5_fjltw"]
 [ext_resource type="PackedScene" uid="uid://bidh4dyxpiib5" path="res://scenes/UI/hover_pop_up/hover_pop_up.tscn" id="6_shnv1"]
+[ext_resource type="PackedScene" uid="uid://cy85d3dmowhsg" path="res://scenes/UI/save_menu/save_menu.tscn" id="7_fg6wj"]
 
 [node name="Game" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_rnblv")
 
 [node name="Map" type="Node2D" parent="."]
@@ -24,6 +26,10 @@ unique_name_in_owner = true
 position = Vector2(577, 324)
 
 [node name="PatientDataUI" parent="." instance=ExtResource("4_v15a2")]
+unique_name_in_owner = true
+visible = false
+
+[node name="SaveMenu" parent="." instance=ExtResource("7_fg6wj")]
 unique_name_in_owner = true
 visible = false
 

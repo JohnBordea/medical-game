@@ -1,14 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://42fbpkbn0viu"]
+[gd_scene load_steps=6 format=3 uid="uid://42fbpkbn0viu"]
 
 [ext_resource type="Script" path="res://scenes/overworld/maps/map_001/map_001.gd" id="1_25pc0"]
 [ext_resource type="TileSet" uid="uid://bo4mdekuamqni" path="res://scenes/overworld/maps/assets/base.tres" id="1_ctttt"]
 [ext_resource type="PackedScene" uid="uid://76b6ppdrtu4v" path="res://scenes/overworld/player/player.tscn" id="2_ag66b"]
 [ext_resource type="PackedScene" uid="uid://ditmakevejder" path="res://scenes/overworld/maps/door/door.tscn" id="3_wb8xt"]
 [ext_resource type="PackedScene" uid="uid://bvfhiih78wcpl" path="res://scenes/overworld/NPC/npc.tscn" id="5_utrj4"]
-[ext_resource type="Resource" uid="uid://bekinc46pxnvc" path="res://resources/dialogues/NPC.dialogue" id="6_7ftru"]
-[ext_resource type="Resource" uid="uid://bf1r35fmuvvuq" path="res://resources/npc_data/default.tres" id="7_knaen"]
 
 [node name="Map001" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_25pc0")
 npc_instance = ExtResource("5_utrj4")
 
@@ -30,15 +29,10 @@ position = Vector2(512, 288)
 path = "res://scenes/overworld/maps/map_002/map_002.tscn"
 coordinates = Vector2(64, 72)
 
-[node name="Player" parent="." instance=ExtResource("2_ag66b")]
-unique_name_in_owner = true
-position = Vector2(272, 200)
-
 [node name="NPCs" type="Node2D" parent="."]
 unique_name_in_owner = true
 
-[node name="NPC" parent="NPCs" instance=ExtResource("5_utrj4")]
-position = Vector2(80, 88)
-dialogue = ExtResource("6_7ftru")
-dialogue_start = "content"
-data = ExtResource("7_knaen")
+[node name="Player" parent="." instance=ExtResource("2_ag66b")]
+unique_name_in_owner = true
+y_sort_enabled = true
+position = Vector2(272, 208)

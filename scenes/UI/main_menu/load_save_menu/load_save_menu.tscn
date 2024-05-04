@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://lls0er1j7kb"]
+
+[ext_resource type="Script" path="res://scenes/UI/main_menu/load_save_menu/load_save_menu.gd" id="1_gvo58"]
+[ext_resource type="PackedScene" uid="uid://bnajiw1nqo1k6" path="res://scenes/UI/main_menu/load_save_menu/load_slot/load_slot.tscn" id="2_11wwv"]
+
+[node name="LoadSaveMenu" type="CanvasLayer"]
+script = ExtResource("1_gvo58")
+load_slot_instance = ExtResource("2_11wwv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(1112, 528)
+layout_mode = 2
+
+[node name="LoadContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/ScrollContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1112, 528)
+layout_mode = 2
+
+[node name="LoadTab" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/LoadTab"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/LoadTab/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Back" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/LoadTab/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Back"
+
+[node name="LoadChosenData" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/LoadTab/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(772, 50)
+layout_mode = 2
+
+[node name="Load" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/LoadTab/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Load"
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/LoadTab/MarginContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/LoadTab/MarginContainer/HBoxContainer/Load" to="." method="_on_load_pressed"]
