@@ -36,9 +36,9 @@ func _on_test_take(test: Test = null):
 	DialogueManagerGlobal.reset_test_chosen()
 
 	if test != null:
-		if test in npc_data.illness.tests.keys():
-			Config.add_test_to_save(npc_data, test, npc_data.illness.tests[test])
-			panel_profile.test_taken(test, npc_data.illness.tests[test])
+		if npc_data.illness.check_if_test_possible(test):
+			Config.add_test_to_save(npc_data, test, npc_data.illness.get_test_result(test))
+			panel_profile.test_taken(test, npc_data.illness.get_test_result(test))
 		else:
 			Config.add_test_to_save(npc_data, test, test.default_diagnostic)
 			panel_profile.test_taken(test, test.default_diagnostic)

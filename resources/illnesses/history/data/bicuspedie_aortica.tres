@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HistoryBase" load_steps=2 format=3 uid="uid://cjpyw40dhqkmf"]
+
+[ext_resource type="Script" path="res://resources/illnesses/history/history.gd" id="1_icoms"]
+
+[resource]
+script = ExtResource("1_icoms")
+image = "res://resources/illnesses/history/default_icon.png"
+name = "Bicuspedie Aortica"
+requirenment_type = 0
+requirenment = []

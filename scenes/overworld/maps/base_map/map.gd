@@ -23,15 +23,7 @@ func initiate_npcs():
 					#Create NPC
 					var npc = NPCBase.new()
 					npc.name = "Default Case"
-					npc.gender = "M"
-					npc.age = 99
-					if location.posible_illneses.is_empty():
-						npc.cured = true
-					else:
-						npc.cured = false
-						npc.illness = location.posible_illneses.pick_random()
-					npc.dialogue = load("res://resources/dialogues/NPC.dialogue") as DialogueResource
-					npc.dialogue_start = "content"
+					npc.generate_data(location.posible_illneses)
 					npc_location.npc = npc
 				var npc = npc_instance.instantiate()
 				npc_s.add_child(npc)

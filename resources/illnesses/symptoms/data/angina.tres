@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SymptomBase" load_steps=2 format=3 uid="uid://b0p5hhwr8x0e5"]
+
+[ext_resource type="Script" path="res://resources/illnesses/symptoms/symptom.gd" id="1_r3m4q"]
+
+[resource]
+script = ExtResource("1_r3m4q")
+image = "res://resources/illnesses/symptoms/default_icon.png"
+name = "Angina"
+requirenment_type = 0
+requirenment = []

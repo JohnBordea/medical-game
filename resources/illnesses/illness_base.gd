@@ -5,8 +5,24 @@ class_name IllnessBase
 @export var title: String
 @export var description: String = "Simple information about the Illness. Maybe a few fun facts about it. ETC..."
 
+@export var gender: float = .5
+@export var age: Array[Array] = [[0, 90]]
+
 @export var history: Array[HistoryBase]
 @export var symptoms: Array[SymptomBase]
 #needs to be Test: String
-@export var tests: Dictionary
+@export var tests: Array[TestResult]
 @export var combat_entity: CombatEntity
+
+func check_if_test_possible(test: Test) -> bool:
+	for t in tests:
+		if t.test == test:
+			return true
+	return false
+
+func get_test_result(test: Test) -> String:
+	for t in tests:
+		if t.test == test:
+			t.get_test_result()
+			return t.visual_result
+	return ""

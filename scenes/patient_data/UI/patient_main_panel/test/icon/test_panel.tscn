@@ -38,5 +38,7 @@ text = "Test title"
 
 [node name="Result" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(212, 0)
 layout_mode = 2
 text = "Test Result"
+autowrap_mode = 3

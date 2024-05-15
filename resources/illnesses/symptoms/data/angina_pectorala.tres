@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SymptomBase" load_steps=2 format=3 uid="uid://b37sdu35phh8j"]
+
+[ext_resource type="Script" path="res://resources/illnesses/symptoms/symptom.gd" id="1_kwg31"]
+
+[resource]
+script = ExtResource("1_kwg31")
+image = "res://resources/illnesses/symptoms/default_icon.png"
+name = "Angina Pectorala"
+requirenment_type = 0
+requirenment = []

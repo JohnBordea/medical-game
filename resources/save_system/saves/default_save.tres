@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SaveSlot" load_steps=11 format=3 uid="uid://bl8lkyxbbn70k"]
+[gd_resource type="Resource" script_class="SaveSlot" load_steps=12 format=3 uid="uid://bl8lkyxbbn70k"]
 
 [ext_resource type="Script" path="res://resources/save_system/save_slot.gd" id="1_2t6pd"]
 [ext_resource type="Script" path="res://resources/save_system/npc_location.gd" id="1_f11ud"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://dtkm5hsr7rg3s" path="res://resources/quest_system/resources/quests/quest_2.tres" id="2_dfmt1"]
 [ext_resource type="Resource" uid="uid://w687bsh80w2" path="res://resources/illnesses/mild_mifral_stenosis.tres" id="2_pcrg6"]
 [ext_resource type="Script" path="res://resources/save_system/map_positioning.gd" id="3_iaqeq"]
+[ext_resource type="Resource" uid="uid://bvte5a2n83cpa" path="res://resources/illnesses/data/stenoza/aortica/stenoza_aortica_usoara.tres" id="3_vsh47"]
 
 [sub_resource type="Resource" id="Resource_ro585"]
 script = ExtResource("1_f11ud")
@@ -32,7 +33,7 @@ diagnostic_made = false
 script = ExtResource("3_iaqeq")
 map_name = "res://scenes/overworld/maps/map_001/map_001.tscn"
 npc_location = Array[ExtResource("1_f11ud")]([SubResource("Resource_ro585"), SubResource("Resource_gafvs"), SubResource("Resource_tktdq")])
-posible_illneses = Array[Resource("res://resources/illnesses/illness_base.gd")]([ExtResource("2_pcrg6")])
+posible_illneses = Array[Resource("res://resources/illnesses/illness_base.gd")]([ExtResource("2_pcrg6"), ExtResource("3_vsh47")])
 
 [resource]
 script = ExtResource("1_2t6pd")

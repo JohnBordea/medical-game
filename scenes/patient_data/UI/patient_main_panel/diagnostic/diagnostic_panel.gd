@@ -22,11 +22,13 @@ func initiate(npc: NPCBase):
 func test_taken():
 	b_diagnostic.disabled = false
 
-func diagnostic_taken(chosen_corectly: bool):
+func diagnostic_taken(chosen_corectly: bool, can_be_cured: bool = true):
 	if chosen_corectly:
 		result.text = "Correct Diagnosys"
 		b_diagnostic.disabled = true
 		b_cure.disabled = false
+		if not can_be_cured:
+			b_cure.text = "Surgical Intervention"
 	else:
 		result.text = "Wrong Diagnosys"
 

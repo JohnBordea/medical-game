@@ -7,6 +7,10 @@ enum SkillType{
 	PHYSICAL,
 	BUFF
 }
+enum RequirenmentType {
+	NONE,
+	AGE
+}
 
 var local_map_path: String
 var local_map_coordinates: Vector2

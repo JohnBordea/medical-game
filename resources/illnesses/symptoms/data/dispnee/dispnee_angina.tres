@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SymptomBase" load_steps=2 format=3 uid="uid://ch74kvwix5it4"]
+
+[ext_resource type="Script" path="res://resources/illnesses/symptoms/symptom.gd" id="1_euy0g"]
+
+[resource]
+script = ExtResource("1_euy0g")
+image = "res://resources/illnesses/symptoms/default_icon.png"
+name = "Angina Dispnee"
+requirenment_type = 0
+requirenment = []

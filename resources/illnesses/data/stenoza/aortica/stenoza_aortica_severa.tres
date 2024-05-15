@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="IllnessBase" load_steps=18 format=3 uid="uid://cvvf2gxmxwg3x"]
+
+[ext_resource type="Script" path="res://resources/illnesses/illness_base.gd" id="1_86ho1"]
+[ext_resource type="Resource" uid="uid://cjpyw40dhqkmf" path="res://resources/illnesses/history/data/bicuspedie_aortica.tres" id="1_177ap"]
+[ext_resource type="Resource" uid="uid://cyoxihdjfk0pp" path="res://resources/illnesses/symptoms/data/dispnee/dispnee.tres" id="2_epm3h"]
+[ext_resource type="Script" path="res://resources/illnesses/test_result/test_result.gd" id="4_8xkgr"]
+[ext_resource type="Resource" uid="uid://ch74kvwix5it4" path="res://resources/illnesses/symptoms/data/dispnee/dispnee_angina.tres" id="4_gsmkp"]
+[ext_resource type="Resource" uid="uid://g452iu14nfh0" path="res://resources/tests/physical_exam/palpare.tres" id="5_ury4a"]
+[ext_resource type="Resource" uid="uid://s4pmirwnia7h" path="res://resources/tests/physical_exam/ascultare.tres" id="6_0jsiy"]
+[ext_resource type="Resource" uid="uid://bsbf4fe7h065j" path="res://resources/tests/investigations/radiografie.tres" id="7_1ifrr"]
+[ext_resource type="Script" path="res://resources/illnesses/test_result/test_result_replacement.gd" id="8_3b7yv"]
+[ext_resource type="Resource" uid="uid://haipkowknrxx" path="res://resources/tests/investigations/ecografie_cardiaca.tres" id="9_d707a"]
+[ext_resource type="Resource" uid="uid://2m3f7m42livc" path="res://resources/tests/investigations/ekg.tres" id="10_wh7lw"]
+
+[sub_resource type="Resource" id="Resource_4t6dp"]
+script = ExtResource("4_8xkgr")
+test = ExtResource("5_ury4a")
+result = "Puls Slab"
+replacements = Array[ExtResource("8_3b7yv")]([])
+
+[sub_resource type="Resource" id="Resource_7g2nt"]
+script = ExtResource("4_8xkgr")
+test = ExtResource("6_0jsiy")
+result = "Suflu Sistolic de ????"
+replacements = Array[ExtResource("8_3b7yv")]([])
+
+[sub_resource type="Resource" id="Resource_51e38"]
+script = ExtResource("4_8xkgr")
+test = ExtResource("7_1ifrr")
+result = "Aorta ascendenta dilatata"
+replacements = Array[ExtResource("8_3b7yv")]([])
+
+[sub_resource type="Resource" id="Resource_otnms"]
+script = ExtResource("8_3b7yv")
+formater = "floatValue"
+replacer_type = 2
+replacer = [0.1, 1.0]
+
+[sub_resource type="Resource" id="Resource_mdrvx"]
+script = ExtResource("4_8xkgr")
+test = ExtResource("9_d707a")
+result = "{floatValue} cm^2"
+replacements = Array[ExtResource("8_3b7yv")]([SubResource("Resource_otnms")])
+
+[sub_resource type="Resource" id="Resource_56j1a"]
+script = ExtResource("4_8xkgr")
+test = ExtResource("10_wh7lw")
+result = "HVS"
+replacements = Array[ExtResource("8_3b7yv")]([])
+
+[resource]
+script = ExtResource("1_86ho1")
+image = "res://resources/tests/default_icon.png"
+title = "Stenoza Aortica Severa"
+description = "Simple information about the Illness. Maybe a few fun facts about it. ETC..."
+gender = 0.5
+age = Array[Array]([[0, 90]])
+history = Array[Resource("res://resources/illnesses/history/history.gd")]([ExtResource("1_177ap")])
+symptoms = Array[Resource("res://resources/illnesses/symptoms/symptom.gd")]([ExtResource("2_epm3h"), ExtResource("4_gsmkp")])
+tests = Array[ExtResource("4_8xkgr")]([SubResource("Resource_4t6dp"), SubResource("Resource_7g2nt"), SubResource("Resource_51e38"), SubResource("Resource_mdrvx"), SubResource("Resource_56j1a")])

@@ -19,7 +19,7 @@ func _ready():
 	panel_diagnostic.cancel.connect(_on_cancel_procedure)
 
 func initiate(npc: NPCBase):
-	panel_profile.initiate(npc.sprite)
+	panel_profile.initiate(npc.sprite_body, npc.sprite_hair)
 	panel_profile_data.initiate(npc.name, npc.gender, npc.age)
 	panel_history.initiate(npc.illness.history)
 	panel_sympthoms.initiate(npc.illness.symptoms)

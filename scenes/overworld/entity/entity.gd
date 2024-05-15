@@ -9,9 +9,6 @@ class_name Entity
 
 var _direction: Vector2 = Vector2.ZERO
 
-func _ready():
-	_play_animation()
-
 func ajust_direction(direction: Vector2):
 	_direction = direction
 
@@ -25,4 +22,4 @@ func _play_animation():
 	elif _direction.y < 0:
 		_player_state_direction = "up"
 		
-	_animation_player.play(_player_state + "_" + _player_state_direction)
+	#_animation_player.play(_player_state + "_" + _player_state_direction)
