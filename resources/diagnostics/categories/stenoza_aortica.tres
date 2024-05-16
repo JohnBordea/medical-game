@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DiagnosticType" load_steps=5 format=3 uid="uid://de2n34iewf4yo"]
+
+[ext_resource type="Script" path="res://resources/diagnostics/diagnostic_type.gd" id="1_oqboe"]
+[ext_resource type="Resource" uid="uid://bvte5a2n83cpa" path="res://resources/illnesses/data/stenoza/aortica/stenoza_aortica_usoara.tres" id="2_adkt3"]
+[ext_resource type="Resource" uid="uid://d0225ticdutmn" path="res://resources/illnesses/data/stenoza/aortica/stenoza_aortica_moderata.tres" id="3_plfe6"]
+[ext_resource type="Resource" uid="uid://cvvf2gxmxwg3x" path="res://resources/illnesses/data/stenoza/aortica/stenoza_aortica_severa.tres" id="4_jy0i8"]
+
+[resource]
+script = ExtResource("1_oqboe")
+name = "Stenoza Aortica"
+tests = Array[Resource("res://resources/illnesses/illness_base.gd")]([ExtResource("2_adkt3"), ExtResource("3_plfe6"), ExtResource("4_jy0i8")])

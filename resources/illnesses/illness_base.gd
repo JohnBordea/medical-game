@@ -23,6 +23,5 @@ func check_if_test_possible(test: Test) -> bool:
 func get_test_result(test: Test) -> String:
 	for t in tests:
 		if t.test == test:
-			t.get_test_result()
-			return t.visual_result
+			return t.get_test_result()
 	return ""

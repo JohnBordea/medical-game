@@ -6,9 +6,9 @@ class_name TestResult
 var visual_result: String
 @export var replacements: Array[TestResultReplacement]
 
-func get_test_result():
+func get_test_result() -> String:
+	visual_result = result
 	if replacements != null and !replacements.is_empty():
-		visual_result = result
 		for replacement in replacements:
 			var value
 			if replacement.replacer_type == 0:
@@ -21,3 +21,4 @@ func get_test_result():
 				#FLOAT
 				value = str(randf_range(replacement.replacer[0], replacement.replacer[1])).pad_decimals(2)
 			visual_result = visual_result.format({replacement.formater: value})
+	return visual_result

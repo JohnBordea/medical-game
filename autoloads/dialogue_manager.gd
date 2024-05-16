@@ -31,13 +31,13 @@ func check_test_if_is_pressed(test: Test):
 func reset_test_chosen():
 	_test_taken_checker = null
 
-signal diagnostic_taken(diagnostic: Diagnostic)
-var _diagnostic_taken_checker: Diagnostic = null
+signal diagnostic_taken(diagnostic: IllnessBase)
+var _diagnostic_taken_checker: IllnessBase = null
 
-func diagnostic_chosen(diagnostic: Diagnostic):
+func diagnostic_chosen(diagnostic: IllnessBase):
 	emit_signal("diagnostic_taken", diagnostic)
 
-func check_diagnostic_if_is_pressed(diagnostic: Diagnostic):
+func check_diagnostic_if_is_pressed(diagnostic: IllnessBase):
 	return _diagnostic_taken_checker == diagnostic
 
 func reset_diagnostic_chosen():

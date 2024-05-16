@@ -48,14 +48,14 @@ func _on_patient_take_diagnostic():
 	panel_diagnostic.visible = true
 	panel_diagnostic.initiate()
 
-func _on_diagnostic_take(diagnostic: Diagnostic = null):
+func _on_diagnostic_take(diagnostic: IllnessBase = null):
 	panel_profile.set_process_mode(0)
 	panel_diagnostic.visible = false
 	DialogueManagerGlobal.reset_diagnostic_chosen()
 	
 	if diagnostic != null:
-		Config.add_diagnostic_to_save(npc_data, diagnostic.description == npc_data.illness)
-		panel_profile.diagnostic_taken(diagnostic.description == npc_data.illness)
+		Config.add_diagnostic_to_save(npc_data, diagnostic == npc_data.illness)
+		panel_profile.diagnostic_taken(diagnostic == npc_data.illness, diagnostic.combat_entity != null)
 
 func _on_take_cure():
 	emit_signal("take_diagnostic")

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TestType" load_steps=3 format=3 uid="uid://5a77xw4hwc1p"]
+
+[ext_resource type="Script" path="res://resources/tests/test_type.gd" id="1_mesaj"]
+[ext_resource type="Resource" uid="uid://nbjuncpxk3gn" path="res://resources/tests/other/vena_cintracta.tres" id="2_jdgpx"]
+
+[resource]
+script = ExtResource("1_mesaj")
+name = "Alte"
+tests = Array[Resource("res://resources/tests/test.gd")]([ExtResource("2_jdgpx")])

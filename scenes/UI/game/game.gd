@@ -7,24 +7,18 @@ extends Node2D
 @onready var quest_menu = %QuestMenu
 @onready var save_menu = %SaveMenu
 
-enum window_open {
-	MAP,
-	PATIENT_DATA,
-	COMBAT,
-	QUEST,
-	SAVE
-}
+var current_node: Node
+var _what_window_open: Node
 
 var player_node: Node2D
 var _is_camera_on_player: bool = true
-var _what_window_open: window_open
 
 func _ready():
 	DialogueManagerGlobal.start_treatment_menu.connect(_on_start_treatment_menu)
 	patient_data_ui.take_diagnostic.connect(_on_take_diagnostic)
 	patient_data_ui.cancel.connect(_on_diagnostic_cancel)
 	CombatBase.game_over.connect(_on_game_over)
-	_what_window_open = window_open.MAP
+	_what_window_open = map
 	initiate()
 
 func _process(delta):
@@ -54,40 +48,41 @@ func initiate(load: SaveSlot = null):
 	player_node = map_scene.player
 
 func _on_start_treatment_menu(npc: NPCBase):
-	_what_window_open = window_open.PATIENT_DATA
-
-	_scene_change_from_to(map, patient_data_ui, 1)
+	_scene_change_from_to(patient_data_ui, 1)
 
 	patient_data_ui.initiate(npc)
 	DialogueManagerGlobal.end_dialogue()
 
 func _on_take_diagnostic():
-	_what_window_open = window_open.COMBAT
+	if DialogueManagerGlobal.npc.illness.combat_entity != null:
+		_is_camera_on_player = false
+		camera.zoom = Vector2(1, 1)
 
-	_is_camera_on_player = false
-	camera.zoom = Vector2(1, 1)
+		_scene_change_from_to(combat)
+		patient_data_ui.visible = false
+		combat.visible = true
 
-	_scene_change_from_to(patient_data_ui, combat)
-	patient_data_ui.visible = false
-	combat.visible = true
+		combat.initiate(DialogueManagerGlobal.npc.illness.combat_entity)
+	else:
+		_is_camera_on_player = true
+		camera.zoom = Vector2(2, 2)
 
-	combat.initiate(DialogueManagerGlobal.npc.illness.combat_entity)
+		_scene_change_from_to(map, 2)
+
+		DialogueManagerGlobal.npc.cured = true
+		Config.quest_checker(DialogueManagerGlobal.npc.illness)
 
 func _on_diagnostic_cancel():
-	_what_window_open = window_open.MAP
-
 	_is_camera_on_player = true
 	camera.zoom = Vector2(2, 2)
 
-	_scene_change_from_to(patient_data_ui, map, 2)
+	_scene_change_from_to(map, 2)
 
-func _on_game_over(winner: CombatEntity):
-	_what_window_open = window_open.MAP
-
+func _on_game_over(winner: CombatEntity = null):
 	_is_camera_on_player = true
 	camera.zoom = Vector2(2, 2)
 
-	_scene_change_from_to(combat, map, 2)
+	_scene_change_from_to(map, 2)
 
 	if DialogueManagerGlobal.npc.illness.combat_entity != winner:
 		DialogueManagerGlobal.npc.cured = true
@@ -111,40 +106,36 @@ func _on_map_scene_change_defered(path: String, coord: Vector2):
 	player_node = new_map.player
 
 func _on_quest_menu_activate():
-	if _what_window_open == window_open.MAP:
-		_what_window_open = window_open.QUEST
-		_scene_change_from_to(map, quest_menu)
+	if _what_window_open == map:
+		_scene_change_from_to(quest_menu)
 		quest_menu.initiate()
-	elif _what_window_open == window_open.QUEST:
-		_what_window_open = window_open.MAP
-		_scene_change_from_to(quest_menu, map)
-	elif _what_window_open == window_open.SAVE:
-		_what_window_open = window_open.QUEST
-		_scene_change_from_to(save_menu, quest_menu)
+	elif _what_window_open == quest_menu:
+		_scene_change_from_to(map)
+	elif _what_window_open == save_menu:
+		_scene_change_from_to(quest_menu)
 		quest_menu.initiate()
 
 func _on_save_menu_activate():
-	if _what_window_open == window_open.MAP:
-		_what_window_open = window_open.SAVE
-		_scene_change_from_to(map, save_menu)
+	if _what_window_open == map:
+		_scene_change_from_to(save_menu)
 		Config.local_map_coordinates = player_node.position
 		save_menu.initiate()
-	elif _what_window_open == window_open.SAVE:
-		_what_window_open = window_open.MAP
-		_scene_change_from_to(save_menu, map)
-	elif _what_window_open == window_open.QUEST:
-		_what_window_open = window_open.SAVE
-		_scene_change_from_to(quest_menu, save_menu)
+	elif _what_window_open == save_menu:
+		_scene_change_from_to(map)
+	elif _what_window_open == quest_menu:
+		_scene_change_from_to(save_menu)
 		Config.local_map_coordinates = player_node.position
 		save_menu.initiate()
 
-func _scene_change_from_to(scene_from: Node, scene_to: Node, who_to_change_process: int = -1):
-	scene_from.visible = false
+func _scene_change_from_to(scene_to: Node, who_to_change_process: int = -1):
+	_what_window_open.visible = false
 	scene_to.visible = true
 
 	#TODO
 	#When out of map to not be able to move
 	if who_to_change_process == 1:
-		scene_from.set_process(not scene_from.is_processing())
+		_what_window_open.set_process(not _what_window_open.is_processing())
 	elif who_to_change_process == 2:
 		scene_to.set_process(not scene_to.is_processing())
+
+	_what_window_open = scene_to

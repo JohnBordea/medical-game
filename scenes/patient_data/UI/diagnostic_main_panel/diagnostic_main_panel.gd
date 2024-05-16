@@ -1,12 +1,12 @@
 extends MarginContainer
 
-signal take_diagnostic(diagnostic: Diagnostic)
+signal take_diagnostic(diagnostic: IllnessBase)
 signal cancel_diagnostic
 
 @onready var diagnostic_taker = %DiagnosticTaker
 @onready var link_container = %CategoryLinkContainer
 
-var diagnostic: Diagnostic
+var diagnostic: IllnessBase
 var categories: Array[DiagnosticType]
 
 func _ready():
@@ -40,7 +40,7 @@ func initiate():
 	diagnostic = null
 	%TakeDiagnostic.disabled = true
 
-func _on_diagnostic_chosen(diagnostic: Diagnostic):
+func _on_diagnostic_chosen(diagnostic: IllnessBase):
 	self.diagnostic = diagnostic
 	%TakeDiagnostic.disabled = false
 

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DiagnosticType" load_steps=3 format=3 uid="uid://b3mbm60ytfeqd"]
+
+[ext_resource type="Script" path="res://resources/diagnostics/diagnostic_type.gd" id="1_vgvyg"]
+[ext_resource type="Resource" uid="uid://w687bsh80w2" path="res://resources/illnesses/mild_mifral_stenosis.tres" id="2_um4rq"]
+
+[resource]
+script = ExtResource("1_vgvyg")
+name = "Stenoza"
+tests = Array[Resource("res://resources/illnesses/illness_base.gd")]([ExtResource("2_um4rq")])

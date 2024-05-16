@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="IllnessBase" load_steps=15 format=3 uid="uid://cb15g66ix4r8b"]
+
+[ext_resource type="Script" path="res://resources/illnesses/illness_base.gd" id="1_06ds2"]
+[ext_resource type="Resource" uid="uid://cvopjjdbm3fui" path="res://resources/illnesses/symptoms/data/dispnee/dispnee_intensa.tres" id="2_onk07"]
+[ext_resource type="Resource" uid="uid://b7d5fmvdw5ibj" path="res://resources/illnesses/symptoms/data/ortopnee.tres" id="3_7hr7u"]
+[ext_resource type="Script" path="res://resources/illnesses/test_result/test_result.gd" id="4_hc8ni"]
+[ext_resource type="Resource" uid="uid://rmdpvjluls4" path="res://resources/tests/physical_exam/inspection.tres" id="5_vif72"]
+[ext_resource type="Resource" uid="uid://g452iu14nfh0" path="res://resources/tests/physical_exam/palpare.tres" id="6_tl6fa"]
+[ext_resource type="Resource" uid="uid://s4pmirwnia7h" path="res://resources/tests/physical_exam/ascultare.tres" id="7_bvs2u"]
+[ext_resource type="Resource" uid="uid://bsbf4fe7h065j" path="res://resources/tests/investigations/radiografie.tres" id="8_dnsgy"]
+[ext_resource type="Resource" uid="uid://haipkowknrxx" path="res://resources/tests/investigations/ecografie_cardiaca.tres" id="9_ryh1u"]
+
+[sub_resource type="Resource" id="Resource_nxfxq"]
+script = ExtResource("4_hc8ni")
+test = ExtResource("5_vif72")
+result = "Anxios polipneic"
+replacements = Array[Resource("res://resources/illnesses/test_result/test_result_replacement.gd")]([])
+
+[sub_resource type="Resource" id="Resource_x3jnc"]
+script = ExtResource("4_hc8ni")
+test = ExtResource("6_tl6fa")
+result = "Puls periferic slab, foarte frecvent"
+replacements = Array[Resource("res://resources/illnesses/test_result/test_result_replacement.gd")]([])
+
+[sub_resource type="Resource" id="Resource_io820"]
+script = ExtResource("4_hc8ni")
+test = ExtResource("7_bvs2u")
+result = "Suflu holosisfolic apexian cu iradiere in axila"
+replacements = Array[Resource("res://resources/illnesses/test_result/test_result_replacement.gd")]([])
+
+[sub_resource type="Resource" id="Resource_j8p4b"]
+script = ExtResource("4_hc8ni")
+test = ExtResource("8_dnsgy")
+result = "Cord normal, edem pulmonar intestinal"
+replacements = Array[Resource("res://resources/illnesses/test_result/test_result_replacement.gd")]([])
+
+[sub_resource type="Resource" id="Resource_s7lj1"]
+script = ExtResource("4_hc8ni")
+test = ExtResource("9_ryh1u")
+result = "Cord de dimensiune normala, set de regurgitare mic"
+replacements = Array[Resource("res://resources/illnesses/test_result/test_result_replacement.gd")]([])
+
+[resource]
+script = ExtResource("1_06ds2")
+image = "res://resources/tests/default_icon.png"
+title = "Recurgitare Mitrala Acuta"
+description = "Simple information about the Illness. Maybe a few fun facts about it. ETC..."
+gender = 0.5
+age = Array[Array]([[0, 90]])
+history = Array[Resource("res://resources/illnesses/history/history.gd")]([])
+symptoms = Array[Resource("res://resources/illnesses/symptoms/symptom.gd")]([ExtResource("2_onk07"), ExtResource("3_7hr7u")])
+tests = Array[ExtResource("4_hc8ni")]([SubResource("Resource_nxfxq"), SubResource("Resource_x3jnc"), SubResource("Resource_io820"), SubResource("Resource_j8p4b"), SubResource("Resource_s7lj1")])

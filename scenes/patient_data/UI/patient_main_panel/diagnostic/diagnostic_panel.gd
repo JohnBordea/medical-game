@@ -15,7 +15,7 @@ func initiate(npc: NPCBase):
 
 	var npc_location = Config._get_npc_location(npc)
 	if npc_location.diagnostic_made:
-		diagnostic_taken(npc_location.diagnostic_made)
+		diagnostic_taken(npc_location.diagnostic_made, npc.illness.combat_entity != null)
 	elif npc_location.tests_taken.size() > 0:
 		test_taken()
 
