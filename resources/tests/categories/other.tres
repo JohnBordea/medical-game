@@ -7,3 +7,4 @@
 script = ExtResource("1_mesaj")
 name = "Alte"
 tests = Array[Resource("res://resources/tests/test.gd")]([ExtResource("2_jdgpx")])
+order = 100

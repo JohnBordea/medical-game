@@ -1,0 +1,17 @@
+~ start
+
+Doctor: [[Hi|Hello|Howdy]], this is some dialogue.
+Doctor: Here are some choices.
+- First one
+	Doctor: You picked the first one.
+- Second one
+	Doctor: You picked the second one.
+- Start again => start
+- End the conversation => dialogue_end
+Doctor: For more information see the online documentation.
+
+=> dialogue_end
+
+~ dialogue_end
+do DialogueManagerGlobal.end_dialogue()
+=> END

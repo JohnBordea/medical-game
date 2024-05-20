@@ -1,0 +1,143 @@
+[gd_scene load_steps=11 format=3 uid="uid://bfpmq86uv04hb"]
+
+[ext_resource type="Script" path="res://scenes/overworld/maps/conference_room/conference_room.gd" id="1_y471k"]
+[ext_resource type="TileSet" uid="uid://bo4mdekuamqni" path="res://scenes/overworld/maps/assets/tile_collisions.tres" id="2_crjas"]
+[ext_resource type="PackedScene" uid="uid://ditmakevejder" path="res://scenes/overworld/maps/door/door.tscn" id="3_b2tja"]
+[ext_resource type="TileSet" uid="uid://bb6tewp48vrs6" path="res://scenes/overworld/maps/assets/tile_floor.tres" id="3_uucn8"]
+[ext_resource type="PackedScene" uid="uid://bltvgf3g6wbwl" path="res://scenes/overworld/maps/assets/items/table/table.tscn" id="4_0j4gd"]
+[ext_resource type="PackedScene" uid="uid://cmn6e8fg58cj4" path="res://scenes/overworld/maps/assets/items/seat/seat.tscn" id="4_d2wn8"]
+[ext_resource type="TileSet" uid="uid://dt1sv7xs7xi3x" path="res://scenes/overworld/maps/assets/tile_walls.tres" id="4_jb1ri"]
+[ext_resource type="PackedScene" uid="uid://76b6ppdrtu4v" path="res://scenes/overworld/player/player.tscn" id="4_qqjim"]
+[ext_resource type="PackedScene" uid="uid://dfts6vur7fofx" path="res://scenes/overworld/maps/assets/items/seat/small_table.tscn" id="6_w6gru"]
+[ext_resource type="PackedScene" uid="uid://c8nrn61kjiiy2" path="res://scenes/overworld/doctor/doctor.tscn" id="7_hd3u1"]
+
+[node name="ConferenceRoom" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_y471k")
+
+[node name="TileMaps" type="Node2D" parent="."]
+
+[node name="TileMapCollisions" type="TileMap" parent="TileMaps"]
+tile_set = ExtResource("2_crjas")
+format = 2
+layer_0/tile_data = PackedInt32Array(196608, 0, 1, 262144, 0, 1, 327680, 0, 1, 393216, 0, 1, 458752, 0, 1, 524288, 0, 1, 589824, 0, 1, 655360, 0, 1, 720896, 0, 1, 786432, 0, 1, 851968, 0, 1, 327682, 0, 1, 458754, 0, 1, 589826, 0, 1, 327683, 0, 1, 458755, 0, 1, 589827, 0, 1, 327684, 0, 1, 458756, 0, 1, 589828, 0, 1, 786437, 0, 1, 786438, 0, 1, 327687, 0, 1, 458759, 0, 1, 589831, 0, 1, 327688, 0, 1, 458760, 0, 1, 589832, 0, 1, 327689, 0, 1, 458761, 0, 1, 589833, 0, 1, 11, 0, 1, 65547, 0, 1, 131083, 0, 1, 196619, 0, 1, 262155, 0, 1, 327691, 0, 1, 393227, 0, 1, 458763, 0, 1, 524299, 0, 1, 589835, 0, 1, 655371, 0, 1, 720907, 0, 1, 786443, 0, 1, 851979, 0, 1, 983040, 0, 1, 1048576, 0, 1, 1048577, 0, 1, 1048578, 0, 1, 1048579, 0, 1, 1048580, 0, 1, 1048581, 0, 1, 1048582, 0, 1, 1048583, 0, 1, 1048584, 0, 1, 1048585, 0, 1, 1048586, 0, 1, 1048587, 0, 1, 917515, 0, 1, 983051, 0, 1, 917504, 0, 1, -65536, 0, 1, -65535, 0, 1, -65534, 0, 1, -65533, 0, 1, -65532, 0, 1, -65531, 0, 1, -65530, 0, 1, -65529, 0, 1, -65528, 0, 1, -65527, 0, 1, -65526, 0, 1, -65525, 0, 1)
+
+[node name="TileMapFloor" type="TileMap" parent="TileMaps"]
+y_sort_enabled = true
+tile_set = ExtResource("3_uucn8")
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 5, 0, 0, 65541, 0, 0, 131077, 0, 0, 6, 0, 0, 65542, 0, 0, 131078, 0, 0, 7, 0, 0, 65543, 0, 0, 131079, 0, 0, 8, 0, 0, 65544, 0, 0, 131080, 0, 0, 9, 0, 0, 65545, 0, 0, 131081, 0, 0, 10, 0, 0, 65546, 0, 0, 131082, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 655361, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 589826, 0, 0, 655362, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 0, 0, 589827, 0, 0, 655363, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 0, 0, 589828, 0, 0, 655364, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 589829, 0, 0, 655365, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, 458758, 0, 0, 524294, 0, 0, 589830, 0, 0, 655366, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0, 458759, 0, 0, 524295, 0, 0, 589831, 0, 0, 655367, 0, 0, 196616, 0, 0, 262152, 0, 0, 327688, 0, 0, 393224, 0, 0, 458760, 0, 0, 524296, 0, 0, 589832, 0, 0, 655368, 0, 0, 196617, 0, 0, 262153, 0, 0, 327689, 0, 0, 393225, 0, 0, 458761, 0, 0, 524297, 0, 0, 589833, 0, 0, 655369, 0, 0, 196618, 0, 0, 262154, 0, 0, 327690, 0, 0, 393226, 0, 0, 458762, 0, 0, 524298, 0, 0, 589834, 0, 0, 655370, 0, 0, 720897, 0, 0, 786433, 0, 0, 851969, 0, 0, 917505, 0, 0, 983041, 0, 0, 720898, 0, 0, 786434, 0, 0, 851970, 0, 0, 917506, 0, 0, 983042, 0, 0, 720899, 0, 0, 786435, 0, 0, 851971, 0, 0, 917507, 0, 0, 983043, 0, 0, 720900, 0, 0, 786436, 0, 0, 851972, 0, 0, 917508, 0, 0, 983044, 0, 0, 720901, 0, 0, 786437, 0, 0, 851973, 0, 0, 917509, 0, 0, 983045, 0, 0, 720902, 0, 0, 786438, 0, 0, 851974, 0, 0, 917510, 0, 0, 983046, 0, 0, 720903, 0, 0, 786439, 0, 0, 851975, 0, 0, 917511, 0, 0, 983047, 0, 0, 720904, 0, 0, 786440, 0, 0, 851976, 0, 0, 917512, 0, 0, 983048, 0, 0, 720905, 0, 0, 786441, 0, 0, 851977, 0, 0, 917513, 0, 0, 983049, 0, 0, 720906, 0, 0, 786442, 0, 0, 851978, 0, 0, 917514, 0, 0, 983050, 0, 0)
+
+[node name="TileMapWall" type="TileMap" parent="TileMaps"]
+y_sort_enabled = true
+tile_set = ExtResource("4_jb1ri")
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(-65536, 65536, 0, -65535, 65536, 0, -65534, 65536, 0, -65533, 65536, 0, -65532, 65536, 0, -65531, 65536, 0, -65530, 65536, 0, -65529, 65536, 0, -65528, 65536, 0, -65527, 65536, 0, -65526, 65536, 0, -65525, 131072, 0, 11, 131072, 1, 65547, 131072, 1, 131083, 131072, 1, 196619, 131072, 1, 262155, 131072, 1, 851979, 131072, 1, 917515, 131072, 1, 983051, 131072, 1, 1048587, 131072, 1, 524299, 131072, 1, 589835, 131072, 1, 655371, 131072, 1, 720907, 131072, 1, 786443, 131072, 1, 327691, 131072, 1, 393227, 131072, 1, 458763, 131072, 1, 1114123, 131072, 1, 1179659, 131072, 2, 1179649, 65536, 2, 1179650, 65536, 2, 1179651, 65536, 2, 1179652, 65536, 2, 1179653, 65536, 2, 1179654, 65536, 2, 1179655, 65536, 2, 1179656, 65536, 2, 1179657, 65536, 2, 1179658, 65536, 2, 1179648, 0, 2, 786432, 0, 1, 851968, 0, 1, 917504, 0, 1, 983040, 0, 1, 1048576, 0, 1, 1114112, 0, 1, 327680, 0, 1, 393216, 0, 1, 458752, 0, 1, 524288, 0, 1, 589824, 0, 1, 655360, 0, 1, 720896, 0, 1, 262144, 196608, 0)
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Door" parent="Doors" instance=ExtResource("3_b2tja")]
+position = Vector2(0, 32)
+
+[node name="VisualLayer" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Tables" type="Node2D" parent="VisualLayer"]
+y_sort_enabled = true
+
+[node name="Table" parent="VisualLayer/Tables" instance=ExtResource("4_0j4gd")]
+position = Vector2(224, 320)
+
+[node name="Table2" parent="VisualLayer/Tables" instance=ExtResource("4_0j4gd")]
+position = Vector2(64, 320)
+
+[node name="Table3" parent="VisualLayer/Tables" instance=ExtResource("4_0j4gd")]
+position = Vector2(224, 256)
+
+[node name="Table4" parent="VisualLayer/Tables" instance=ExtResource("4_0j4gd")]
+position = Vector2(64, 256)
+
+[node name="Table5" parent="VisualLayer/Tables" instance=ExtResource("4_0j4gd")]
+position = Vector2(224, 192)
+
+[node name="Table6" parent="VisualLayer/Tables" instance=ExtResource("4_0j4gd")]
+position = Vector2(64, 192)
+
+[node name="Seats" type="Node2D" parent="VisualLayer"]
+y_sort_enabled = true
+
+[node name="Seat" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(288, 255)
+
+[node name="Seat2" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(256, 255)
+
+[node name="Seat3" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(224, 255)
+
+[node name="Seat4" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(128, 255)
+
+[node name="Seat5" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(96, 255)
+
+[node name="Seat6" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(64, 255)
+
+[node name="Seat7" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(288, 191)
+
+[node name="Seat8" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(256, 191)
+
+[node name="Seat9" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(224, 191)
+
+[node name="Seat10" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(128, 191)
+
+[node name="Seat11" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(96, 191)
+
+[node name="Seat12" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(64, 191)
+
+[node name="Seat13" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(288, 127)
+
+[node name="Seat14" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(256, 127)
+
+[node name="Seat15" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(224, 127)
+
+[node name="Seat16" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(128, 127)
+
+[node name="Seat17" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(96, 127)
+
+[node name="Seat18" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(64, 127)
+
+[node name="Seat19" parent="VisualLayer/Seats" instance=ExtResource("4_d2wn8")]
+position = Vector2(288, 0)
+
+[node name="Seat" parent="VisualLayer" instance=ExtResource("6_w6gru")]
+position = Vector2(160, 416)
+
+[node name="NPCs" type="Node2D" parent="."]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="Doctor" parent="NPCs" instance=ExtResource("7_hd3u1")]
+position = Vector2(192, 424)
+
+[node name="Player" parent="." instance=ExtResource("4_qqjim")]
+unique_name_in_owner = true
+position = Vector2(200, 56)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)

@@ -2,8 +2,26 @@
 
 [ext_resource type="Script" path="res://scenes/patient_data/UI/test_main_panel/category_button/category_button.gd" id="1_jc5s8"]
 
-[node name="CategoryButton" type="Button"]
-text = "Data1"
+[node name="CategoryButton" type="PanelContainer"]
+custom_minimum_size = Vector2(177, 0)
 script = ExtResource("1_jc5s8")
 
-[connection signal="pressed" from="." to="." method="_on_pressed"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Text" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(157, 0)
+layout_mode = 2
+text = "datadatadatadatadatadatadatadatadatadatadata"
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

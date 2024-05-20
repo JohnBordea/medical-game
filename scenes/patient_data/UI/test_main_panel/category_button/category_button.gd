@@ -1,9 +1,11 @@
-extends Button
+extends PanelContainer
 
 signal link(name: String)
 
-func initiate(name: String):
-	text = name
+@onready var text_label = %Text
 
-func _on_pressed():
-	emit_signal("link", text)
+func initiate(name: String):
+	text_label.text = name
+
+func _on_button_pressed():
+	emit_signal("link", text_label.text)

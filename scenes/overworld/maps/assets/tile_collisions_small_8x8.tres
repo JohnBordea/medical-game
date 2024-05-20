@@ -1,0 +1,16 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cc6mk4gn76pdw"]
+
+[ext_resource type="Texture2D" uid="uid://b78gyf18ed8nd" path="res://scenes/overworld/maps/assets/tile_collision.png" id="1_48gnx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ft7je"]
+texture = ExtResource("1_48gnx")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.5625, -4, 4, -4, 4, 4, -4, 4, -4, -4)
+
+[resource]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ft7je")

@@ -7,11 +7,12 @@ class_name Player
 var _input: bool = true
 var sound_over = true
 
-var _npc: NPC = null
+var _npc: Entity = null
 
 func _ready():
 	DialogueManagerGlobal.start.connect(_on_dialogue_start)
 	DialogueManagerGlobal.end.connect(_on_dialogue_end)
+	_animation_player = %Animator
 	_play_animation()
 
 func _physics_process(delta):
@@ -27,6 +28,7 @@ func _physics_process(delta):
 			DialogueManagerGlobal.start_dialogue(_npc)
 	else:
 		_player_state = 'idle'
+		velocity = Vector2.ZERO
 	_play_animation()
 	move_and_slide()
 
@@ -54,8 +56,8 @@ func _on_dialogue_end():
 	_input = true
 
 func _on_dialogue_controller_body_entered(body):
-	if body is NPC:
-		_npc = body as NPC
+	if body is Entity:
+		_npc = body as Entity
 
 func _on_dialogue_controller_body_exited(body):
 	if _npc == body:

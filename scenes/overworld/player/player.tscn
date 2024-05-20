@@ -11,10 +11,14 @@ radius = 9.0
 radius = 23.0
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_layer = 5
 script = ExtResource("1_u0al8")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Animations" type="Node2D" parent="."]
+
+[node name="Animator" type="AnimatedSprite2D" parent="Animations"]
+unique_name_in_owner = true
 position = Vector2(0, -16)
 sprite_frames = ExtResource("2_sfslf")
 animation = &"walk_down"
@@ -24,7 +28,6 @@ position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_l8dqw")
 
 [node name="DialogueController" type="Area2D" parent="."]
-y_sort_enabled = true
 position = Vector2(0, -4)
 collision_layer = 0
 collision_mask = 2

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfts6vur7fofx"]
+
+[ext_resource type="Texture2D" uid="uid://u3lb6b4qmc6b" path="res://scenes/overworld/maps/assets/items/seat/sprite_small_table.png" id="1_gh1e5"]
+
+[node name="Seat" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(32, -24)
+texture = ExtResource("1_gh1e5")

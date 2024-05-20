@@ -6,30 +6,40 @@ extends Node2D
 @onready var camera = %Camera
 @onready var quest_menu = %QuestMenu
 @onready var save_menu = %SaveMenu
+@onready var load_save_menu = %LoadSaveMenu
+@onready var general_menu = %GeneralMenu
 
 var current_node: Node
 var _what_window_open: Node
 
 var player_node: Node2D
 var _is_camera_on_player: bool = true
+var _is_menu_accesible: bool = true
 
 func _ready():
 	DialogueManagerGlobal.start_treatment_menu.connect(_on_start_treatment_menu)
 	patient_data_ui.take_diagnostic.connect(_on_take_diagnostic)
 	patient_data_ui.cancel.connect(_on_diagnostic_cancel)
 	CombatBase.game_over.connect(_on_game_over)
-	_what_window_open = map
-	initiate()
+	general_menu.option_made.connect(_on_option_made)
+	_scene_change_from_to(map)
+	_is_menu_accesible = true
+	#quest_menu._trim_top(110)
 
 func _process(delta):
 	if _is_camera_on_player:
-		camera.global_position = player_node.global_position
+		camera.global_position = player_node.global_position - Vector2(0, 17)
 	else:
 		camera.global_position = Vector2(577, 324)
-	if Input.is_action_just_released("quest_menu"):
-		_on_quest_menu_activate()
-	if Input.is_action_just_released("save_menu"):
-		_on_save_menu_activate()
+	if _is_menu_accesible:
+		if Input.is_action_just_released("quest_menu"):
+			_scene_change_from_to(quest_menu)
+		if Input.is_action_just_released("save_menu"):
+			_scene_change_from_to(save_menu)
+		if Input.is_action_just_released("load_menu"):
+			_scene_change_from_to(load_save_menu)
+		if Input.is_action_just_released("map") or Input.is_action_just_released("escape"):
+			_scene_change_from_to(map)
 
 func initiate(load: SaveSlot = null):
 	Config.initiate(load)
@@ -48,7 +58,7 @@ func initiate(load: SaveSlot = null):
 	player_node = map_scene.player
 
 func _on_start_treatment_menu(npc: NPCBase):
-	_scene_change_from_to(patient_data_ui, 1)
+	_scene_change_from_to(patient_data_ui)
 
 	patient_data_ui.initiate(npc)
 	DialogueManagerGlobal.end_dialogue()
@@ -64,25 +74,16 @@ func _on_take_diagnostic():
 
 		combat.initiate(DialogueManagerGlobal.npc.illness.combat_entity)
 	else:
-		_is_camera_on_player = true
-		camera.zoom = Vector2(2, 2)
-
-		_scene_change_from_to(map, 2)
+		_scene_change_from_to(map)
 
 		DialogueManagerGlobal.npc.cured = true
 		Config.quest_checker(DialogueManagerGlobal.npc.illness)
 
 func _on_diagnostic_cancel():
-	_is_camera_on_player = true
-	camera.zoom = Vector2(2, 2)
-
-	_scene_change_from_to(map, 2)
+	_scene_change_from_to(map)
 
 func _on_game_over(winner: CombatEntity = null):
-	_is_camera_on_player = true
-	camera.zoom = Vector2(2, 2)
-
-	_scene_change_from_to(map, 2)
+	_scene_change_from_to(map)
 
 	if DialogueManagerGlobal.npc.illness.combat_entity != winner:
 		DialogueManagerGlobal.npc.cured = true
@@ -105,37 +106,31 @@ func _on_map_scene_change_defered(path: String, coord: Vector2):
 	new_map.map_scene_change.connect(_on_map_scene_change)
 	player_node = new_map.player
 
-func _on_quest_menu_activate():
-	if _what_window_open == map:
-		_scene_change_from_to(quest_menu)
-		quest_menu.initiate()
-	elif _what_window_open == quest_menu:
-		_scene_change_from_to(map)
-	elif _what_window_open == save_menu:
-		_scene_change_from_to(quest_menu)
-		quest_menu.initiate()
+func _on_option_made(simbol: String):
+	pass
 
-func _on_save_menu_activate():
-	if _what_window_open == map:
-		_scene_change_from_to(save_menu)
-		Config.local_map_coordinates = player_node.position
-		save_menu.initiate()
-	elif _what_window_open == save_menu:
-		_scene_change_from_to(map)
-	elif _what_window_open == quest_menu:
-		_scene_change_from_to(save_menu)
-		Config.local_map_coordinates = player_node.position
-		save_menu.initiate()
+func _scene_change_from_to(scene_to: Node):
+	if _what_window_open:
+		_what_window_open.visible = false
 
-func _scene_change_from_to(scene_to: Node, who_to_change_process: int = -1):
-	_what_window_open.visible = false
-	scene_to.visible = true
-
-	#TODO
-	#When out of map to not be able to move
-	if who_to_change_process == 1:
-		_what_window_open.set_process(not _what_window_open.is_processing())
-	elif who_to_change_process == 2:
-		scene_to.set_process(not scene_to.is_processing())
-
-	_what_window_open = scene_to
+	if _what_window_open == scene_to:
+		_what_window_open = map
+	else:
+		_what_window_open = scene_to
+	
+	_what_window_open.visible = true
+	
+	match _what_window_open:
+		map:
+			_is_camera_on_player = true
+			camera.zoom = Vector2(2, 2)
+			general_menu.visible = true
+		patient_data_ui:
+			general_menu.visible = false
+		save_menu:
+			Config.local_map_coordinates = player_node.position
+			save_menu.initiate()
+		quest_menu:
+			quest_menu.initiate()
+		load_save_menu:
+			load_save_menu.initiate()

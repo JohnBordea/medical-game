@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dic75xtxbmhke" path="res://scenes/UI/quest_menu/quest_panel/quest_item/quest_item.tscn" id="2_a68t0"]
 
 [node name="QuestPanel" type="MarginContainer"]
-custom_minimum_size = Vector2(822, 608)
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -12,16 +11,17 @@ theme_override_constants/margin_bottom = 10
 script = ExtResource("1_gvvlp")
 quest_item_instance = ExtResource("2_a68t0")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="QuestItemScrollContainer" type="ScrollContainer" parent="."]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(802, 588)
 layout_mode = 2
 
-[node name="Control" type="Control" parent="ScrollContainer"]
+[node name="Control" type="Control" parent="QuestItemScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="QuestItemConections" type="Node2D" parent="ScrollContainer/Control"]
+[node name="QuestItemConections" type="Node2D" parent="QuestItemScrollContainer/Control"]
 unique_name_in_owner = true
 
-[node name="QuestItemList" type="Node2D" parent="ScrollContainer/Control"]
+[node name="QuestItemList" type="Node2D" parent="QuestItemScrollContainer/Control"]
 unique_name_in_owner = true

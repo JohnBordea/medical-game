@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddke7nget66ec"]
+[gd_scene load_steps=4 format=3 uid="uid://ddke7nget66ec"]
 
 [ext_resource type="Script" path="res://scenes/patient_data/UI/diagnostic_main_panel/diagnostic_main_panel.gd" id="1_kuyot"]
 [ext_resource type="PackedScene" uid="uid://c0f1s1e5pf4yc" path="res://scenes/patient_data/UI/diagnostic_main_panel/diagnostic_taker/diagnostic_taker.tscn" id="2_ace2t"]
+[ext_resource type="PackedScene" uid="uid://chfkupnwy1kjf" path="res://scenes/patient_data/UI/test_main_panel/category_button/category_button.tscn" id="2_gpx18"]
 
 [node name="DiagnosticMainPanel" type="MarginContainer"]
 anchors_preset = 15
@@ -14,6 +15,7 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 script = ExtResource("1_kuyot")
+link_button_instance = ExtResource("2_gpx18")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
@@ -45,38 +47,18 @@ size_flags_vertical = 0
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="CategoryLinkContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(177, 0)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="CategoryLinkContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(177, 0)
 layout_mode = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/CategoryLinkContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/CategoryLinkContainer/ScrollContainer"]
-custom_minimum_size = Vector2(177, 0)
-layout_mode = 2
 theme_override_constants/separation = 10
-
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/CategoryLinkContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Data1"
-
-[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/CategoryLinkContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Data1"
-
-[node name="Button3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/CategoryLinkContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Data1"
-
-[node name="Button4" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/CategoryLinkContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Data1"
-
-[node name="Button5" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/CategoryLinkContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Data1"
 
 [node name="DiagnosticTaker" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("2_ace2t")]
 unique_name_in_owner = true
@@ -100,7 +82,7 @@ text = "Cancel"
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
-text = "Take test"
+text = "Take Diagnosis"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/Cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/TakeDiagnostic" to="." method="_on_take_diagnostic_pressed"]

@@ -5,18 +5,24 @@ signal end
 signal start_treatment_menu(npc: NPCBase)
 
 var npc: NPCBase
+var dialogue_ongoing: bool = false
 
-func start_dialogue(npc: NPC):
+func start_dialogue(npc: Entity):
 	if npc.dialogue != null:
-		self.npc = npc.data
+		if npc is NPC:
+			self.npc = npc.data
 		DialogueManager.show_example_dialogue_balloon(npc.dialogue, npc.dialogue_start)
 		emit_signal('start')
+		dialogue_ongoing = true
+		print("Dialogue Started")
 
 func start_treatment():
 	emit_signal('start_treatment_menu', npc)
 
 func end_dialogue():
 	emit_signal('end')
+	print("Dialogue Ended")
+	dialogue_ongoing = false
 
 signal test_taken(test: Test)
 var _test_taken_checker: Test = null

@@ -4,8 +4,12 @@ extends MarginContainer
 @onready var description = %Description
 @onready var progress_container = %ProgressContainer
 @onready var validator = %Validator
+@onready var quest_scroll_container = %QuestScrollContainer
 
 var quest: QuestBase
+
+func _ready():
+	quest_scroll_container.size = Vector2(260, 346)
 
 func initiate(quest_init: QuestBase):
 	quest = quest_init
@@ -41,3 +45,7 @@ func _on_validator_pressed():
 	if quest.solved:
 		validator.disabled = true
 		validator.text = "Solved"
+
+func _trim_top(height: int):
+	size = Vector2(size.x, size.y - height)
+	quest_scroll_container.size = Vector2(quest_scroll_container.size.x, quest_scroll_container.size.y - height)

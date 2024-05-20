@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/overworld/maps/base_map/map.gd" id="1_oipre"]
 [ext_resource type="PackedScene" uid="uid://76b6ppdrtu4v" path="res://scenes/overworld/player/player.tscn" id="2_7r3rj"]
-[ext_resource type="TileSet" uid="uid://bo4mdekuamqni" path="res://scenes/overworld/maps/assets/base.tres" id="2_yby8c"]
+[ext_resource type="TileSet" uid="uid://bo4mdekuamqni" path="res://scenes/overworld/maps/assets/tile_collisions.tres" id="2_yby8c"]
 [ext_resource type="PackedScene" uid="uid://ditmakevejder" path="res://scenes/overworld/maps/door/door.tscn" id="3_0ne55"]
 
 [node name="MapStart" type="Node2D"]

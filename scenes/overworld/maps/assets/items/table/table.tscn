@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bltvgf3g6wbwl"]
+
+[ext_resource type="Script" path="res://scenes/overworld/maps/assets/items/table/table.gd" id="1_5o4k5"]
+[ext_resource type="Texture2D" uid="uid://y4sbatxhg4tb" path="res://scenes/overworld/maps/assets/items/table/sprite_table.png" id="1_k0m8k"]
+[ext_resource type="Texture2D" uid="uid://boelvlcss3m7f" path="res://scenes/overworld/maps/assets/items/table/sprite_paper.png" id="3_vqsma"]
+[ext_resource type="Texture2D" uid="uid://ch5ddv12oei4l" path="res://scenes/overworld/maps/assets/items/table/sprite_vase.png" id="4_rqpu8"]
+
+[node name="Table" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_5o4k5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(48, -24)
+texture = ExtResource("1_k0m8k")
+
+[node name="TableAccesories" type="Node2D" parent="."]
+
+[node name="Paper" type="Sprite2D" parent="TableAccesories"]
+unique_name_in_owner = true
+position = Vector2(16, -36)
+texture = ExtResource("3_vqsma")
+
+[node name="Vase" type="Sprite2D" parent="TableAccesories"]
+unique_name_in_owner = true
+position = Vector2(84, -44)
+texture = ExtResource("4_rqpu8")

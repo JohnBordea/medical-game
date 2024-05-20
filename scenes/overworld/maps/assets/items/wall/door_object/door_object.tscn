@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://h2rgcc8k55xb"]
+
+[ext_resource type="Texture2D" uid="uid://cmxnc7cvd6jjw" path="res://scenes/overworld/maps/assets/items/wall/door_object/sprite_door.png" id="1_1jvag"]
+
+[node name="DoorObject" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(16, -36)
+texture = ExtResource("1_1jvag")

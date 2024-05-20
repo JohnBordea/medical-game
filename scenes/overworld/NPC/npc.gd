@@ -4,8 +4,6 @@ class_name NPC
 @onready var body = %Body
 @onready var hair = %Hair
 
-@export var dialogue: DialogueResource
-@export var dialogue_start: String = ""
 @export var data: NPCBase
 
 func initiate(new_data: NPCBase):

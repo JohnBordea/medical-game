@@ -5,8 +5,12 @@ signal quest_chosen(quest: QuestBase)
 @onready var quest_item_list = %QuestItemList
 @onready var quest_item_conections = %QuestItemConections
 @onready var control = %Control
+@onready var quest_item_scroll_container = %QuestItemScrollContainer
 
 @export var quest_item_instance: PackedScene
+
+func _ready():
+	quest_item_scroll_container.size = Vector2(802, 588)
 
 func initiate():
 	var control_x = 0
@@ -34,3 +38,10 @@ func initiate():
 
 func _on_quest_chosen(quest: QuestBase):
 	emit_signal("quest_chosen", quest)
+
+func _trim_top(height: int):
+	#size.y -= height
+	size = Vector2(size.x, size.y - height)
+	#quest_item_scroll_container.size.y -= height
+	quest_item_scroll_container.size = Vector2(quest_item_scroll_container.size.x, quest_item_scroll_container.size.y - height)
+	#quest_item_scroll_container._set_size(quest_item_scroll_container.size - Vector2(0, height))

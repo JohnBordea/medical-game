@@ -23,26 +23,18 @@ func _ready():
 	test_taker.create(categories)
 
 func _on_link_category_pressed(name: String):
-	print(name)
+	test_taker.move_to(name)
 
 func _load_categories():
-	categories = []
-	var paths = _get_all_files("res://resources/tests/categories/", ".tres")
+	#categories = []
+	categories.clear()
+	var paths = Config._get_all_files("res://resources/tests/categories/", ".tres")
 	for path in paths:
 		categories.append(ResourceLoader.load(path) as TestType)
-
-func _get_all_files(path: String, sufix: String):
-	var dir = DirAccess.open(path)
-	var paths = []
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if not dir.current_is_dir():
-				if file_name.ends_with(sufix):
-					paths.append(path + file_name)
-			file_name = dir.get_next()
-	return paths
+	categories.sort_custom(
+		func sorter(a: TestType, b: TestType):
+			return a.order < b.order
+	)
 
 func initiate():
 	test = null

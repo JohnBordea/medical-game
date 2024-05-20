@@ -1,12 +1,14 @@
 extends CharacterBody2D
 class_name Entity
 
-@onready var _animation_player = $AnimatedSprite2D
-
 @export var max_speed: int = 400
 @export var _player_state: String = "idle"
 @export var _player_state_direction: String = "down"
 
+@export var dialogue: DialogueResource
+@export var dialogue_start: String = ""
+
+var _animation_player
 var _direction: Vector2 = Vector2.ZERO
 
 func ajust_direction(direction: Vector2):

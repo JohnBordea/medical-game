@@ -8,3 +8,6 @@ func initiate():
 		if quest.solved:
 			quest_solved += 1
 	progress.text = "Quests solved: " + str(quest_solved) + "/" + str(Config.global_quests.size()) + ""
+
+func _trim_top(height: int):
+	size = Vector2(size.x, size.y - height)

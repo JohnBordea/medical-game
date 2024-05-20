@@ -18,3 +18,9 @@ func _on_quest_chosen(quest: QuestBase):
 	general_progress.visible = false
 	quest_progress.visible = true
 	quest_progress.initiate(quest)
+
+func _trim_top(height: int):
+	general_progress._trim_top(height)
+	quest_progress._trim_top(height)
+	quest_panel._trim_top(height)
+	size = Vector2(size.x, size.y - height)

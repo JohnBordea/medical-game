@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dx7k4ge64nfax"]
 
 [ext_resource type="Script" path="res://scenes/overworld/maps/map_002/map_002.gd" id="1_bdtvk"]
-[ext_resource type="TileSet" uid="uid://bo4mdekuamqni" path="res://scenes/overworld/maps/assets/base.tres" id="1_dew01"]
+[ext_resource type="TileSet" uid="uid://bo4mdekuamqni" path="res://scenes/overworld/maps/assets/tile_collisions.tres" id="1_dew01"]
 [ext_resource type="PackedScene" uid="uid://bvfhiih78wcpl" path="res://scenes/overworld/NPC/npc.tscn" id="2_b5s2w"]
 [ext_resource type="PackedScene" uid="uid://ditmakevejder" path="res://scenes/overworld/maps/door/door.tscn" id="2_rnftj"]
 [ext_resource type="PackedScene" uid="uid://76b6ppdrtu4v" path="res://scenes/overworld/player/player.tscn" id="3_854wq"]

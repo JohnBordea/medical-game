@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://i74ew53yexom"]
+
+[ext_resource type="Texture2D" uid="uid://uniywg88tsuj" path="res://scenes/overworld/maps/assets/items/bed/sprite_bed_back.png" id="1_271ie"]
+[ext_resource type="Texture2D" uid="uid://dy1yh3ahml5pu" path="res://scenes/overworld/maps/assets/items/bed/sprite_bed_front.png" id="2_cmdwx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mt3u"]
+size = Vector2(32, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l1sq"]
+size = Vector2(32, 26)
+
+[node name="Bed" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Front" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(16, -49)
+
+[node name="Sprite" type="Sprite2D" parent="Front"]
+y_sort_enabled = true
+position = Vector2(0, -8)
+texture = ExtResource("1_271ie")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_3mt3u")
+
+[node name="Back" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(16, -24)
+
+[node name="Sprite" type="Sprite2D" parent="Back"]
+position = Vector2(0, -8)
+texture = ExtResource("2_cmdwx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back"]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_1l1sq")

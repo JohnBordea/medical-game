@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8nrn61kjiiy2"]
+
+[ext_resource type="Script" path="res://scenes/overworld/doctor/doctor.gd" id="1_muae7"]
+[ext_resource type="Resource" uid="uid://doikm7ajpys4m" path="res://resources/dialogues/doctor/_001.dialogue" id="2_ry358"]
+[ext_resource type="SpriteFrames" uid="uid://bo1d4h62k4dp8" path="res://scenes/overworld/entity/assets/resources/regular_person_male.tres" id="2_vwgpp"]
+[ext_resource type="Texture2D" uid="uid://c6l7sfv8kpn0g" path="res://resources/npc_data/sprites/body/sprite_adult_male.png" id="4_g5e17"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tj35j"]
+radius = 9.0
+
+[node name="Doctor" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_layer = 3
+script = ExtResource("1_muae7")
+dialogue = ExtResource("2_ry358")
+dialogue_start = "start"
+
+[node name="Sprites" type="Node2D" parent="."]
+position = Vector2(0, -16)
+
+[node name="Animation" type="AnimatedSprite2D" parent="Sprites"]
+unique_name_in_owner = true
+visible = false
+sprite_frames = ExtResource("2_vwgpp")
+animation = &"idle_down"
+
+[node name="Body" type="Sprite2D" parent="Sprites"]
+unique_name_in_owner = true
+
+[node name="Hair" type="Sprite2D" parent="Sprites"]
+unique_name_in_owner = true
+texture = ExtResource("4_g5e17")
+
+[node name="WallCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_tj35j")

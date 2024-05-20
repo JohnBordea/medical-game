@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckjvaqvnx5a6w"]
+
+[ext_resource type="Texture2D" uid="uid://y4sbatxhg4tb" path="res://scenes/overworld/maps/assets/items/table/sprite_table.png" id="1_wn86n"]
+
+[node name="ItemBase" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(48, -24)
+texture = ExtResource("1_wn86n")

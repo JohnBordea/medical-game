@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bo4mdekuamqni"]
 
-[ext_resource type="Texture2D" uid="uid://fkhgwbx45hnt" path="res://scenes/overworld/maps/assets/tilemap.png" id="1_ujls4"]
+[ext_resource type="Texture2D" uid="uid://fkhgwbx45hnt" path="res://scenes/overworld/maps/assets/tilemap.png" id="1_mo55c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cegqw"]
-texture = ExtResource("1_ujls4")
+texture = ExtResource("1_mo55c")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)

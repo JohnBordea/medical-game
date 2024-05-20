@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DiagnosticType" load_steps=6 format=3 uid="uid://u2dx16ldh82x"]
+
+[ext_resource type="Script" path="res://resources/diagnostics/diagnostic_type.gd" id="1_dtuau"]
+[ext_resource type="Resource" uid="uid://dnexgqpiat87m" path="res://resources/illnesses/data/recurgitare/mitrala/recurgitare_mitrala_usoara.tres" id="2_nggm0"]
+[ext_resource type="Resource" uid="uid://bk7at8uqahmss" path="res://resources/illnesses/data/recurgitare/mitrala/recurgitare_mitrala_cronica_moderata.tres" id="3_jsl4l"]
+[ext_resource type="Resource" uid="uid://cqdtj5rsyl24p" path="res://resources/illnesses/data/recurgitare/mitrala/recurgitare_mitrala_cronica_severa.tres" id="4_r1jlr"]
+[ext_resource type="Resource" uid="uid://cb15g66ix4r8b" path="res://resources/illnesses/data/recurgitare/mitrala/recurgitare_mitrala_acuta.tres" id="5_nhqy1"]
+
+[resource]
+script = ExtResource("1_dtuau")
+name = "Recurgitare Mitrala"
+tests = Array[Resource("res://resources/illnesses/illness_base.gd")]([ExtResource("2_nggm0"), ExtResource("3_jsl4l"), ExtResource("4_r1jlr"), ExtResource("5_nhqy1")])
+order = 0

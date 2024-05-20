@@ -10,3 +10,4 @@
 script = ExtResource("1_he1m8")
 name = "Physical Exam"
 tests = Array[Resource("res://resources/tests/test.gd")]([ExtResource("2_xpd8a"), ExtResource("3_q6gg5"), ExtResource("4_rjamy"), ExtResource("5_0jg0f")])
+order = 1
