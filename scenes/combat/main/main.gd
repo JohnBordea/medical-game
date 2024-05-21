@@ -28,9 +28,9 @@ func initiate(enemy: CombatEntity):
 	CombatBase.set_player_list(list)
 	CombatBase.play_game()
 
-func _on_playable_turn(player: CombatEntity):
+func _on_playable_turn(player: CombatEntity, enemy: CombatEntity):
 	attack_manu.visible = true
-	attack_manu.initiate(player)
+	attack_manu.initiate(player, enemy)
 
 func _on_playable_move(player: CombatEntity, skill: SkillBase):
 	attack_manu.visible = false

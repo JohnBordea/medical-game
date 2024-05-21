@@ -9,3 +9,4 @@
 script = ExtResource("1_oqboe")
 name = "Stenoza Aortica"
 tests = Array[Resource("res://resources/illnesses/illness_base.gd")]([ExtResource("2_adkt3"), ExtResource("3_plfe6"), ExtResource("4_jy0i8")])
+order = 0

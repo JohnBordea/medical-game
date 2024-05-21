@@ -20,11 +20,13 @@ func _ready():
 	DialogueManagerGlobal.start_treatment_menu.connect(_on_start_treatment_menu)
 	patient_data_ui.take_diagnostic.connect(_on_take_diagnostic)
 	patient_data_ui.cancel.connect(_on_diagnostic_cancel)
-	CombatBase.game_over.connect(_on_game_over)
 	general_menu.option_made.connect(_on_option_made)
+	load_save_menu.back.connect(_on_menu_cancel)
+	load_save_menu.load_save.connect(_on_load_save)
+	CombatBase.game_over.connect(_on_game_over)
 	_scene_change_from_to(map)
 	_is_menu_accesible = true
-	#quest_menu._trim_top(110)
+	general_menu.visible = true
 
 func _process(delta):
 	if _is_camera_on_player:
@@ -62,6 +64,12 @@ func _on_start_treatment_menu(npc: NPCBase):
 
 	patient_data_ui.initiate(npc)
 	DialogueManagerGlobal.end_dialogue()
+
+func _on_menu_cancel():
+	_scene_change_from_to(map)
+
+func _on_load_save(data: SaveSlot):
+	MapChanger.switch_map_scene("res://scenes/UI/game/game.tscn", data)
 
 func _on_take_diagnostic():
 	if DialogueManagerGlobal.npc.illness.combat_entity != null:
@@ -107,7 +115,15 @@ func _on_map_scene_change_defered(path: String, coord: Vector2):
 	player_node = new_map.player
 
 func _on_option_made(simbol: String):
-	pass
+	match simbol:
+		"K":
+			_scene_change_from_to(save_menu)
+		"L":
+			_scene_change_from_to(load_save_menu)
+		"J":
+			_scene_change_from_to(quest_menu)
+		"M":
+			_scene_change_from_to(map)
 
 func _scene_change_from_to(scene_to: Node):
 	if _what_window_open:
@@ -124,13 +140,18 @@ func _scene_change_from_to(scene_to: Node):
 		map:
 			_is_camera_on_player = true
 			camera.zoom = Vector2(2, 2)
+			_is_menu_accesible = true
 			general_menu.visible = true
 		patient_data_ui:
+			_is_menu_accesible = false
 			general_menu.visible = false
 		save_menu:
 			Config.local_map_coordinates = player_node.position
 			save_menu.initiate()
+			general_menu.visible = false
 		quest_menu:
 			quest_menu.initiate()
+			general_menu.visible = false
 		load_save_menu:
 			load_save_menu.initiate()
+			general_menu.visible = false

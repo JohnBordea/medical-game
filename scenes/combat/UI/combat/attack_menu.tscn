@@ -1,33 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://c678t7osnbbwl"]
+[gd_scene load_steps=6 format=3 uid="uid://c678t7osnbbwl"]
 
 [ext_resource type="Script" path="res://scenes/combat/UI/combat/attack_menu.gd" id="1_ukrw3"]
-[ext_resource type="PackedScene" uid="uid://57ourbjpaw4s" path="res://scenes/combat/UI/combat/skill_button/skill_button.tscn" id="2_clu2c"]
+[ext_resource type="PackedScene" uid="uid://b7eqcpgmnjqf1" path="res://scenes/combat/UI/combat/analyze_menu/analyze_menu.tscn" id="3_42pco"]
+[ext_resource type="PackedScene" uid="uid://iti10p1w612k" path="res://scenes/combat/UI/combat/main_menu/main_menu.tscn" id="4_71duf"]
+[ext_resource type="PackedScene" uid="uid://cy8c8ibhcfldp" path="res://scenes/combat/UI/combat/skill_type_menu/skill_type_menu.tscn" id="5_buv0u"]
+[ext_resource type="PackedScene" uid="uid://0srpblmh18xc" path="res://scenes/combat/UI/combat/attack_skill_menu/attack_skill_menu.tscn" id="6_0lnbg"]
 
 [node name="AttackMenu" type="CanvasLayer"]
 script = ExtResource("1_ukrw3")
-skill_button = ExtResource("2_clu2c")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(500, 200)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -250.0
-offset_top = -40.0
-offset_right = 250.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 40
-
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="SkillContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+[node name="MainMenu" parent="." instance=ExtResource("4_71duf")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(460, 140)
-layout_mode = 2
+visible = false
+
+[node name="AnalyzeMenu" parent="." instance=ExtResource("3_42pco")]
+unique_name_in_owner = true
+visible = false
+
+[node name="SkillTypeMenu" parent="." instance=ExtResource("5_buv0u")]
+unique_name_in_owner = true
+visible = false
+
+[node name="AttackSkillMenu" parent="." instance=ExtResource("6_0lnbg")]
+unique_name_in_owner = true
+visible = false

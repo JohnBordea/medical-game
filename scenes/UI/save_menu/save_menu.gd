@@ -19,6 +19,7 @@ func _create_save_slot(save: SaveSlot):
 	save_container.add_child(save_slot)
 	save_slot.initiate(save)
 	save_slot.chosen.connect(_on_save_slot_pressed)
+	save_slot.delete.connect(_on_save_slot_delete)
 
 func _on_save_slot_pressed(data: SaveSlot):
 	save_text_edit.text = data.name
@@ -32,7 +33,6 @@ func _on_save_pressed():
 	local_save.date = Time.get_datetime_string_from_system()
 	local_save.map_path = Config.local_map_path
 	local_save.player_coord = Config.local_map_coordinates
-	print(Config.local_map_coordinates)
 	Config.add_new_save_slot(local_save)
 	initiate()
 
@@ -46,3 +46,7 @@ func _sort_saves():
 		save_container.remove_child(node)
 	for node in sorted_nodes:
 		save_container.add_child(node)
+
+func _on_save_slot_delete(data: SaveSlot):
+	Config.delete_save_slot(data)
+	initiate()

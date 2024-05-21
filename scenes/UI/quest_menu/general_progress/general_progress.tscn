@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scenes/UI/quest_menu/general_progress/general_progress.gd" id="1_y215y"]
 
 [node name="GeneralProgress" type="MarginContainer"]
+custom_minimum_size = Vector2(280, 0)
 offset_right = 280.0
 offset_bottom = 608.0
 theme_override_constants/margin_left = 10

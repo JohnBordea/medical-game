@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DiagnosticType" load_steps=13 format=3 uid="uid://ch2qqu5dogvc3"]
+
+[ext_resource type="Script" path="res://resources/diagnostics/diagnostic_type.gd" id="1_ooond"]
+[ext_resource type="Resource" uid="uid://w687bsh80w2" path="res://resources/illnesses/mild_mifral_stenosis.tres" id="2_a4qve"]
+[ext_resource type="Resource" uid="uid://d0225ticdutmn" path="res://resources/illnesses/data/stenoza/aortica/stenoza_aortica_moderata.tres" id="3_duxav"]
+[ext_resource type="Resource" uid="uid://cvvf2gxmxwg3x" path="res://resources/illnesses/data/stenoza/aortica/stenoza_aortica_severa.tres" id="4_130p5"]
+[ext_resource type="Resource" uid="uid://bvte5a2n83cpa" path="res://resources/illnesses/data/stenoza/aortica/stenoza_aortica_usoara.tres" id="5_4u5n3"]
+[ext_resource type="Resource" uid="uid://cb15g66ix4r8b" path="res://resources/illnesses/data/recurgitare/mitrala/recurgitare_mitrala_acuta.tres" id="6_xoyas"]
+[ext_resource type="Resource" uid="uid://bk7at8uqahmss" path="res://resources/illnesses/data/recurgitare/mitrala/recurgitare_mitrala_cronica_moderata.tres" id="7_k26l8"]
+[ext_resource type="Resource" uid="uid://cqdtj5rsyl24p" path="res://resources/illnesses/data/recurgitare/mitrala/recurgitare_mitrala_cronica_severa.tres" id="8_fdw20"]
+[ext_resource type="Resource" uid="uid://dnexgqpiat87m" path="res://resources/illnesses/data/recurgitare/mitrala/recurgitare_mitrala_usoara.tres" id="9_mj2r3"]
+[ext_resource type="Resource" uid="uid://csaecv8vw7bnr" path="res://resources/illnesses/data/recurgitare/aortica/regurgitare_aortica_moderate.tres" id="10_0stlw"]
+[ext_resource type="Resource" uid="uid://defx1btus7jiu" path="res://resources/illnesses/data/recurgitare/aortica/regurgitare_aortica_severa.tres" id="11_1bknu"]
+[ext_resource type="Resource" uid="uid://c6hu3gg3g7cv0" path="res://resources/illnesses/data/recurgitare/aortica/regurgitare_aortica_usoara.tres" id="12_tedwg"]
+
+[resource]
+script = ExtResource("1_ooond")
+name = "All"
+tests = Array[Resource("res://resources/illnesses/illness_base.gd")]([ExtResource("2_a4qve"), ExtResource("3_duxav"), ExtResource("4_130p5"), ExtResource("5_4u5n3"), ExtResource("6_xoyas"), ExtResource("7_k26l8"), ExtResource("8_fdw20"), ExtResource("9_mj2r3"), ExtResource("10_0stlw"), ExtResource("11_1bknu"), ExtResource("12_tedwg")])
+order = 0

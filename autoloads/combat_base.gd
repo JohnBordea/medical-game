@@ -1,6 +1,6 @@
 extends Node
 
-signal playable_turn(player: CombatEntity)
+signal playable_turn(player: CombatEntity, enemy: CombatEntity)
 signal game_over(winner: CombatEntity)
 
 var player_list: Array[EntityCombatVisual]
@@ -25,7 +25,7 @@ func play_turn():
 	player = player_queue.pop_front()
 	target = _get_target(player)
 	if player.data.is_player:
-		emit_signal("playable_turn", player.data)
+		emit_signal("playable_turn", player.data, target.data)
 	else:
 		player_execute_move(player.data, player.data.strategy())
 

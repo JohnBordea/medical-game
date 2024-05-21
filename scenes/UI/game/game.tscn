@@ -49,4 +49,3 @@ visible = false
 
 [node name="GeneralMenu" parent="." instance=ExtResource("8_ly425")]
 unique_name_in_owner = true
-visible = false

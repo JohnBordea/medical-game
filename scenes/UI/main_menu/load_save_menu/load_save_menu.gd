@@ -28,11 +28,16 @@ func _create_load_slot(save):
 	load_container.add_child(load_slot)
 	load_slot.initiate(save)
 	load_slot.chosen.connect(_on_load_slot_pressed)
+	load_slot.delete.connect(_on_load_slot_delete)
 
 func _on_load_slot_pressed(data: SaveSlot):
 	load_file = data
 	load.disabled = false
 	load_chosen_data.text = data.name
+
+func _on_load_slot_delete(data: SaveSlot):
+	Config.delete_save_slot(data)
+	initiate()
 
 func _sort_saves():
 	var sorted_nodes = load_container.get_children()

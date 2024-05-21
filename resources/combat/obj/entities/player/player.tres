@@ -1,25 +1,25 @@
-[gd_resource type="Resource" script_class="CombatEntity" load_steps=8 format=3 uid="uid://iwr1c4fn5ed7"]
+[gd_resource type="Resource" script_class="CombatEntity" load_steps=7 format=3 uid="uid://iwr1c4fn5ed7"]
 
 [ext_resource type="Script" path="res://resources/combat/scripts/combat_entity.gd" id="1_yl6wn"]
-[ext_resource type="Resource" uid="uid://btnu75720cxsy" path="res://resources/combat/obj/skills/simple_attack.tres" id="2_tpckw"]
-[ext_resource type="Resource" uid="uid://7qt4h4tgf2pt" path="res://resources/combat/obj/entities/player/skills/abixaban.tres" id="3_0xnj2"]
+[ext_resource type="Resource" uid="uid://cb2lkffta6fql" path="res://resources/combat/obj/entities/player/skills/deansa.tres" id="2_rhom2"]
 [ext_resource type="Script" path="res://resources/combat/scripts/stats.gd" id="3_s38yk"]
-[ext_resource type="Resource" uid="uid://cb2lkffta6fql" path="res://resources/combat/obj/entities/player/skills/deansa.tres" id="4_lpfn5"]
-[ext_resource type="Resource" uid="uid://dfvfb0j8g8tmu" path="res://resources/combat/obj/entities/player/skills/labetalol.tres" id="5_kjc8y"]
+[ext_resource type="Resource" uid="uid://7qt4h4tgf2pt" path="res://resources/combat/obj/entities/player/skills/abixaban.tres" id="3_v3s0w"]
+[ext_resource type="Resource" uid="uid://dfvfb0j8g8tmu" path="res://resources/combat/obj/entities/player/skills/labetalol.tres" id="4_e1krc"]
 
-[sub_resource type="Resource" id="Resource_76vey"]
+[sub_resource type="Resource" id="Resource_nijs2"]
 script = ExtResource("3_s38yk")
 strength = 10
 constitution = 10
 intelligence = 10
-agility = 5
+agility = 10
 luck = 10
 
 [resource]
 script = ExtResource("1_yl6wn")
 name = "Player"
-sprite = "res://resources/combat/obj/entities/player/player.png"
+sprite = null
+description = "This is you"
 is_player = true
 ally = false
-stats = SubResource("Resource_76vey")
-skills = Array[Resource("res://resources/combat/scripts/misc/skill.gd")]([ExtResource("2_tpckw"), ExtResource("3_0xnj2"), ExtResource("4_lpfn5"), ExtResource("5_kjc8y")])
+stats = SubResource("Resource_nijs2")
+skills = Array[Resource("res://resources/combat/scripts/misc/skill.gd")]([ExtResource("2_rhom2"), ExtResource("3_v3s0w"), ExtResource("4_e1krc")])

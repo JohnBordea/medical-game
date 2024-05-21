@@ -3,6 +3,7 @@ class_name CombatEntity
 
 @export var name: String
 @export_global_file("*.png") var sprite
+@export var description: String
 @export var is_player: bool
 @export var ally: bool
 

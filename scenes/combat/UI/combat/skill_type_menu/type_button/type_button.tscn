@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://byooevua160qb"]
+
+[ext_resource type="Script" path="res://scenes/combat/UI/combat/skill_type_menu/type_button/type_button.gd" id="1_oi0ns"]
+
+[node name="TypeButton" type="Button"]
+script = ExtResource("1_oi0ns")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

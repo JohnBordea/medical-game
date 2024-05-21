@@ -7,3 +7,4 @@
 script = ExtResource("1_vgvyg")
 name = "Stenoza"
 tests = Array[Resource("res://resources/illnesses/illness_base.gd")]([ExtResource("2_um4rq")])
+order = 1

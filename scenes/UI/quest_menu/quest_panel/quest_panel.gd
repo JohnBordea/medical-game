@@ -40,8 +40,5 @@ func _on_quest_chosen(quest: QuestBase):
 	emit_signal("quest_chosen", quest)
 
 func _trim_top(height: int):
-	#size.y -= height
 	size = Vector2(size.x, size.y - height)
-	#quest_item_scroll_container.size.y -= height
 	quest_item_scroll_container.size = Vector2(quest_item_scroll_container.size.x, quest_item_scroll_container.size.y - height)
-	#quest_item_scroll_container._set_size(quest_item_scroll_container.size - Vector2(0, height))

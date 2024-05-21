@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="SkillType" load_steps=2 format=3 uid="uid://d1eomjv67o04i"]
-
-[ext_resource type="Script" path="res://resources/combat/scripts/misc/skill_type.gd" id="1_u8ete"]
-
-[resource]
-script = ExtResource("1_u8ete")
-name = "Buff"
-sprite = "res://resources/combat/entities/skills/misc/skill_type_buff.png"

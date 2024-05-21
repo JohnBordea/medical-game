@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj47fb36wqori"]
+
+[ext_resource type="Script" path="res://scenes/UI/quest_menu/quest_progress/quest_scroll_container/quest_scroll_container.gd" id="1_1x8fo"]
+
+[node name="QuestScrollContainer" type="ScrollContainer"]
+custom_minimum_size = Vector2(260, 0)
+offset_right = 260.0
+offset_bottom = 346.0
+size_flags_vertical = 3
+script = ExtResource("1_1x8fo")
+
+[node name="ProgressContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 3

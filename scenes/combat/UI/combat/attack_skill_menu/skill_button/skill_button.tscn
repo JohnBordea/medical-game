@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://57ourbjpaw4s"]
 
-[ext_resource type="Script" path="res://scenes/combat/UI/combat/skill_button/skill_button.gd" id="1_rfgsb"]
+[ext_resource type="Script" path="res://scenes/combat/UI/combat/attack_skill_menu/skill_button/skill_button.gd" id="1_olt0k"]
 
 [node name="Button" type="Button"]
 text = "Base"
-script = ExtResource("1_rfgsb")
+script = ExtResource("1_olt0k")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
