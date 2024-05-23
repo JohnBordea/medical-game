@@ -14,14 +14,12 @@ func start_dialogue(npc: Entity):
 		DialogueManager.show_example_dialogue_balloon(npc.dialogue, npc.dialogue_start)
 		emit_signal('start')
 		dialogue_ongoing = true
-		print("Dialogue Started")
 
 func start_treatment():
 	emit_signal('start_treatment_menu', npc)
 
 func end_dialogue():
 	emit_signal('end')
-	print("Dialogue Ended")
 	dialogue_ongoing = false
 
 signal test_taken(test: Test)

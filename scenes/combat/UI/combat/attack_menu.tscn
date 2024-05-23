@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c678t7osnbbwl"]
+[gd_scene load_steps=7 format=3 uid="uid://c678t7osnbbwl"]
 
 [ext_resource type="Script" path="res://scenes/combat/UI/combat/attack_menu.gd" id="1_ukrw3"]
 [ext_resource type="PackedScene" uid="uid://b7eqcpgmnjqf1" path="res://scenes/combat/UI/combat/analyze_menu/analyze_menu.tscn" id="3_42pco"]
 [ext_resource type="PackedScene" uid="uid://iti10p1w612k" path="res://scenes/combat/UI/combat/main_menu/main_menu.tscn" id="4_71duf"]
 [ext_resource type="PackedScene" uid="uid://cy8c8ibhcfldp" path="res://scenes/combat/UI/combat/skill_type_menu/skill_type_menu.tscn" id="5_buv0u"]
 [ext_resource type="PackedScene" uid="uid://0srpblmh18xc" path="res://scenes/combat/UI/combat/attack_skill_menu/attack_skill_menu.tscn" id="6_0lnbg"]
+[ext_resource type="PackedScene" uid="uid://biu35en4wowe" path="res://scenes/combat/UI/combat/log_menu/log_menu.tscn" id="6_7m47w"]
 
 [node name="AttackMenu" type="CanvasLayer"]
 script = ExtResource("1_ukrw3")
@@ -22,5 +23,9 @@ unique_name_in_owner = true
 visible = false
 
 [node name="AttackSkillMenu" parent="." instance=ExtResource("6_0lnbg")]
+unique_name_in_owner = true
+visible = false
+
+[node name="LogMenu" parent="." instance=ExtResource("6_7m47w")]
 unique_name_in_owner = true
 visible = false

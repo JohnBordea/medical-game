@@ -9,6 +9,8 @@ var active_cooldown: int = 0
 
 @export var priority_factor: int = 0
 
+@export var log_text: String = "used skill"
+
 func activate_cooldown():
 	active_cooldown = cooldown + 1
 

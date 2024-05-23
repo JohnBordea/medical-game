@@ -17,7 +17,7 @@ luck = 10
 [resource]
 script = ExtResource("1_yl6wn")
 name = "Player"
-sprite = null
+sprite = "res://resources/combat/obj/entities/player/player.png"
 description = "This is you"
 is_player = true
 ally = false

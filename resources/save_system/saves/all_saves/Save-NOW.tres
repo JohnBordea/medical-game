@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SaveSlot" load_steps=18 format=3]
+[gd_resource type="Resource" script_class="SaveSlot" load_steps=17 format=3]
 
 [ext_resource type="Resource" path="res://resources/dialogues/NPC.dialogue" id="1_ova72"]
 [ext_resource type="Resource" path="res://resources/illnesses/mild_mifral_stenosis.tres" id="2_10etp"]
@@ -9,15 +9,14 @@
 [ext_resource type="Script" path="res://resources/save_system/save_slot.gd" id="4_h1aes"]
 [ext_resource type="Script" path="res://resources/save_system/npc_location.gd" id="4_tkxn5"]
 [ext_resource type="Script" path="res://resources/save_system/map_positioning.gd" id="6_ggav2"]
-[ext_resource type="Resource" path="res://resources/tests/investigations/ekg.tres" id="6_h40lo"]
 
-[sub_resource type="Resource" id="Resource_a6fe8"]
+[sub_resource type="Resource" id="Resource_pgbhi"]
 script = ExtResource("3_efi1u")
-sprite_body = "res://resources/npc_data/sprites/body/sprite_adult_female.png"
+sprite_body = "res://resources/npc_data/sprites/body/sprite_adult_male.png"
 sprite_hair = "res://resources/npc_data/sprites/hair/adult/sprite_hair_00.png"
 name = "Default Case"
-gender = "Female"
-age = 21
+gender = "Male"
+age = 28
 illness = ExtResource("2_10etp")
 cured = false
 dialogue = ExtResource("1_ova72")
@@ -26,18 +25,18 @@ dialogue_start = "content"
 [sub_resource type="Resource" id="Resource_ro585"]
 script = ExtResource("4_tkxn5")
 position = Vector2(480, 88)
-npc = SubResource("Resource_a6fe8")
+npc = SubResource("Resource_pgbhi")
 tests_taken = Array[Resource("res://resources/tests/test.gd")]([])
 tests_taken_results = Array[String]([])
 diagnostic_made = false
 
-[sub_resource type="Resource" id="Resource_uss5d"]
+[sub_resource type="Resource" id="Resource_wbbtw"]
 script = ExtResource("3_efi1u")
-sprite_body = "res://resources/npc_data/sprites/body/sprite_old_female.png"
+sprite_body = "res://resources/npc_data/sprites/body/sprite_old_male.png"
 sprite_hair = "res://resources/npc_data/sprites/hair/adult/sprite_hair_00.png"
 name = "Default Case"
-gender = "Female"
-age = 77
+gender = "Male"
+age = 70
 illness = ExtResource("2_tqrbt")
 cured = false
 dialogue = ExtResource("1_ova72")
@@ -46,18 +45,18 @@ dialogue_start = "content"
 [sub_resource type="Resource" id="Resource_gafvs"]
 script = ExtResource("4_tkxn5")
 position = Vector2(72, 88)
-npc = SubResource("Resource_uss5d")
+npc = SubResource("Resource_wbbtw")
 tests_taken = Array[Resource("res://resources/tests/test.gd")]([])
 tests_taken_results = Array[String]([])
 diagnostic_made = false
 
-[sub_resource type="Resource" id="Resource_o2cvc"]
+[sub_resource type="Resource" id="Resource_eg4ry"]
 script = ExtResource("3_efi1u")
-sprite_body = "res://resources/npc_data/sprites/body/sprite_old_female.png"
+sprite_body = "res://resources/npc_data/sprites/body/sprite_adult_male.png"
 sprite_hair = "res://resources/npc_data/sprites/hair/adult/sprite_hair_00.png"
 name = "Default Case"
-gender = "Female"
-age = 65
+gender = "Male"
+age = 25
 illness = ExtResource("2_10etp")
 cured = false
 dialogue = ExtResource("1_ova72")
@@ -66,10 +65,10 @@ dialogue_start = "content"
 [sub_resource type="Resource" id="Resource_tktdq"]
 script = ExtResource("4_tkxn5")
 position = Vector2(264, 88)
-npc = SubResource("Resource_o2cvc")
-tests_taken = Array[Resource("res://resources/tests/test.gd")]([ExtResource("6_h40lo")])
-tests_taken_results = Array[String](["Nothing Unusual"])
-diagnostic_made = true
+npc = SubResource("Resource_eg4ry")
+tests_taken = Array[Resource("res://resources/tests/test.gd")]([])
+tests_taken_results = Array[String]([])
+diagnostic_made = false
 
 [sub_resource type="Resource" id="Resource_45dgh"]
 script = ExtResource("6_ggav2")
@@ -80,9 +79,9 @@ posible_illneses = Array[Resource("res://resources/illnesses/illness_base.gd")](
 [resource]
 script = ExtResource("4_h1aes")
 name = "Save-NOW"
-date = "2024-05-21T19:46:16"
+date = "2024-05-22T12:42:37"
 map_path = "res://scenes/overworld/maps/map_001/map_001.tscn"
-player_coord = Vector2(272, 120)
+player_coord = Vector2(390.382, 148.954)
 quest_list = Array[Resource("res://resources/quest_system/classes/quest_base.gd")]([ExtResource("2_oncvp"), ExtResource("3_vscri")])
 maps_positioning = Array[ExtResource("6_ggav2")]([SubResource("Resource_45dgh")])
 to_be_deleted = false

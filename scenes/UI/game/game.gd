@@ -80,7 +80,8 @@ func _on_take_diagnostic():
 		patient_data_ui.visible = false
 		combat.visible = true
 
-		combat.initiate(DialogueManagerGlobal.npc.illness.combat_entity)
+		#combat.initiate(DialogueManagerGlobal.npc.illness.combat_entity)
+		combat.initiate(DialogueManagerGlobal.npc.illness)
 	else:
 		_scene_change_from_to(map)
 

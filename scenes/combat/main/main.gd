@@ -6,31 +6,30 @@ extends Node2D
 @onready var player = $Players/Player
 @onready var enemy = $Players/Enemy
 
-var menu_user: CombatEntity
+var enemy_data: IllnessBase
 
-func initiate(enemy: CombatEntity):
+func initiate(enemy: IllnessBase):
 	var list: Array[EntityCombatVisual] = []
 	
 	list.append(player)
 	player.initiate()
 	
-	self.enemy.data = enemy
+	enemy_data = enemy
+	self.enemy.data = enemy.combat_entity
 	list.append(self.enemy)
 	self.enemy.initiate()
 	
 	CombatBase.playable_turn.connect(_on_playable_turn)
 	attack_manu.skill_chosen.connect(_on_playable_move)
 	
-	#for entity in players_list.get_children():
-	#	entity.initiate()
-	#	list.append(entity)
+	attack_manu.clear_logger()
 	
-	CombatBase.set_player_list(list)
+	CombatBase.set_player_list(list, enemy)
 	CombatBase.play_game()
 
 func _on_playable_turn(player: CombatEntity, enemy: CombatEntity):
 	attack_manu.visible = true
-	attack_manu.initiate(player, enemy)
+	attack_manu.initiate(player, enemy, enemy_data)
 
 func _on_playable_move(player: CombatEntity, skill: SkillBase):
 	attack_manu.visible = false

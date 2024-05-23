@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2tkl5xx16e7l"]
+[gd_scene load_steps=10 format=3 uid="uid://d2tkl5xx16e7l"]
 
 [ext_resource type="Script" path="res://scenes/combat/entities/base_entity.gd" id="1_fpitx"]
 [ext_resource type="PackedScene" uid="uid://bxb17bv3fohd2" path="res://scenes/combat/entities/health/hp_bar.tscn" id="2_40eqa"]
+[ext_resource type="Texture2D" uid="uid://dq7bie7h14idd" path="res://resources/combat/obj/entities/stenosis/heart.png" id="2_r7tah"]
 [ext_resource type="PackedScene" uid="uid://cfp66oj1otkuc" path="res://scenes/combat/entities/buff_visualizer/buff_visualizer.tscn" id="3_5if2w"]
 
 [sub_resource type="Animation" id="Animation_d6cwl"]
@@ -181,6 +182,9 @@ _data = {
 script = ExtResource("1_fpitx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(3, 3)
+texture = ExtResource("2_r7tah")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -229,11 +233,6 @@ visible = false
 color = Color(0.768627, 0.239216, 0, 0.301961)
 polygon = PackedVector2Array(-24, 0, -32, -40, -24, -56, 24, -56, 32, -40, 24, 0, 16, 8, 0, 16, -16, 8)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_e7w5i")
-}
-
 [node name="EntityName" type="Label" parent="."]
 unique_name_in_owner = true
 offset_left = -64.0
@@ -241,3 +240,8 @@ offset_top = -128.0
 offset_right = 64.0
 offset_bottom = -105.0
 horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e7w5i")
+}

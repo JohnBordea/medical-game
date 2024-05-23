@@ -31,8 +31,6 @@ func _load_categories():
 	for path in paths:
 		var item = ResourceLoader.load(path) as DiagnosticType
 		categories.append(item)
-		print(item)
-		print(path)
 	categories.sort_custom(
 		func sorter(a: DiagnosticType, b: DiagnosticType):
 			return a.order < b.order

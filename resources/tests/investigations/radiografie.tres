@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_4ayxd")
-image = "res://resources/tests/default_icon.png"
+image = "res://resources/tests/icons/sprite_test_radio.png"
 name = "Radiografie"
 description = ""
 default_diagnostic = "Nothing Unusual"

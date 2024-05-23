@@ -1,0 +1,90 @@
+[gd_resource type="Resource" script_class="SaveSlot" load_steps=19 format=3]
+
+[ext_resource type="Resource" path="res://resources/dialogues/NPC.dialogue" id="1_3uye0"]
+[ext_resource type="Resource" path="res://resources/illnesses/mild_mifral_stenosis.tres" id="2_iy5qh"]
+[ext_resource type="Script" path="res://resources/npc_data/npc.gd" id="3_nbo2g"]
+[ext_resource type="Script" path="res://resources/save_system/npc_location.gd" id="4_mbkfa"]
+[ext_resource type="Resource" path="res://resources/tests/physical_exam/inspection.tres" id="5_tkaf4"]
+[ext_resource type="Resource" path="res://resources/illnesses/data/stenoza/aortica/stenoza_aortica_usoara.tres" id="6_v4yku"]
+[ext_resource type="Resource" path="res://resources/tests/investigations/ecografie_cardiaca.tres" id="7_eysxd"]
+[ext_resource type="Script" path="res://resources/save_system/map_positioning.gd" id="8_0uqie"]
+[ext_resource type="Resource" path="res://resources/quest_system/resources/quests/quest_1.tres" id="9_2plio"]
+[ext_resource type="Resource" path="res://resources/quest_system/resources/quests/quest_2.tres" id="10_dbqib"]
+[ext_resource type="Script" path="res://resources/save_system/save_slot.gd" id="11_jckxt"]
+
+[sub_resource type="Resource" id="Resource_pgbhi"]
+script = ExtResource("3_nbo2g")
+sprite_body = "res://resources/npc_data/sprites/body/sprite_adult_male.png"
+sprite_hair = "res://resources/npc_data/sprites/hair/adult/sprite_hair_00.png"
+name = "Default Case"
+gender = "Male"
+age = 28
+illness = ExtResource("2_iy5qh")
+cured = false
+dialogue = ExtResource("1_3uye0")
+dialogue_start = "content"
+
+[sub_resource type="Resource" id="Resource_ro585"]
+script = ExtResource("4_mbkfa")
+position = Vector2(480, 88)
+npc = SubResource("Resource_pgbhi")
+tests_taken = Array[Resource("res://resources/tests/test.gd")]([ExtResource("5_tkaf4")])
+tests_taken_results = Array[String](["Facies Mitral"])
+diagnostic_made = true
+
+[sub_resource type="Resource" id="Resource_wbbtw"]
+script = ExtResource("3_nbo2g")
+sprite_body = "res://resources/npc_data/sprites/body/sprite_old_male.png"
+sprite_hair = "res://resources/npc_data/sprites/hair/adult/sprite_hair_00.png"
+name = "Default Case"
+gender = "Male"
+age = 70
+illness = ExtResource("6_v4yku")
+cured = false
+dialogue = ExtResource("1_3uye0")
+dialogue_start = "content"
+
+[sub_resource type="Resource" id="Resource_gafvs"]
+script = ExtResource("4_mbkfa")
+position = Vector2(72, 88)
+npc = SubResource("Resource_wbbtw")
+tests_taken = Array[Resource("res://resources/tests/test.gd")]([])
+tests_taken_results = Array[String]([])
+diagnostic_made = false
+
+[sub_resource type="Resource" id="Resource_eg4ry"]
+script = ExtResource("3_nbo2g")
+sprite_body = "res://resources/npc_data/sprites/body/sprite_adult_male.png"
+sprite_hair = "res://resources/npc_data/sprites/hair/adult/sprite_hair_00.png"
+name = "Default Case"
+gender = "Male"
+age = 25
+illness = ExtResource("2_iy5qh")
+cured = false
+dialogue = ExtResource("1_3uye0")
+dialogue_start = "content"
+
+[sub_resource type="Resource" id="Resource_tktdq"]
+script = ExtResource("4_mbkfa")
+position = Vector2(264, 88)
+npc = SubResource("Resource_eg4ry")
+tests_taken = Array[Resource("res://resources/tests/test.gd")]([ExtResource("7_eysxd")])
+tests_taken_results = Array[String](["1.54 cm^2 orificiu mitral"])
+diagnostic_made = true
+
+[sub_resource type="Resource" id="Resource_45dgh"]
+script = ExtResource("8_0uqie")
+map_name = "res://scenes/overworld/maps/map_001/map_001.tscn"
+npc_location = Array[ExtResource("4_mbkfa")]([SubResource("Resource_ro585"), SubResource("Resource_gafvs"), SubResource("Resource_tktdq")])
+posible_illneses = Array[Resource("res://resources/illnesses/illness_base.gd")]([ExtResource("2_iy5qh"), ExtResource("6_v4yku")])
+
+[resource]
+script = ExtResource("11_jckxt")
+name = "ddd1"
+date = "2024-05-22T12:50:29"
+map_path = "res://scenes/overworld/maps/map_001/map_001.tscn"
+player_coord = Vector2(399.81, 123.431)
+quest_list = Array[Resource("res://resources/quest_system/classes/quest_base.gd")]([ExtResource("9_2plio"), ExtResource("10_dbqib")])
+maps_positioning = Array[ExtResource("8_0uqie")]([SubResource("Resource_45dgh")])
+to_be_deleted = false
+illneses_encountered = Array[Resource("res://resources/illnesses/illness_base.gd")]([])

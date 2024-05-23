@@ -23,6 +23,8 @@ func initiate():
 	entity_name.text = data.name
 	if data.sprite != null:
 		sprite.texture = load(data.sprite)
+		var dimension = max(sprite.texture.get_size().x, sprite.texture.get_size().y)
+		sprite.scale = Vector2(92 / dimension, 92 / dimension)
 
 func attack_animation(attack_skill: SkillAttack):
 	_add_buffs(attack_skill.add_buff)
@@ -38,12 +40,14 @@ func attacked_animation(skill: SkillAttack, damage: int):
 	var block_multiplier = 1.0 - data.block_chance
 	for buff in data.buffs:
 		block_multiplier = block_multiplier - buff.block_chance
-	_damage = max(damage * block_multiplier, 0) + max(min(skill.true_damage, damage), 0)
+	_damage = max(damage * block_multiplier + min(skill.true_damage, damage), 0)
 
 	if _damage > 0:
 		damage_label.text = "-" + str(_damage)
 	else:
 		damage_label.text = "0"
+
+	CombatBase.set_damage_of_attack(damage, _damage)
 
 	#TODO
 	#check if attack nullifies buffs or adds buffs

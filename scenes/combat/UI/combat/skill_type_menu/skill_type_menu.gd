@@ -8,8 +8,9 @@ signal back
 @export var button_scene: PackedScene
 
 func _input(event):
-	if Input.is_action_just_released("escape"):
-		emit_signal("back")
+	if visible:
+		if Input.is_action_just_released("escape"):
+			emit_signal("back")
 
 func initiate(types: Array[SkillType]):
 	for child in type_container.get_children():

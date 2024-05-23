@@ -29,6 +29,8 @@ func initiate():
 	hp_current = hp_total
 	block_chance = .01 * (stats.strength + stats.constitution)
 	base_power = stats.strength
+	buffs.clear()
+	debuffs.clear()
 
 func strategy() -> SkillBase:
 	#TODO

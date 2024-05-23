@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_py0n0")
-image = "res://resources/tests/default_icon.png"
+image = "res://resources/tests/icons/sprite_test_ekg.png"
 name = "EKG"
 description = ""
 default_diagnostic = "Nothing Unusual"

@@ -8,18 +8,16 @@
 custom_minimum_size = Vector2(252, 252)
 script = ExtResource("1_jcvoq")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 2
-theme_override_constants/separation = -252
-
-[node name="Body" type="TextureRect" parent="HBoxContainer"]
+[node name="Body" type="TextureRect" parent="."]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(252, 252)
 layout_mode = 2
 texture = ExtResource("2_meh7g")
 expand_mode = 2
 
-[node name="Head" type="TextureRect" parent="HBoxContainer"]
+[node name="Head" type="TextureRect" parent="."]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(252, 252)
 layout_mode = 2
 texture = ExtResource("3_j4j8u")
 expand_mode = 2

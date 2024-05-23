@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cjblyiqujmgi2"]
+
+[node name="Log" type="Label"]
+custom_minimum_size = Vector2(460, 0)
+text = "qwertyyqwertyyqwertyyqwertyyqwertyyqwertyyqwertyyqwertyyqwertyyqwertyyqwertyyqwertyyqwertyyqwertyyqwertyyqwertyy"
+autowrap_mode = 3
