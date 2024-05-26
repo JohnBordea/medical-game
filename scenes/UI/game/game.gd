@@ -8,6 +8,7 @@ extends Node2D
 @onready var save_menu = %SaveMenu
 @onready var load_save_menu = %LoadSaveMenu
 @onready var general_menu = %GeneralMenu
+@onready var combat_result_menu = %CombatResultMenu
 
 var current_node: Node
 var _what_window_open: Node
@@ -24,6 +25,7 @@ func _ready():
 	load_save_menu.back.connect(_on_menu_cancel)
 	load_save_menu.load_save.connect(_on_load_save)
 	CombatBase.game_over.connect(_on_game_over)
+	combat_result_menu.proceed.connect(_on_combat_result_menu_proceed)
 	_scene_change_from_to(map)
 	_is_menu_accesible = true
 	general_menu.visible = true
@@ -92,11 +94,15 @@ func _on_diagnostic_cancel():
 	_scene_change_from_to(map)
 
 func _on_game_over(winner: CombatEntity = null):
-	_scene_change_from_to(map)
-
-	if DialogueManagerGlobal.npc.illness.combat_entity != winner:
-		DialogueManagerGlobal.npc.cured = true
+	var result = (DialogueManagerGlobal.npc.illness.combat_entity != winner)
+	DialogueManagerGlobal.npc.cured = result
 	Config.quest_checker(DialogueManagerGlobal.npc.illness)
+
+	_scene_change_from_to(combat_result_menu)
+	combat_result_menu.initiate(DialogueManagerGlobal.npc.illness, result)
+
+func _on_combat_result_menu_proceed():
+	_scene_change_from_to(map)
 
 func _on_map_scene_change(path: String, coord: Vector2):
 	call_deferred("_on_map_scene_change_defered", path, coord)

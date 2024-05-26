@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cahqvmct0aq2c"]
+[gd_scene load_steps=11 format=3 uid="uid://cahqvmct0aq2c"]
 
 [ext_resource type="Script" path="res://scenes/UI/game/game.gd" id="1_rnblv"]
 [ext_resource type="PackedScene" uid="uid://42fbpkbn0viu" path="res://scenes/overworld/maps/map_001/map_001.tscn" id="2_75gwd"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bidh4dyxpiib5" path="res://scenes/UI/hover_pop_up/hover_pop_up.tscn" id="6_shnv1"]
 [ext_resource type="PackedScene" uid="uid://cy85d3dmowhsg" path="res://scenes/UI/save_menu/save_menu.tscn" id="7_fg6wj"]
 [ext_resource type="PackedScene" uid="uid://rihtwrrbhn2p" path="res://scenes/UI/general_menu/general_menu.tscn" id="8_ly425"]
+[ext_resource type="PackedScene" uid="uid://f8s71mc8b0ca" path="res://scenes/UI/combat_result_menu/combat_result_menu.tscn" id="10_bkhet"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -49,3 +50,7 @@ visible = false
 
 [node name="GeneralMenu" parent="." instance=ExtResource("8_ly425")]
 unique_name_in_owner = true
+
+[node name="CombatResultMenu" parent="." instance=ExtResource("10_bkhet")]
+unique_name_in_owner = true
+visible = false

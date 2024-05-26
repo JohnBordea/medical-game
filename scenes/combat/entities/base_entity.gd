@@ -40,7 +40,7 @@ func attacked_animation(skill: SkillAttack, damage: int):
 	var block_multiplier = 1.0 - data.block_chance
 	for buff in data.buffs:
 		block_multiplier = block_multiplier - buff.block_chance
-	_damage = max(damage * block_multiplier + min(skill.true_damage, damage), 0)
+	_damage = max(damage * block_multiplier, 0) + min(skill.true_damage, damage)
 
 	if _damage > 0:
 		damage_label.text = "-" + str(_damage)

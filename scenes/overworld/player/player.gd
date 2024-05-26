@@ -16,7 +16,7 @@ func _ready():
 	_play_animation()
 
 func _physics_process(delta):
-	if _input:
+	if _input and visible:
 		_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		if _direction.x == 0 and _direction.y == 0:
 			_player_state = 'idle'
