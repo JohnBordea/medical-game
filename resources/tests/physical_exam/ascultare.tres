@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_dvt08")
-image = "res://resources/tests/default_icon.png"
+image = "res://resources/tests/icons/sprite_test_ascultatie.png"
 name = "Ascultare"
 description = ""
 default_diagnostic = "Nothing Unusual"

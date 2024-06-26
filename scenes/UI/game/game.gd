@@ -2,13 +2,13 @@ extends Node2D
 
 @onready var map = %Map
 @onready var patient_data_ui = %PatientDataUI
-@onready var combat = %Main
+@onready var combat = %CureMenu
 @onready var camera = %Camera
 @onready var quest_menu = %QuestMenu
 @onready var save_menu = %SaveMenu
 @onready var load_save_menu = %LoadSaveMenu
 @onready var general_menu = %GeneralMenu
-@onready var combat_result_menu = %CombatResultMenu
+@onready var combat_result_menu = %CureResultMenu
 
 var current_node: Node
 var _what_window_open: Node

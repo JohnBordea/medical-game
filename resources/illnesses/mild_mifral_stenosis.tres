@@ -2,11 +2,11 @@
 
 [ext_resource type="Resource" uid="uid://50j6tdrak0dg" path="res://resources/combat/obj/entities/stenosis/stenoza_mitrala_usoara/stenoza_mitrala_usoara.tres" id="1_1okp4"]
 [ext_resource type="Script" path="res://resources/illnesses/illness_base.gd" id="1_ajlup"]
-[ext_resource type="Resource" uid="uid://dhrrhnu361uxm" path="res://resources/illnesses/history/default.tres" id="1_pufan"]
 [ext_resource type="Resource" uid="uid://rmdpvjluls4" path="res://resources/tests/physical_exam/inspection.tres" id="2_0pyw7"]
-[ext_resource type="Resource" uid="uid://dq86n4b58gnwa" path="res://resources/illnesses/symptoms/default.tres" id="2_bbs2x"]
 [ext_resource type="Resource" uid="uid://g452iu14nfh0" path="res://resources/tests/physical_exam/palpare.tres" id="3_cxhxu"]
+[ext_resource type="Resource" uid="uid://cyoxihdjfk0pp" path="res://resources/illnesses/symptoms/data/dispnee/dispnee.tres" id="3_kqkbn"]
 [ext_resource type="Resource" uid="uid://s4pmirwnia7h" path="res://resources/tests/physical_exam/ascultare.tres" id="4_invgn"]
+[ext_resource type="Resource" uid="uid://bkmdpqqvtp6pg" path="res://resources/illnesses/symptoms/data/palpitatii.tres" id="4_mmok1"]
 [ext_resource type="Script" path="res://resources/illnesses/test_result/test_result.gd" id="5_bgqqv"]
 [ext_resource type="Resource" uid="uid://bwytrtqogel7f" path="res://resources/tests/physical_exam/percutie.tres" id="7_mhmjq"]
 [ext_resource type="Resource" uid="uid://haipkowknrxx" path="res://resources/tests/investigations/ecografie_cardiaca.tres" id="9_ffhdx"]
@@ -51,11 +51,11 @@ replacements = Array[ExtResource("10_t0dsu")]([SubResource("Resource_gqsya")])
 [resource]
 script = ExtResource("1_ajlup")
 image = "res://resources/tests/default_icon.png"
-title = "Mild Mifral Stenosis"
+title = "Stenoză Mitrală Ușoară"
 description = "Simple information about the Illness. Maybe a few fun facts about it. ETC..."
 gender = 0.5
 age = Array[Array]([[20, 30], [60, 90]])
-history = Array[Resource("res://resources/illnesses/history/history.gd")]([ExtResource("1_pufan")])
-symptoms = Array[Resource("res://resources/illnesses/symptoms/symptom.gd")]([ExtResource("2_bbs2x")])
+history = Array[Resource("res://resources/illnesses/history/history.gd")]([])
+symptoms = Array[Resource("res://resources/illnesses/symptoms/symptom.gd")]([ExtResource("3_kqkbn"), ExtResource("4_mmok1")])
 tests = Array[ExtResource("5_bgqqv")]([SubResource("Resource_30i5u"), SubResource("Resource_vsbi5"), SubResource("Resource_weg1b"), SubResource("Resource_arooq"), SubResource("Resource_dven0")])
 combat_entity = ExtResource("1_1okp4")

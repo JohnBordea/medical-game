@@ -17,6 +17,7 @@ luck = 5
 script = ExtResource("1_xbg0e")
 name = "Enemy"
 sprite = null
+description = ""
 is_player = false
 ally = false
 stats = SubResource("Resource_by4bx")

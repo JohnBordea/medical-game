@@ -36,12 +36,13 @@ func _on_test_take(test: Test = null):
 	DialogueManagerGlobal.reset_test_chosen()
 
 	if test != null:
-		if npc_data.illness.check_if_test_possible(test):
-			Config.add_test_to_save(npc_data, test, npc_data.illness.get_test_result(test))
-			panel_profile.test_taken(test, npc_data.illness.get_test_result(test))
-		else:
-			Config.add_test_to_save(npc_data, test, test.default_diagnostic)
-			panel_profile.test_taken(test, test.default_diagnostic)
+		if not Config.check_test_made(npc_data, test):
+			if npc_data.illness.check_if_test_possible(test):
+				Config.add_test_to_save(npc_data, test, npc_data.illness.get_test_result(test))
+				panel_profile.test_taken(test, npc_data.illness.get_test_result(test), Config.check_if_test_count(npc_data))
+			else:
+				Config.add_test_to_save(npc_data, test, test.default_diagnostic)
+				panel_profile.test_taken(test, test.default_diagnostic, Config.check_if_test_count(npc_data))
 
 func _on_patient_take_diagnostic():
 	panel_profile.set_process_mode(4)

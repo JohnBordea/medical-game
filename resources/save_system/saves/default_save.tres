@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SaveSlot" load_steps=12 format=3 uid="uid://bl8lkyxbbn70k"]
+[gd_resource type="Resource" script_class="SaveSlot" load_steps=16 format=3 uid="uid://bl8lkyxbbn70k"]
 
 [ext_resource type="Script" path="res://resources/save_system/save_slot.gd" id="1_2t6pd"]
 [ext_resource type="Script" path="res://resources/save_system/npc_location.gd" id="1_f11ud"]
@@ -35,12 +35,40 @@ map_name = "res://scenes/overworld/maps/map_001/map_001.tscn"
 npc_location = Array[ExtResource("1_f11ud")]([SubResource("Resource_ro585"), SubResource("Resource_gafvs"), SubResource("Resource_tktdq")])
 posible_illneses = Array[Resource("res://resources/illnesses/illness_base.gd")]([ExtResource("2_pcrg6"), ExtResource("3_vsh47")])
 
+[sub_resource type="Resource" id="Resource_l16iw"]
+script = ExtResource("1_f11ud")
+position = Vector2(80, 224)
+tests_taken = Array[Resource("res://resources/tests/test.gd")]([])
+tests_taken_results = Array[String]([])
+diagnostic_made = false
+
+[sub_resource type="Resource" id="Resource_whgwb"]
+script = ExtResource("1_f11ud")
+position = Vector2(272, 224)
+tests_taken = Array[Resource("res://resources/tests/test.gd")]([])
+tests_taken_results = Array[String]([])
+diagnostic_made = false
+
+[sub_resource type="Resource" id="Resource_82qon"]
+script = ExtResource("1_f11ud")
+position = Vector2(464, 224)
+tests_taken = Array[Resource("res://resources/tests/test.gd")]([])
+tests_taken_results = Array[String]([])
+diagnostic_made = false
+
+[sub_resource type="Resource" id="Resource_644oq"]
+script = ExtResource("3_iaqeq")
+map_name = "res://scenes/overworld/maps/saloon/saloon.tscn"
+npc_location = Array[ExtResource("1_f11ud")]([SubResource("Resource_l16iw"), SubResource("Resource_whgwb"), SubResource("Resource_82qon")])
+posible_illneses = Array[Resource("res://resources/illnesses/illness_base.gd")]([ExtResource("2_pcrg6"), ExtResource("3_vsh47")])
+
 [resource]
 script = ExtResource("1_2t6pd")
 name = "Defaul Save"
 date = ""
-map_path = "res://scenes/overworld/maps/map_001/map_001.tscn"
-player_coord = Vector2(272, 200)
+map_path = "res://scenes/overworld/maps/conference_room/conference_room.tscn"
+player_coord = Vector2(192, 320)
 quest_list = Array[Resource("res://resources/quest_system/classes/quest_base.gd")]([ExtResource("1_l5ovt"), ExtResource("2_dfmt1")])
-maps_positioning = Array[ExtResource("3_iaqeq")]([SubResource("Resource_45dgh")])
+maps_positioning = Array[ExtResource("3_iaqeq")]([SubResource("Resource_45dgh"), SubResource("Resource_644oq")])
 to_be_deleted = false
+illneses_encountered = Array[Resource("res://resources/illnesses/illness_base.gd")]([])

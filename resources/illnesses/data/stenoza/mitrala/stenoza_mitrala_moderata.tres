@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="IllnessBase" load_steps=19 format=3 uid="uid://buu6ab01klvlt"]
+
+[ext_resource type="Script" path="res://resources/illnesses/illness_base.gd" id="2_hvi3e"]
+[ext_resource type="Resource" uid="uid://cyoxihdjfk0pp" path="res://resources/illnesses/symptoms/data/dispnee/dispnee.tres" id="2_qm2ai"]
+[ext_resource type="Resource" uid="uid://bkmdpqqvtp6pg" path="res://resources/illnesses/symptoms/data/palpitatii.tres" id="3_1k5i3"]
+[ext_resource type="Script" path="res://resources/illnesses/test_result/test_result.gd" id="3_6h66q"]
+[ext_resource type="Resource" uid="uid://rmdpvjluls4" path="res://resources/tests/physical_exam/inspection.tres" id="4_hkgmq"]
+[ext_resource type="Resource" uid="uid://g452iu14nfh0" path="res://resources/tests/physical_exam/palpare.tres" id="5_fu2va"]
+[ext_resource type="Resource" uid="uid://s4pmirwnia7h" path="res://resources/tests/physical_exam/ascultare.tres" id="6_7nmrx"]
+[ext_resource type="Resource" uid="uid://bsbf4fe7h065j" path="res://resources/tests/investigations/radiografie.tres" id="7_6hxtq"]
+[ext_resource type="Resource" uid="uid://2m3f7m42livc" path="res://resources/tests/investigations/ekg.tres" id="8_wvtac"]
+[ext_resource type="Script" path="res://resources/illnesses/test_result/test_result_replacement.gd" id="9_rupbf"]
+[ext_resource type="Resource" uid="uid://haipkowknrxx" path="res://resources/tests/investigations/ecografie_cardiaca.tres" id="10_uwoki"]
+
+[sub_resource type="Resource" id="Resource_cmjo6"]
+script = ExtResource("3_6h66q")
+test = ExtResource("4_hkgmq")
+result = "Facies Mitral"
+replacements = Array[ExtResource("9_rupbf")]([])
+
+[sub_resource type="Resource" id="Resource_symim"]
+script = ExtResource("3_6h66q")
+test = ExtResource("5_fu2va")
+result = "Puls periferic slab"
+replacements = Array[ExtResource("9_rupbf")]([])
+
+[sub_resource type="Resource" id="Resource_328wq"]
+script = ExtResource("3_6h66q")
+test = ExtResource("6_7nmrx")
+result = "Z1 întărit, clacment de deschidere a mitralei, uruitură diastolică"
+replacements = Array[ExtResource("9_rupbf")]([])
+
+[sub_resource type="Resource" id="Resource_hlb0u"]
+script = ExtResource("3_6h66q")
+test = ExtResource("7_6hxtq")
+result = "Dublu contur al arcului inferior drept, Atriu stâng dilatat"
+replacements = Array[ExtResource("9_rupbf")]([])
+
+[sub_resource type="Resource" id="Resource_aj4ae"]
+script = ExtResource("3_6h66q")
+test = ExtResource("8_wvtac")
+result = "Unda P “bifidă”"
+replacements = Array[ExtResource("9_rupbf")]([])
+
+[sub_resource type="Resource" id="Resource_svvxa"]
+script = ExtResource("9_rupbf")
+formater = "floatValue"
+replacer_type = 2
+replacer = [1.0, 1.5]
+
+[sub_resource type="Resource" id="Resource_rg5tb"]
+script = ExtResource("3_6h66q")
+test = ExtResource("10_uwoki")
+result = "Aria valvei mitrale – {floatValue} cm^2"
+replacements = Array[ExtResource("9_rupbf")]([SubResource("Resource_svvxa")])
+
+[resource]
+script = ExtResource("2_hvi3e")
+image = "res://resources/tests/default_icon.png"
+title = "Stenoza Mitrala Moderata"
+description = "Simple information about the Illness. Maybe a few fun facts about it. ETC..."
+gender = 0.5
+age = Array[Array]([[0, 90]])
+history = Array[Resource("res://resources/illnesses/history/history.gd")]([])
+symptoms = Array[Resource("res://resources/illnesses/symptoms/symptom.gd")]([ExtResource("2_qm2ai"), ExtResource("3_1k5i3")])
+tests = Array[ExtResource("3_6h66q")]([SubResource("Resource_cmjo6"), SubResource("Resource_symim"), SubResource("Resource_328wq"), SubResource("Resource_hlb0u"), SubResource("Resource_aj4ae"), SubResource("Resource_rg5tb")])

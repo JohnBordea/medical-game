@@ -26,15 +26,8 @@ func _on_link_category_pressed(name: String):
 	test_taker.move_to(name)
 
 func _load_categories():
-	#categories = []
 	categories.clear()
-	var paths = Config._get_all_files("res://resources/tests/categories/", ".tres")
-	for path in paths:
-		categories.append(ResourceLoader.load(path) as TestType)
-	categories.sort_custom(
-		func sorter(a: TestType, b: TestType):
-			return a.order < b.order
-	)
+	categories = Config.all_test_categories
 
 func initiate():
 	test = null

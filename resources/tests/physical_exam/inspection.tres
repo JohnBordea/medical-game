@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_cltmd")
-image = "res://resources/tests/default_icon.png"
+image = "res://resources/tests/icons/sprite_test_inspection.png"
 name = "Inspection"
 description = "You are inspecting the body(maybe the chest)."
 default_diagnostic = "Nothing Unusual"

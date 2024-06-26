@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_kklrq")
-image = "res://resources/tests/default_icon.png"
+image = "res://resources/tests/icons/sprite_test_vena.png"
 name = "Vena Contracta"
 description = ""
 default_diagnostic = "Nothing Unusual"

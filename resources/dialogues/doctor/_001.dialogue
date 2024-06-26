@@ -1,14 +1,13 @@
 ~ start
 
-Doctor: [[Hi|Hello|Howdy]], this is some dialogue.
-Doctor: Here are some choices.
-- First one
-	Doctor: You picked the first one.
-- Second one
-	Doctor: You picked the second one.
-- Start again => start
-- End the conversation => dialogue_end
-Doctor: For more information see the online documentation.
+Doctor Principal: Salutare domnule student. 
+Doctor Principal: Bun venit  în secția noastră. 
+Doctor Principal: Aici veți fi responsabil de îngrijirea pacienților cu patologie valvulară, pentru început. 
+Doctor Principal: Va trebui să-i examinați obiectiv.
+Doctor Principal: Să efectuați teste paraclinice, printre care EKG, Radiografii, Ecografii etc.
+Doctor Principal: Să stabiliți diagnosticul corect.
+Doctor Principal: Să tratați cu succes pacienții, în măsura în care este posibil.
+Doctor Principal: Mult succes!
 
 => dialogue_end
 

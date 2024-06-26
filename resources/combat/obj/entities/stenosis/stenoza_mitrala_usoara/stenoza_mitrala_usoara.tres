@@ -18,7 +18,7 @@ luck = 5
 [resource]
 script = ExtResource("1_ixpa5")
 name = "Stenoza Mifrala Usoara"
-sprite = "res://resources/combat/obj/entities/stenosis/heart.png"
+sprite = "res://resources/combat/obj/entities/stenosis/sprite_mitral_stenosis_.png"
 description = "Nothing Unusual about this illness"
 is_player = false
 ally = false

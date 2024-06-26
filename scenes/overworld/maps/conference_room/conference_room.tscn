@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfpmq86uv04hb"]
+[gd_scene load_steps=12 format=3 uid="uid://bfpmq86uv04hb"]
 
 [ext_resource type="Script" path="res://scenes/overworld/maps/conference_room/conference_room.gd" id="1_y471k"]
 [ext_resource type="TileSet" uid="uid://bo4mdekuamqni" path="res://scenes/overworld/maps/assets/tile_collisions.tres" id="2_crjas"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://76b6ppdrtu4v" path="res://scenes/overworld/player/player.tscn" id="4_qqjim"]
 [ext_resource type="PackedScene" uid="uid://dfts6vur7fofx" path="res://scenes/overworld/maps/assets/items/seat/small_table.tscn" id="6_w6gru"]
 [ext_resource type="PackedScene" uid="uid://c8nrn61kjiiy2" path="res://scenes/overworld/doctor/doctor.tscn" id="7_hd3u1"]
+[ext_resource type="Resource" uid="uid://bc64yp44q5vbb" path="res://resources/dialogues/doctor/_002.dialogue" id="10_0wvuh"]
 
 [node name="ConferenceRoom" type="Node2D"]
 y_sort_enabled = true
@@ -37,9 +38,22 @@ layer_0/y_sort_enabled = true
 layer_0/tile_data = PackedInt32Array(-65536, 65536, 0, -65535, 65536, 0, -65534, 65536, 0, -65533, 65536, 0, -65532, 65536, 0, -65531, 65536, 0, -65530, 65536, 0, -65529, 65536, 0, -65528, 65536, 0, -65527, 65536, 0, -65526, 65536, 0, -65525, 131072, 0, 11, 131072, 1, 65547, 131072, 1, 131083, 131072, 1, 196619, 131072, 1, 262155, 131072, 1, 851979, 131072, 1, 917515, 131072, 1, 983051, 131072, 1, 1048587, 131072, 1, 524299, 131072, 1, 589835, 131072, 1, 655371, 131072, 1, 720907, 131072, 1, 786443, 131072, 1, 327691, 131072, 1, 393227, 131072, 1, 458763, 131072, 1, 1114123, 131072, 1, 1179659, 131072, 2, 1179649, 65536, 2, 1179650, 65536, 2, 1179651, 65536, 2, 1179652, 65536, 2, 1179653, 65536, 2, 1179654, 65536, 2, 1179655, 65536, 2, 1179656, 65536, 2, 1179657, 65536, 2, 1179658, 65536, 2, 1179648, 0, 2, 786432, 0, 1, 851968, 0, 1, 917504, 0, 1, 983040, 0, 1, 1048576, 0, 1, 1114112, 0, 1, 327680, 0, 1, 393216, 0, 1, 458752, 0, 1, 524288, 0, 1, 589824, 0, 1, 655360, 0, 1, 720896, 0, 1, 262144, 196608, 0)
 
 [node name="Doors" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="Door" parent="Doors" instance=ExtResource("3_b2tja")]
 position = Vector2(0, 32)
+path = "res://scenes/overworld/maps/saloon/saloon.tscn"
+coordinates = Vector2(528, 24)
+
+[node name="Door2" parent="Doors" instance=ExtResource("3_b2tja")]
+position = Vector2(0, 64)
+path = "res://scenes/overworld/maps/saloon/saloon.tscn"
+coordinates = Vector2(528, 56)
+
+[node name="Door3" parent="Doors" instance=ExtResource("3_b2tja")]
+position = Vector2(0, 96)
+path = "res://scenes/overworld/maps/saloon/saloon.tscn"
+coordinates = Vector2(528, 88)
 
 [node name="VisualLayer" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -135,9 +149,18 @@ y_sort_enabled = true
 [node name="Doctor" parent="NPCs" instance=ExtResource("7_hd3u1")]
 position = Vector2(192, 424)
 
+[node name="Doctor2" parent="NPCs" instance=ExtResource("7_hd3u1")]
+position = Vector2(304, 152)
+dialogue = ExtResource("10_0wvuh")
+
+[node name="Doctor3" parent="NPCs" instance=ExtResource("7_hd3u1")]
+position = Vector2(112, 216)
+dialogue = ExtResource("10_0wvuh")
+
+[node name="Doctor4" parent="NPCs" instance=ExtResource("7_hd3u1")]
+position = Vector2(240, 280)
+dialogue = ExtResource("10_0wvuh")
+
 [node name="Player" parent="." instance=ExtResource("4_qqjim")]
 unique_name_in_owner = true
-position = Vector2(200, 56)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2, 2)
+position = Vector2(192, 320)

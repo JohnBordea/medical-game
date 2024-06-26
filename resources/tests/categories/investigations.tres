@@ -9,4 +9,5 @@
 script = ExtResource("1_ob4cg")
 name = "Investigation"
 tests = Array[Resource("res://resources/tests/test.gd")]([ExtResource("2_m5peh"), ExtResource("3_y73wa"), ExtResource("4_5fbo2")])
-order = 0
+order = 1
+at_least_used_count = 2

@@ -56,7 +56,7 @@ replacements = Array[ExtResource("10_whrby")]([SubResource("Resource_8yl2g")])
 
 [resource]
 script = ExtResource("1_lt7cb")
-image = "res://resources/tests/default_icon.png"
+image = "res://resources/illnesses/data/img/sprite_mitral_stenosis_3.png"
 title = "Recurgitare Mitrala Cronica Severa"
 description = "Simple information about the Illness. Maybe a few fun facts about it. ETC..."
 gender = 0.5

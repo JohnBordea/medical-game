@@ -49,7 +49,7 @@ replacements = Array[ExtResource("9_6hkge")]([SubResource("Resource_ve5dr")])
 
 [resource]
 script = ExtResource("1_3deqk")
-image = "res://resources/tests/default_icon.png"
+image = "res://resources/illnesses/data/img/sprite_regurgitar_stenosis_3.png"
 title = "Regurgitare Aortica Severa"
 description = "Simple information about the Illness. Maybe a few fun facts about it. ETC..."
 gender = 0.5

@@ -51,7 +51,7 @@ replacements = Array[ExtResource("9_7c4yu")]([])
 
 [resource]
 script = ExtResource("2_ivfu8")
-image = "res://resources/tests/default_icon.png"
+image = "res://resources/illnesses/data/img/sprite_aortic_stenosis_1.png"
 title = "Stenoza Aortica Usoara"
 description = "Simple information about the Illness. Maybe a few fun facts about it. ETC..."
 gender = 0.5

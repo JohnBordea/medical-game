@@ -17,10 +17,14 @@ var local_map_coordinates: Vector2
 var local_save: SaveSlot
 var all_saves: Array[SaveSlot]
 
+var all_test_categories: Array[TestType]
+var all_diagnostic_categories: Array[DiagnosticType]
+
 var global_npc_locations: Array[NPCBase]
 var global_quests: Array[QuestBase] = []
 
 func _ready():
+	#save files
 	var paths = _get_all_files("res://resources/save_system/saves/all_saves/", ".tres")
 	for path in paths:
 		var save = load(path) as SaveSlot
@@ -33,6 +37,18 @@ func _ready():
 		func (a: Node, b: Node):
 			return a.data.date > b.data.date
 	)
+
+	#test categories
+	paths = _get_all_files("res://resources/tests/categories/", ".tres")
+	for path in paths:
+		all_test_categories.append(ResourceLoader.load(path) as TestType)
+	all_test_categories.sort_custom(
+		func sorter(a: TestType, b: TestType):
+			return a.order < b.order
+	)
+
+	#TODO
+	#load diagnostic category
 
 func initiate(load: SaveSlot = null):
 	if load == null:
@@ -82,11 +98,27 @@ func _get_all_files(path: String, sufix: String):
 			file_name = dir.get_next()
 	return paths
 
+func check_test_made(npc: NPCBase, test: Test) -> bool:
+	var npc_location = _get_npc_location(npc)
+	return test in npc_location.tests_taken
+
 func add_test_to_save(npc: NPCBase, test: Test, result: String):
 	var npc_location = _get_npc_location(npc)
 	if npc_location:
 		npc_location.tests_taken.insert(0, test)
 		npc_location.tests_taken_results.insert(0, result)
+
+func check_if_test_count(npc: NPCBase) -> bool:
+	var npc_location = _get_npc_location(npc)
+
+	for category in all_test_categories:
+		var count = 0
+		for test in npc_location.tests_taken:
+			if test in category.tests:
+				count += 1
+		if count < category.at_least_used_count:
+			return false
+	return true
 
 func add_diagnostic_to_save(npc: NPCBase, result: bool):
 	var npc_location = _get_npc_location(npc)

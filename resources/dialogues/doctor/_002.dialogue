@@ -1,0 +1,9 @@
+~ start
+
+Doctor: [[Pacientul Popescu se externează după amiază|Ai o fișă de semnat?|Oare unde am lăsat parafa?|Azi sunt de gardă]]
+
+=> dialogue_end
+
+~ dialogue_end
+do DialogueManagerGlobal.end_dialogue()
+=> END

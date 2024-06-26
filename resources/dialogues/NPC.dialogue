@@ -6,11 +6,11 @@ else:
 => dialogue_end
 
 ~ to_be_cured
-DialogueManagerGlobal.npc.name: Va rog ajutatima!
+{{DialogueManagerGlobal.npc.name}}: Va rog ajutatima!
 do DialogueManagerGlobal.start_treatment()
 => END
 
 ~ dialogue_end
-DialogueManagerGlobal.npc.name: Totul este bine!
+{{DialogueManagerGlobal.npc.name}}: Totul este bine!
 do DialogueManagerGlobal.end_dialogue()
 => END

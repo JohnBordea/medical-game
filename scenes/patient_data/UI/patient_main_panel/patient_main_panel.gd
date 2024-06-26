@@ -26,9 +26,10 @@ func initiate(npc: NPCBase):
 	panel_test.initiate(npc)
 	panel_diagnostic.initiate(npc)
 
-func test_taken(test: Test, result: String):
+func test_taken(test: Test, result: String, test_count: bool = false):
 	panel_test.add_test_result(test, result)
-	panel_diagnostic.test_taken()
+	if test_count:
+		panel_diagnostic.test_taken()
 
 func diagnostic_taken(chosen_corectly: bool, can_be_cured: bool = true):
 	panel_diagnostic.diagnostic_taken(chosen_corectly, can_be_cured)

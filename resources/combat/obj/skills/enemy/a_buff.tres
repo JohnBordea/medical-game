@@ -13,3 +13,4 @@ type = 1
 power = 0.0
 cooldown = 5
 priority_factor = 5
+log_text = "used skill"
