@@ -1,27 +1,48 @@
-[gd_resource type="Resource" script_class="QuestBase" load_steps=8 format=3 uid="uid://dtkm5hsr7rg3s"]
+[gd_resource type="Resource" script_class="QuestBase" load_steps=14 format=3 uid="uid://dtkm5hsr7rg3s"]
 
 [ext_resource type="Script" path="res://resources/quest_system/classes/quest_progress.gd" id="1_2sdis"]
 [ext_resource type="Script" path="res://resources/quest_system/classes/quest_base.gd" id="1_afpvu"]
 [ext_resource type="Resource" uid="uid://cddso0xkf32ua" path="res://resources/quest_system/resources/quests/quest_1.tres" id="1_encr7"]
-[ext_resource type="Resource" uid="uid://w687bsh80w2" path="res://resources/illnesses/mild_mifral_stenosis.tres" id="1_xpx4g"]
 [ext_resource type="Script" path="res://resources/quest_system/classes/quest_progres_action.gd" id="2_hgrb3"]
+[ext_resource type="Resource" uid="uid://dnexgqpiat87m" path="res://resources/illnesses/data/recurgitare/mitrala/recurgitare_mitrala_cronica_usoara.tres" id="2_vufqt"]
+[ext_resource type="Resource" uid="uid://bk7at8uqahmss" path="res://resources/illnesses/data/recurgitare/mitrala/recurgitare_mitrala_cronica_moderata.tres" id="4_24tcp"]
+[ext_resource type="Resource" uid="uid://cqdtj5rsyl24p" path="res://resources/illnesses/data/recurgitare/mitrala/recurgitare_mitrala_cronica_severa.tres" id="5_hm0b4"]
+[ext_resource type="Resource" uid="uid://cb15g66ix4r8b" path="res://resources/illnesses/data/recurgitare/mitrala/recurgitare_mitrala_acuta.tres" id="6_kfuil"]
 
 [sub_resource type="Resource" id="Resource_jpqb4"]
 script = ExtResource("2_hgrb3")
 character_class = "Cure"
-item = ExtResource("1_xpx4g")
-amount = 2
+item = ExtResource("2_vufqt")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_0joy1"]
+script = ExtResource("2_hgrb3")
+character_class = "Cure"
+item = ExtResource("4_24tcp")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_xnpty"]
+script = ExtResource("2_hgrb3")
+character_class = "Cure"
+item = ExtResource("5_hm0b4")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_iappa"]
+script = ExtResource("2_hgrb3")
+character_class = "Cure"
+item = ExtResource("6_kfuil")
+amount = 1
 
 [sub_resource type="Resource" id="Resource_m3e42"]
 script = ExtResource("1_2sdis")
 title = "Generic Progress"
-actions = Array[ExtResource("2_hgrb3")]([SubResource("Resource_jpqb4")])
+actions = Array[ExtResource("2_hgrb3")]([SubResource("Resource_jpqb4"), SubResource("Resource_0joy1"), SubResource("Resource_xnpty"), SubResource("Resource_iappa")])
 
 [resource]
 script = ExtResource("1_afpvu")
-title = "Regular Quest - Continuation"
-description = "Continuation of the Previous Quest"
+title = "Regurgitare Mitrala"
+description = "Pentru a intelege cum de tratat Regurgitarea Mitrala"
 progress = Array[ExtResource("1_2sdis")]([SubResource("Resource_m3e42")])
 prerequesites = Array[ExtResource("1_afpvu")]([ExtResource("1_encr7")])
-image = "res://resources/quest_system/classes/quest_item_icon_default.png"
+image = "res://resources/quest_system/img/quest_item_icon_002.png"
 coordinates = Vector2(400, 300)

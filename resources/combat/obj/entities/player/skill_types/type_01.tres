@@ -1,11 +1,9 @@
-[gd_resource type="Resource" script_class="SkillType" load_steps=5 format=3 uid="uid://c8djofgj0iueh"]
+[gd_resource type="Resource" script_class="SkillType" load_steps=3 format=3 uid="uid://c8djofgj0iueh"]
 
 [ext_resource type="Script" path="res://resources/combat/scripts/misc/skill_type.gd" id="1_y2t77"]
 [ext_resource type="Resource" uid="uid://cb2lkffta6fql" path="res://resources/combat/obj/entities/player/skills/deansa.tres" id="2_s7s1o"]
-[ext_resource type="Resource" uid="uid://7qt4h4tgf2pt" path="res://resources/combat/obj/entities/player/skills/abixaban.tres" id="3_kygas"]
-[ext_resource type="Resource" uid="uid://dfvfb0j8g8tmu" path="res://resources/combat/obj/entities/player/skills/labetalol.tres" id="4_uavhp"]
 
 [resource]
 script = ExtResource("1_y2t77")
-name = "Type 1"
-skills = Array[Resource("res://resources/combat/scripts/misc/skill.gd")]([ExtResource("2_s7s1o"), ExtResource("3_kygas"), ExtResource("4_uavhp")])
+name = "Deuretic de Ansa"
+skills = Array[Resource("res://resources/combat/scripts/misc/skill.gd")]([ExtResource("2_s7s1o")])

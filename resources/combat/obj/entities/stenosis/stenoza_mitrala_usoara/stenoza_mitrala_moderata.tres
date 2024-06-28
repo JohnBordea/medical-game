@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CombatEntity" load_steps=9 format=3 uid="uid://vwdditq7lgo8"]
+
+[ext_resource type="Script" path="res://resources/combat/scripts/combat_entity.gd" id="1_6n6y1"]
+[ext_resource type="Resource" uid="uid://cxavhja0b656i" path="res://resources/combat/obj/entities/stenosis/skills/dispnee.tres" id="2_80ewj"]
+[ext_resource type="Resource" uid="uid://cay2avqwlp8te" path="res://resources/combat/obj/entities/stenosis/skills/edeme_periferice.tres" id="3_wfe2j"]
+[ext_resource type="Resource" uid="uid://c3qm64oid4oin" path="res://resources/combat/obj/entities/stenosis/skills/fibrilatie_atriala.tres" id="4_ms3ck"]
+[ext_resource type="Resource" uid="uid://dpycsbo6pquwp" path="res://resources/combat/obj/entities/stenosis/skills/tromb_intra_atrial.tres" id="5_2qkcc"]
+[ext_resource type="Resource" uid="uid://w5ujqowv5pps" path="res://resources/combat/obj/entities/stenosis/skills/scadere_debit_cardiac.tres" id="6_2tcf2"]
+[ext_resource type="Script" path="res://resources/combat/scripts/stats.gd" id="7_kehis"]
+
+[sub_resource type="Resource" id="Resource_c7bgo"]
+script = ExtResource("7_kehis")
+strength = 5
+constitution = 5
+intelligence = 5
+agility = 5
+luck = 5
+
+[resource]
+script = ExtResource("1_6n6y1")
+name = "Stenoza Mifrala Moderata"
+sprite = "res://resources/combat/obj/entities/stenosis/sprite_mitral_stenosis_.png"
+description = "Nothing Unusual about this illness"
+is_player = false
+ally = false
+stats = SubResource("Resource_c7bgo")
+skills = Array[Resource("res://resources/combat/scripts/misc/skill.gd")]([ExtResource("2_80ewj"), ExtResource("3_wfe2j"), ExtResource("4_ms3ck"), ExtResource("5_2qkcc"), ExtResource("6_2tcf2")])

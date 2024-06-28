@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SkillAttack" load_steps=2 format=3 uid="uid://w5ujqowv5pps"]
+
+[ext_resource type="Script" path="res://resources/combat/scripts/skills/attack_skill.gd" id="2_y4s2t"]
+
+[resource]
+script = ExtResource("2_y4s2t")
+nullifies = Array[Resource("res://resources/combat/scripts/buff/buff.gd")]([])
+restriction = Array[Resource("res://resources/combat/scripts/buff/buff.gd")]([])
+add_buff = Array[Resource("res://resources/combat/scripts/buff/buff.gd")]([])
+true_damage = 0
+buff_bonus = {}
+buff_weakness = {}
+name = "Scadere Debit Cardiac"
+type = 0
+power = 5.0
+cooldown = 0
+priority_factor = 0
+log_text = "a provocat Scadere Debit Cardiac"

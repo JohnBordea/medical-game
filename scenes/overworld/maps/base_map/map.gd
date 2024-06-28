@@ -42,6 +42,9 @@ func _on_reset_npc_instance(node: NPC):
 			for npc_location in location.npc_location:
 				if npc_location.npc != null and npc_location.npc.cured:
 					npc_location.npc = null
+					npc_location.tests_taken.clear()
+					npc_location.tests_taken_results.clear()
+					npc_location.diagnostic_made = false
 
 func initiate(coordinates: Vector2):
 	player.position = coordinates

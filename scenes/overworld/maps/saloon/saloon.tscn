@@ -40,17 +40,17 @@ layer_0/tile_data = PackedInt32Array(-65535, 65536, 0, -65534, 65536, 0, -65533,
 unique_name_in_owner = true
 
 [node name="Door" parent="Doors" instance=ExtResource("3_jpi4v")]
-position = Vector2(544, 32)
+position = Vector2(568, 32)
 path = "res://scenes/overworld/maps/conference_room/conference_room.tscn"
 coordinates = Vector2(48, 16)
 
 [node name="Door2" parent="Doors" instance=ExtResource("3_jpi4v")]
-position = Vector2(544, 64)
+position = Vector2(568, 64)
 path = "res://scenes/overworld/maps/conference_room/conference_room.tscn"
 coordinates = Vector2(48, 48)
 
 [node name="Door3" parent="Doors" instance=ExtResource("3_jpi4v")]
-position = Vector2(544, 96)
+position = Vector2(568, 96)
 path = "res://scenes/overworld/maps/conference_room/conference_room.tscn"
 coordinates = Vector2(48, 80)
 

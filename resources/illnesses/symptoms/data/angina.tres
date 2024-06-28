@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_r3m4q")
-image = "res://resources/illnesses/symptoms/default_icon.png"
+image = "res://resources/illnesses/symptoms/icos/sprite_angina.png"
 name = "Angina"
 requirenment_type = 0
 requirenment = []

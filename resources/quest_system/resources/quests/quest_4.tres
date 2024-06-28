@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="QuestBase" load_steps=12 format=3 uid="uid://b40vcu5qq1qa6"]
+
+[ext_resource type="Resource" uid="uid://b4nbk3ki4ijpt" path="res://resources/quest_system/resources/quests/quest_3.tres" id="1_l65ge"]
+[ext_resource type="Resource" uid="uid://c6hu3gg3g7cv0" path="res://resources/illnesses/data/recurgitare/aortica/regurgitare_aortica_usoara.tres" id="2_ymtpk"]
+[ext_resource type="Script" path="res://resources/quest_system/classes/quest_progres_action.gd" id="3_16qxg"]
+[ext_resource type="Resource" uid="uid://csaecv8vw7bnr" path="res://resources/illnesses/data/recurgitare/aortica/regurgitare_aortica_moderate.tres" id="4_f36rc"]
+[ext_resource type="Resource" uid="uid://defx1btus7jiu" path="res://resources/illnesses/data/recurgitare/aortica/regurgitare_aortica_severa.tres" id="5_e6bfx"]
+[ext_resource type="Script" path="res://resources/quest_system/classes/quest_progress.gd" id="7_6jfql"]
+[ext_resource type="Script" path="res://resources/quest_system/classes/quest_base.gd" id="8_s2ikr"]
+
+[sub_resource type="Resource" id="Resource_oufwr"]
+script = ExtResource("3_16qxg")
+character_class = "Cure"
+item = ExtResource("2_ymtpk")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_q18xf"]
+script = ExtResource("3_16qxg")
+character_class = "Cure"
+item = ExtResource("4_f36rc")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_6qssn"]
+script = ExtResource("3_16qxg")
+character_class = "Cure"
+item = ExtResource("5_e6bfx")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_m3e42"]
+script = ExtResource("7_6jfql")
+title = "Generic Progress"
+actions = Array[ExtResource("3_16qxg")]([SubResource("Resource_oufwr"), SubResource("Resource_q18xf"), SubResource("Resource_6qssn")])
+
+[resource]
+script = ExtResource("8_s2ikr")
+title = "Regurgitare Aortica"
+description = "Pentru a intelege cum de tratat Regurgitarea Aortica"
+progress = Array[ExtResource("7_6jfql")]([SubResource("Resource_m3e42")])
+prerequesites = Array[ExtResource("8_s2ikr")]([ExtResource("1_l65ge")])
+image = "res://resources/quest_system/img/quest_item_icon_004.png"
+coordinates = Vector2(400, 100)

@@ -11,6 +11,7 @@ signal cancel
 func initiate(npc: NPCBase):
 	result.text = ""
 	b_diagnostic.disabled = true
+	b_cure.text = "Tratare"
 	b_cure.disabled = true
 
 	var npc_location = Config._get_npc_location(npc)
@@ -24,13 +25,13 @@ func test_taken():
 
 func diagnostic_taken(chosen_corectly: bool, can_be_cured: bool = true):
 	if chosen_corectly:
-		result.text = "Correct Diagnosys"
+		result.text = "Diagnoza Corecta"
 		b_diagnostic.disabled = true
 		b_cure.disabled = false
 		if not can_be_cured:
-			b_cure.text = "Surgical Intervention"
+			b_cure.text = "Intervantie Chirurgicala"
 	else:
-		result.text = "Wrong Diagnosys"
+		result.text = "Diagnoza Gresita"
 
 func _on_diagnose_pressed():
 	emit_signal("diagnostic")

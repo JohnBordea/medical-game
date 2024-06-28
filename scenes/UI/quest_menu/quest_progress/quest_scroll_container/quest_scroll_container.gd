@@ -15,6 +15,6 @@ func initiate(quest_progress: Array[QuestProgressBase]):
 		for action in progress.actions:
 			var action_label = Label.new()
 			progress_container.add_child(action_label)
+			action_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+			action_label.size.x = 250
 			action_label.text = action.character_class + " " + action.item.title + " " + str(action._amount_completed) + "/" + str(action.amount)
-
-

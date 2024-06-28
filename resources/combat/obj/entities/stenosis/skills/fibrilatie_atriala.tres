@@ -18,3 +18,4 @@ type = 0
 power = 5.0
 cooldown = 6
 priority_factor = 1
+log_text = "a provocat Fibrilatie Atriala"

@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="QuestBase" load_steps=7 format=3 uid="uid://cddso0xkf32ua"]
+[gd_resource type="Resource" script_class="QuestBase" load_steps=11 format=3 uid="uid://cddso0xkf32ua"]
 
 [ext_resource type="Resource" uid="uid://w687bsh80w2" path="res://resources/illnesses/mild_mifral_stenosis.tres" id="1_kk3g8"]
 [ext_resource type="Script" path="res://resources/quest_system/classes/quest_base.gd" id="1_ktjnu"]
 [ext_resource type="Script" path="res://resources/quest_system/classes/quest_progres_action.gd" id="2_6pnxr"]
 [ext_resource type="Script" path="res://resources/quest_system/classes/quest_progress.gd" id="3_hnife"]
+[ext_resource type="Resource" uid="uid://buu6ab01klvlt" path="res://resources/illnesses/data/stenoza/mitrala/stenoza_mitrala_moderata.tres" id="3_xj05l"]
+[ext_resource type="Resource" uid="uid://btpjbam7mifyw" path="res://resources/illnesses/data/stenoza/mitrala/stenoza_mitrala_severa.tres" id="4_7tyym"]
 
 [sub_resource type="Resource" id="Resource_fcae7"]
 script = ExtResource("2_6pnxr")
@@ -11,16 +13,28 @@ character_class = "Cure"
 item = ExtResource("1_kk3g8")
 amount = 1
 
+[sub_resource type="Resource" id="Resource_wmspe"]
+script = ExtResource("2_6pnxr")
+character_class = "Cure"
+item = ExtResource("3_xj05l")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_wgame"]
+script = ExtResource("2_6pnxr")
+character_class = "Cure"
+item = ExtResource("4_7tyym")
+amount = 1
+
 [sub_resource type="Resource" id="Resource_aev55"]
 script = ExtResource("3_hnife")
-title = "Generic Progress"
-actions = Array[ExtResource("2_6pnxr")]([SubResource("Resource_fcae7")])
+title = "Progres"
+actions = Array[ExtResource("2_6pnxr")]([SubResource("Resource_fcae7"), SubResource("Resource_wmspe"), SubResource("Resource_wgame")])
 
 [resource]
 script = ExtResource("1_ktjnu")
-title = "Regular Quest"
-description = "Regular quest ment to help test the quest system"
+title = "Stenoza Mitrala"
+description = "Pentru a intelege cum de tratat Stenoza Mitrala"
 progress = Array[ExtResource("3_hnife")]([SubResource("Resource_aev55")])
 prerequesites = Array[ExtResource("1_ktjnu")]([])
-image = "res://resources/quest_system/classes/quest_item_icon_default.png"
+image = "res://resources/quest_system/img/quest_item_icon_001.png"
 coordinates = Vector2(137, 300)

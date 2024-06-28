@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="QuestBase" load_steps=11 format=3 uid="uid://b4nbk3ki4ijpt"]
+
+[ext_resource type="Resource" uid="uid://bvte5a2n83cpa" path="res://resources/illnesses/data/stenoza/aortica/stenoza_aortica_usoara.tres" id="2_yqacu"]
+[ext_resource type="Script" path="res://resources/quest_system/classes/quest_progres_action.gd" id="3_qpxvm"]
+[ext_resource type="Resource" uid="uid://d0225ticdutmn" path="res://resources/illnesses/data/stenoza/aortica/stenoza_aortica_moderata.tres" id="4_icx5g"]
+[ext_resource type="Resource" uid="uid://cvvf2gxmxwg3x" path="res://resources/illnesses/data/stenoza/aortica/stenoza_aortica_severa.tres" id="5_ut3xn"]
+[ext_resource type="Script" path="res://resources/quest_system/classes/quest_progress.gd" id="7_vprey"]
+[ext_resource type="Script" path="res://resources/quest_system/classes/quest_base.gd" id="8_2rdrs"]
+
+[sub_resource type="Resource" id="Resource_dhfn0"]
+script = ExtResource("3_qpxvm")
+character_class = "Cure"
+item = ExtResource("2_yqacu")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_21x4e"]
+script = ExtResource("3_qpxvm")
+character_class = "Cure"
+item = ExtResource("4_icx5g")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_wiqyn"]
+script = ExtResource("3_qpxvm")
+character_class = "Cure"
+item = ExtResource("5_ut3xn")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_m3e42"]
+script = ExtResource("7_vprey")
+title = "Generic Progress"
+actions = Array[ExtResource("3_qpxvm")]([SubResource("Resource_dhfn0"), SubResource("Resource_21x4e"), SubResource("Resource_wiqyn")])
+
+[resource]
+script = ExtResource("8_2rdrs")
+title = "Stenoza Aortica"
+description = "Pentru a intelege cum de tratat Stenoza Aortica"
+progress = Array[ExtResource("7_vprey")]([SubResource("Resource_m3e42")])
+prerequesites = Array[ExtResource("8_2rdrs")]([])
+image = "res://resources/quest_system/img/quest_item_icon_003.png"
+coordinates = Vector2(137, 100)

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="IllnessBase" load_steps=18 format=3 uid="uid://w687bsh80w2"]
+[gd_resource type="Resource" script_class="IllnessBase" load_steps=16 format=3 uid="uid://w687bsh80w2"]
 
 [ext_resource type="Resource" uid="uid://50j6tdrak0dg" path="res://resources/combat/obj/entities/stenosis/stenoza_mitrala_usoara/stenoza_mitrala_usoara.tres" id="1_1okp4"]
 [ext_resource type="Script" path="res://resources/illnesses/illness_base.gd" id="1_ajlup"]
@@ -8,7 +8,6 @@
 [ext_resource type="Resource" uid="uid://s4pmirwnia7h" path="res://resources/tests/physical_exam/ascultare.tres" id="4_invgn"]
 [ext_resource type="Resource" uid="uid://bkmdpqqvtp6pg" path="res://resources/illnesses/symptoms/data/palpitatii.tres" id="4_mmok1"]
 [ext_resource type="Script" path="res://resources/illnesses/test_result/test_result.gd" id="5_bgqqv"]
-[ext_resource type="Resource" uid="uid://bwytrtqogel7f" path="res://resources/tests/physical_exam/percutie.tres" id="7_mhmjq"]
 [ext_resource type="Resource" uid="uid://haipkowknrxx" path="res://resources/tests/investigations/ecografie_cardiaca.tres" id="9_ffhdx"]
 [ext_resource type="Script" path="res://resources/illnesses/test_result/test_result_replacement.gd" id="10_t0dsu"]
 
@@ -30,12 +29,6 @@ test = ExtResource("4_invgn")
 result = "Z1 intarit; clacment de deschidere; uruitura diostolica"
 replacements = Array[ExtResource("10_t0dsu")]([])
 
-[sub_resource type="Resource" id="Resource_arooq"]
-script = ExtResource("5_bgqqv")
-test = ExtResource("7_mhmjq")
-result = "Nu"
-replacements = Array[ExtResource("10_t0dsu")]([])
-
 [sub_resource type="Resource" id="Resource_gqsya"]
 script = ExtResource("10_t0dsu")
 formater = "floatValue"
@@ -50,12 +43,14 @@ replacements = Array[ExtResource("10_t0dsu")]([SubResource("Resource_gqsya")])
 
 [resource]
 script = ExtResource("1_ajlup")
-image = "res://resources/tests/default_icon.png"
-title = "Stenoză Mitrală Ușoară"
-description = "Simple information about the Illness. Maybe a few fun facts about it. ETC..."
+image = "res://resources/illnesses/data/img/sprite_mitral_1.png"
+title = "Stenoza Mitrala Usoara"
+description = "Boala ce afecteaza valvele mitrale cu micsorarea ariilor acestora."
 gender = 0.5
 age = Array[Array]([[20, 30], [60, 90]])
 history = Array[Resource("res://resources/illnesses/history/history.gd")]([])
 symptoms = Array[Resource("res://resources/illnesses/symptoms/symptom.gd")]([ExtResource("3_kqkbn"), ExtResource("4_mmok1")])
-tests = Array[ExtResource("5_bgqqv")]([SubResource("Resource_30i5u"), SubResource("Resource_vsbi5"), SubResource("Resource_weg1b"), SubResource("Resource_arooq"), SubResource("Resource_dven0")])
+tests = Array[ExtResource("5_bgqqv")]([SubResource("Resource_30i5u"), SubResource("Resource_vsbi5"), SubResource("Resource_weg1b"), SubResource("Resource_dven0")])
 combat_entity = ExtResource("1_1okp4")
+manifest = "Dispnee, Edemele periferice, Palpitatiile si formarea de trombi."
+counter = "Furosemid pentru dispnee si edeme periferice, Labetalol pentru palpitatii si apixaban pentru trombi."

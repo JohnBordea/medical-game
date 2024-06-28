@@ -36,7 +36,7 @@ theme_override_constants/margin_bottom = 10
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelTitle/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Encounter Result"
+text = "Rezultat"
 horizontal_alignment = 1
 
 [node name="PanelContent" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
@@ -53,7 +53,7 @@ offset_top = 30.0
 offset_right = 473.0
 offset_bottom = 58.0
 theme_override_font_sizes/font_size = 20
-text = "Encountered:"
+text = "Patologie:"
 horizontal_alignment = 2
 
 [node name="Encountered" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContent/Control"]
@@ -74,7 +74,7 @@ offset_top = 72.0
 offset_right = 473.0
 offset_bottom = 100.0
 theme_override_font_sizes/font_size = 20
-text = "Result:"
+text = "Rezultat:"
 horizontal_alignment = 2
 
 [node name="Winner" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContent/Control"]
@@ -100,6 +100,6 @@ theme_override_constants/margin_bottom = 10
 
 [node name="Proceed" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/PanelProceed/MarginContainer"]
 layout_mode = 2
-text = "Proceed"
+text = "Continua"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/PanelProceed/MarginContainer/Proceed" to="." method="_on_proceed_pressed"]

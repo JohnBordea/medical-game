@@ -13,6 +13,8 @@ class_name IllnessBase
 #needs to be Test: String
 @export var tests: Array[TestResult]
 @export var combat_entity: CombatEntity
+@export var manifest: String
+@export var counter: String
 
 func check_if_test_possible(test: Test) -> bool:
 	for t in tests:

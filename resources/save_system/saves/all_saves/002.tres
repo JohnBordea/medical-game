@@ -1,0 +1,121 @@
+[gd_resource type="Resource" script_class="SaveSlot" load_steps=27 format=3]
+
+[ext_resource type="Resource" path="res://resources/illnesses/data/stenoza/mitrala/stenoza_mitrala_moderata.tres" id="1_6jo4o"]
+[ext_resource type="Resource" path="res://resources/illnesses/mild_mifral_stenosis.tres" id="2_td8vo"]
+[ext_resource type="Resource" path="res://resources/illnesses/data/stenoza/mitrala/stenoza_mitrala_severa.tres" id="3_m2ccs"]
+[ext_resource type="Script" path="res://resources/save_system/npc_location.gd" id="4_jg4bb"]
+[ext_resource type="Resource" path="res://resources/illnesses/data/stenoza/aortica/stenoza_aortica_usoara.tres" id="5_8eh8a"]
+[ext_resource type="Script" path="res://resources/save_system/map_positioning.gd" id="6_rx40v"]
+[ext_resource type="Resource" path="res://resources/dialogues/NPC.dialogue" id="7_gvaap"]
+[ext_resource type="Script" path="res://resources/npc_data/npc.gd" id="8_drc68"]
+[ext_resource type="Resource" path="res://resources/tests/physical_exam/palpare.tres" id="9_wcqvy"]
+[ext_resource type="Resource" path="res://resources/tests/physical_exam/inspection.tres" id="10_s0y7p"]
+[ext_resource type="Resource" path="res://resources/tests/investigations/ekg.tres" id="11_l7qjg"]
+[ext_resource type="Resource" path="res://resources/tests/investigations/ecografie_cardiaca.tres" id="12_qkqvs"]
+[ext_resource type="Resource" path="res://resources/quest_system/resources/quests/quest_1.tres" id="13_0qgg1"]
+[ext_resource type="Resource" path="res://resources/quest_system/resources/quests/quest_2.tres" id="14_l31lx"]
+[ext_resource type="Script" path="res://resources/save_system/save_slot.gd" id="15_5yjl4"]
+
+[sub_resource type="Resource" id="Resource_ro585"]
+script = ExtResource("4_jg4bb")
+position = Vector2(480, 88)
+tests_taken = Array[Resource("res://resources/tests/test.gd")]([])
+tests_taken_results = Array[String]([])
+diagnostic_made = false
+
+[sub_resource type="Resource" id="Resource_gafvs"]
+script = ExtResource("4_jg4bb")
+position = Vector2(72, 88)
+tests_taken = Array[Resource("res://resources/tests/test.gd")]([])
+tests_taken_results = Array[String]([])
+diagnostic_made = false
+
+[sub_resource type="Resource" id="Resource_tktdq"]
+script = ExtResource("4_jg4bb")
+position = Vector2(264, 88)
+tests_taken = Array[Resource("res://resources/tests/test.gd")]([])
+tests_taken_results = Array[String]([])
+diagnostic_made = false
+
+[sub_resource type="Resource" id="Resource_45dgh"]
+script = ExtResource("6_rx40v")
+map_name = "res://scenes/overworld/maps/map_001/map_001.tscn"
+npc_location = Array[ExtResource("4_jg4bb")]([SubResource("Resource_ro585"), SubResource("Resource_gafvs"), SubResource("Resource_tktdq")])
+posible_illneses = Array[Resource("res://resources/illnesses/illness_base.gd")]([ExtResource("2_td8vo"), ExtResource("5_8eh8a")])
+
+[sub_resource type="Resource" id="Resource_3tdj5"]
+script = ExtResource("8_drc68")
+sprite_body = "res://resources/npc_data/sprites/body/sprite_teen_female.png"
+sprite_hair = "res://resources/npc_data/sprites/hair/adult/sprite_hair_00.png"
+name = "Crina Neagoe"
+gender = "Female"
+age = 16
+illness = ExtResource("1_6jo4o")
+cured = false
+dialogue = ExtResource("7_gvaap")
+dialogue_start = "content"
+
+[sub_resource type="Resource" id="Resource_l16iw"]
+script = ExtResource("4_jg4bb")
+position = Vector2(80, 224)
+npc = SubResource("Resource_3tdj5")
+tests_taken = Array[Resource("res://resources/tests/test.gd")]([])
+tests_taken_results = Array[String]([])
+diagnostic_made = false
+
+[sub_resource type="Resource" id="Resource_h3fkt"]
+script = ExtResource("8_drc68")
+sprite_body = "res://resources/npc_data/sprites/body/sprite_old_male.png"
+sprite_hair = "res://resources/npc_data/sprites/hair/adult/sprite_hair_00.png"
+name = "Anghel Cojoc"
+gender = "Male"
+age = 64
+illness = ExtResource("2_td8vo")
+cured = false
+dialogue = ExtResource("7_gvaap")
+dialogue_start = "content"
+
+[sub_resource type="Resource" id="Resource_whgwb"]
+script = ExtResource("4_jg4bb")
+position = Vector2(272, 224)
+npc = SubResource("Resource_h3fkt")
+tests_taken = Array[Resource("res://resources/tests/test.gd")]([])
+tests_taken_results = Array[String]([])
+diagnostic_made = false
+
+[sub_resource type="Resource" id="Resource_h47gy"]
+script = ExtResource("8_drc68")
+sprite_body = "res://resources/npc_data/sprites/body/sprite_child_female.png"
+sprite_hair = "res://resources/npc_data/sprites/hair/adult/sprite_hair_00.png"
+name = "Aurora Vulcan"
+gender = "Female"
+age = 1
+illness = ExtResource("1_6jo4o")
+cured = true
+dialogue = ExtResource("7_gvaap")
+dialogue_start = "content"
+
+[sub_resource type="Resource" id="Resource_82qon"]
+script = ExtResource("4_jg4bb")
+position = Vector2(464, 224)
+npc = SubResource("Resource_h47gy")
+tests_taken = Array[Resource("res://resources/tests/test.gd")]([ExtResource("9_wcqvy"), ExtResource("10_s0y7p"), ExtResource("11_l7qjg"), ExtResource("12_qkqvs")])
+tests_taken_results = Array[String](["Puls periferic slab", "Facies Mitral", "Unda P “bifidă”", "Aria valvei mitrale – 1.25 cm^2"])
+diagnostic_made = true
+
+[sub_resource type="Resource" id="Resource_644oq"]
+script = ExtResource("6_rx40v")
+map_name = "res://scenes/overworld/maps/saloon/saloon.tscn"
+npc_location = Array[ExtResource("4_jg4bb")]([SubResource("Resource_l16iw"), SubResource("Resource_whgwb"), SubResource("Resource_82qon")])
+posible_illneses = Array[Resource("res://resources/illnesses/illness_base.gd")]([ExtResource("2_td8vo"), ExtResource("1_6jo4o"), ExtResource("3_m2ccs")])
+
+[resource]
+script = ExtResource("15_5yjl4")
+name = "002"
+date = "2024-06-27T11:19:07"
+map_path = "res://scenes/overworld/maps/saloon/saloon.tscn"
+player_coord = Vector2(534.667, 248)
+quest_list = Array[Resource("res://resources/quest_system/classes/quest_base.gd")]([ExtResource("13_0qgg1"), ExtResource("14_l31lx")])
+maps_positioning = Array[ExtResource("6_rx40v")]([SubResource("Resource_45dgh"), SubResource("Resource_644oq")])
+to_be_deleted = false
+illneses_encountered = Array[Resource("res://resources/illnesses/illness_base.gd")]([ExtResource("1_6jo4o"), ExtResource("2_td8vo"), ExtResource("3_m2ccs")])

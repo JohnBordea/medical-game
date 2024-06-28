@@ -25,6 +25,36 @@ func generate_default_data():
 	dialogue = load("res://resources/dialogues/NPC.dialogue") as DialogueResource
 	dialogue_start = "content"
 
+func generate_name(male: bool = true):
+	var names: Array[String]
+	if male:
+		names = [
+			"Horatiu Poienaru",
+			"Anghel Cojoc",
+			"Simu Stoenescu",
+			"Iulien Enache",
+			"Adam Vasile",
+			"Alexandru Vladimirescu",
+			"Timotei Kazaku",
+			"Pereteanu Georgesco",
+			"Doru Raceanu",
+			"Horasiu Corbeanu"
+		]
+	else:
+		names = [
+			"Crina Neagoe",
+			"Catalena Torje",
+			"Lavinia Mihalache",
+			"Voileta Stoenescu",
+			"Denisa Puiu",
+			"Adelina Draghicescu",
+			"Lina Voicu",
+			"Aurora Vulcan",
+			"Stefana Dumitrescu",
+			"Voileta Galca"
+		]
+	name = names.pick_random()
+
 func generate_data(posible_illneses: Array[IllnessBase]):
 	if posible_illneses == null or posible_illneses.is_empty():
 		generate_default_data()
@@ -33,8 +63,10 @@ func generate_data(posible_illneses: Array[IllnessBase]):
 		illness = posible_illneses.pick_random()
 		if randf() < illness.gender:
 			gender = "Male"
+			generate_name(true)
 		else:
 			gender = "Female"
+			generate_name(false)
 		var age_vars = illness.age.pick_random()
 		age = randi_range(age_vars[0], age_vars[1])
 		generate_sprite()

@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("1_he1m8")
-name = "Physical Exam"
-tests = Array[Resource("res://resources/tests/test.gd")]([ExtResource("2_xpd8a"), ExtResource("3_q6gg5"), ExtResource("4_rjamy"), ExtResource("5_0jg0f")])
+name = "Examen Obiectiv"
+tests = Array[Resource("res://resources/tests/test.gd")]([ExtResource("2_xpd8a"), ExtResource("3_q6gg5"), ExtResource("5_0jg0f"), ExtResource("4_rjamy")])
 order = 0
 at_least_used_count = 2

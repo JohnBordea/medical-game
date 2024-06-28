@@ -32,11 +32,11 @@ layout_mode = 2
 
 [node name="Attack" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/ActionContainer"]
 layout_mode = 2
-text = "Attack"
+text = "Ataca"
 
 [node name="Analyze" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/ActionContainer"]
 layout_mode = 2
-text = "Analyze"
+text = "Analiza"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/ActionContainer/Attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/ScrollContainer/ActionContainer/Analyze" to="." method="_on_analyze_pressed"]

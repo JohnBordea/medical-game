@@ -7,6 +7,8 @@ signal back
 @onready var data_box = %DataBox
 @onready var data_description = %GeneralDescription
 @onready var icon = %Icon
+@onready var manifests = %Manifests
+@onready var counters = %Counters
 
 var data: IllnessBase
 
@@ -24,6 +26,8 @@ func initiate(data: IllnessBase):
 	if CombatBase.analyse_enemy_is_known(data):
 		data_unavailable.visible = false
 		data_box.visible = true
+		manifests.text = data.manifest
+		counters.text = data.counter
 	else:
 		data_unavailable.visible = true
 		data_box.visible = false

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SkillType" load_steps=3 format=3 uid="uid://ccbyjhdsrlj3c"]
+
+[ext_resource type="Script" path="res://resources/combat/scripts/misc/skill_type.gd" id="1_doucp"]
+[ext_resource type="Resource" uid="uid://dfvfb0j8g8tmu" path="res://resources/combat/obj/entities/player/skills/labetalol.tres" id="2_g40do"]
+
+[resource]
+script = ExtResource("1_doucp")
+name = "Beta Blocant"
+skills = Array[Resource("res://resources/combat/scripts/misc/skill.gd")]([ExtResource("2_g40do")])

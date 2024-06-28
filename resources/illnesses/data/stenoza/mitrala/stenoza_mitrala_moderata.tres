@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="IllnessBase" load_steps=19 format=3 uid="uid://buu6ab01klvlt"]
+[gd_resource type="Resource" script_class="IllnessBase" load_steps=20 format=3 uid="uid://buu6ab01klvlt"]
 
+[ext_resource type="Resource" uid="uid://vwdditq7lgo8" path="res://resources/combat/obj/entities/stenosis/stenoza_mitrala_usoara/stenoza_mitrala_moderata.tres" id="1_78waw"]
 [ext_resource type="Script" path="res://resources/illnesses/illness_base.gd" id="2_hvi3e"]
 [ext_resource type="Resource" uid="uid://cyoxihdjfk0pp" path="res://resources/illnesses/symptoms/data/dispnee/dispnee.tres" id="2_qm2ai"]
 [ext_resource type="Resource" uid="uid://bkmdpqqvtp6pg" path="res://resources/illnesses/symptoms/data/palpitatii.tres" id="3_1k5i3"]
@@ -56,11 +57,14 @@ replacements = Array[ExtResource("9_rupbf")]([SubResource("Resource_svvxa")])
 
 [resource]
 script = ExtResource("2_hvi3e")
-image = "res://resources/tests/default_icon.png"
+image = "res://resources/illnesses/data/img/sprite_mitral_2.png"
 title = "Stenoza Mitrala Moderata"
-description = "Simple information about the Illness. Maybe a few fun facts about it. ETC..."
+description = "Boala ce afecteaza valvele mitrale cu micsorarea ariilor acestora."
 gender = 0.5
 age = Array[Array]([[0, 90]])
 history = Array[Resource("res://resources/illnesses/history/history.gd")]([])
 symptoms = Array[Resource("res://resources/illnesses/symptoms/symptom.gd")]([ExtResource("2_qm2ai"), ExtResource("3_1k5i3")])
 tests = Array[ExtResource("3_6h66q")]([SubResource("Resource_cmjo6"), SubResource("Resource_symim"), SubResource("Resource_328wq"), SubResource("Resource_hlb0u"), SubResource("Resource_aj4ae"), SubResource("Resource_rg5tb")])
+combat_entity = ExtResource("1_78waw")
+manifest = "Dispnee, Edemele periferice, Palpitatiile si formarea de trombi."
+counter = "Furosemid pentru dispnee si edeme periferice, Labetalol pentru palpitatii si apixaban pentru trombi."

@@ -64,3 +64,5 @@ age = Array[Array]([[0, 90]])
 history = Array[Resource("res://resources/illnesses/history/history.gd")]([])
 symptoms = Array[Resource("res://resources/illnesses/symptoms/symptom.gd")]([ExtResource("2_sq0wo"), ExtResource("3_rycfn")])
 tests = Array[ExtResource("4_gnfvg")]([SubResource("Resource_0b53t"), SubResource("Resource_x0w8l"), SubResource("Resource_xvsvd"), SubResource("Resource_ob402"), SubResource("Resource_6xidl"), SubResource("Resource_cvfsm")])
+manifest = ""
+counter = ""

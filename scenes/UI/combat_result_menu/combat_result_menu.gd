@@ -13,9 +13,9 @@ func _input(event):
 func initiate(encounter: IllnessBase, result: bool = false):
 	encountered.text = encounter.title
 	if result:
-		winner.text = "Succesfully Cured"
+		winner.text = "Tratat cu Succes"
 	else:
-		winner.text = "Not Cured"
+		winner.text = "Tratament Esuat"
 
 func _on_proceed_pressed():
 	emit_signal("proceed")

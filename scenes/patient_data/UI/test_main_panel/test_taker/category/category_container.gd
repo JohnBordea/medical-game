@@ -12,9 +12,9 @@ func create(category: TestType):
 	if category.at_least_used_count == 0:
 		count.text = ""
 	elif category.at_least_used_count == 1:
-		count.text = "Need to use at least once"
+		count.text = "Trebuie de folosit cel putin unul"
 	else:
-		count.text = "Need to use at least " + str(category.at_least_used_count) + " diferent tests"
+		count.text = "Trebuie de folosit cel putin cate " + str(category.at_least_used_count) + " metode"
 
 	for test in category.tests:
 		var t = test_instance.instantiate()

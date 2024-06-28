@@ -36,7 +36,7 @@ theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Diagnostics"
+text = "Diagnostic"
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 484)
@@ -82,7 +82,7 @@ text = "Cancel"
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
-text = "Take Diagnosis"
+text = "Ia Diagnosticul"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/Cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/TakeDiagnostic" to="." method="_on_take_diagnostic_pressed"]

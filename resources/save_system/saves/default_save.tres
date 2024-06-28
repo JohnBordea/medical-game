@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SaveSlot" load_steps=16 format=3 uid="uid://bl8lkyxbbn70k"]
+[gd_resource type="Resource" script_class="SaveSlot" load_steps=20 format=3 uid="uid://bl8lkyxbbn70k"]
 
 [ext_resource type="Script" path="res://resources/save_system/save_slot.gd" id="1_2t6pd"]
 [ext_resource type="Script" path="res://resources/save_system/npc_location.gd" id="1_f11ud"]
@@ -7,6 +7,10 @@
 [ext_resource type="Resource" uid="uid://w687bsh80w2" path="res://resources/illnesses/mild_mifral_stenosis.tres" id="2_pcrg6"]
 [ext_resource type="Script" path="res://resources/save_system/map_positioning.gd" id="3_iaqeq"]
 [ext_resource type="Resource" uid="uid://bvte5a2n83cpa" path="res://resources/illnesses/data/stenoza/aortica/stenoza_aortica_usoara.tres" id="3_vsh47"]
+[ext_resource type="Resource" uid="uid://buu6ab01klvlt" path="res://resources/illnesses/data/stenoza/mitrala/stenoza_mitrala_moderata.tres" id="5_tg378"]
+[ext_resource type="Resource" uid="uid://btpjbam7mifyw" path="res://resources/illnesses/data/stenoza/mitrala/stenoza_mitrala_severa.tres" id="6_iy0wi"]
+[ext_resource type="Resource" uid="uid://b4nbk3ki4ijpt" path="res://resources/quest_system/resources/quests/quest_3.tres" id="9_6vfka"]
+[ext_resource type="Resource" uid="uid://b40vcu5qq1qa6" path="res://resources/quest_system/resources/quests/quest_4.tres" id="10_gux2u"]
 
 [sub_resource type="Resource" id="Resource_ro585"]
 script = ExtResource("1_f11ud")
@@ -60,7 +64,7 @@ diagnostic_made = false
 script = ExtResource("3_iaqeq")
 map_name = "res://scenes/overworld/maps/saloon/saloon.tscn"
 npc_location = Array[ExtResource("1_f11ud")]([SubResource("Resource_l16iw"), SubResource("Resource_whgwb"), SubResource("Resource_82qon")])
-posible_illneses = Array[Resource("res://resources/illnesses/illness_base.gd")]([ExtResource("2_pcrg6"), ExtResource("3_vsh47")])
+posible_illneses = Array[Resource("res://resources/illnesses/illness_base.gd")]([ExtResource("2_pcrg6"), ExtResource("5_tg378"), ExtResource("6_iy0wi")])
 
 [resource]
 script = ExtResource("1_2t6pd")
@@ -68,7 +72,7 @@ name = "Defaul Save"
 date = ""
 map_path = "res://scenes/overworld/maps/conference_room/conference_room.tscn"
 player_coord = Vector2(192, 320)
-quest_list = Array[Resource("res://resources/quest_system/classes/quest_base.gd")]([ExtResource("1_l5ovt"), ExtResource("2_dfmt1")])
+quest_list = Array[Resource("res://resources/quest_system/classes/quest_base.gd")]([ExtResource("1_l5ovt"), ExtResource("2_dfmt1"), ExtResource("9_6vfka"), ExtResource("10_gux2u")])
 maps_positioning = Array[ExtResource("3_iaqeq")]([SubResource("Resource_45dgh"), SubResource("Resource_644oq")])
 to_be_deleted = false
 illneses_encountered = Array[Resource("res://resources/illnesses/illness_base.gd")]([])
